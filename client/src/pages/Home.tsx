@@ -4,13 +4,117 @@ import { CyberButton } from "@/components/CyberButton";
 import { CyberCard } from "@/components/CyberCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { Cpu, Activity, Shield, TrendingUp, ChevronRight, Zap } from "lucide-react";
+import { useState } from "react";
+import { 
+  Cpu, Activity, Shield, TrendingUp, ChevronDown, Zap, 
+  Key, DollarSign, Vote, CreditCard, CheckCircle, 
+  Link as LinkIcon, BarChart3, Users, Twitter, Send
+} from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const subscribeMutation = useMutation({
+    mutationFn: async (email: string) => {
+      return apiRequest('/api/subscribers', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+    },
+    onSuccess: () => {
+      toast({ title: "Success!", description: "You've been added to the waitlist." });
+      setEmail("");
+    },
+    onError: () => {
+      toast({ title: "Error", description: "Failed to subscribe. Try again.", variant: "destructive" });
+    }
+  });
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) subscribeMutation.mutate(email);
+  };
   
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const howItWorksSteps = [
+    { num: 1, title: "Connect Telegram", desc: "Add our bot to your Telegram. No KYC, no personal data required." },
+    { num: 2, title: "Stake Tokens", desc: "Hold or stake $SHANTI tokens to unlock premium signals and analytics." },
+    { num: 3, title: "Get Alerts", desc: "Receive real-time AI-powered market alerts and trading signals." }
+  ];
+
+  const tokenUtilityFeatures = [
+    { icon: Key, title: "Access Tiers", desc: "Stake tokens to unlock advanced features: whale tracking, order book heatmaps, and predictive models.", color: "text-primary" },
+    { icon: DollarSign, title: "Revenue Share", desc: "Platform fees are used to buy back and burn tokens, or distributed to stakers.", color: "text-green-400" },
+    { icon: Vote, title: "Governance", desc: "Vote on which exchanges to monitor, feature priorities, and treasury allocation.", color: "text-yellow-400" },
+    { icon: Zap, title: "Pay-Per-Use", desc: "Don't want to stake? Pay per signal with $SHANTI tokens for flexibility.", color: "text-orange-400" }
+  ];
+
+  const tokenomicsData = [
+    { label: "Public Sale (Pump.fun)", percent: 80, color: "bg-primary" },
+    { label: "Team (2-year vesting)", percent: 10, color: "bg-purple-500" },
+    { label: "Development Fund", percent: 5, color: "bg-blue-500" },
+    { label: "Marketing & Partnerships", percent: 5, color: "bg-pink-500" }
+  ];
+
+  const roadmapData = [
+    {
+      quarter: "Q1 2024",
+      title: "Foundation",
+      items: ["MVP Telegram Bot Launch", "On-chain monitoring (5 exchanges)", "Basic AI signal detection", "Fair launch on Pump.fun"],
+      completed: true
+    },
+    {
+      quarter: "Q2 2024",
+      title: "Expansion",
+      items: ["15+ exchanges integrated", "Advanced order book analysis", "Web dashboard launch", "Staking platform live"],
+      completed: false
+    },
+    {
+      quarter: "Q3 2024",
+      title: "Intelligence",
+      items: ["Whale wallet tracking", "Predictive ML models", "Custom alert builder", "API access for developers"],
+      completed: false
+    },
+    {
+      quarter: "Q4 2024",
+      title: "Ecosystem",
+      items: ["Mobile app launch", "DAO governance live", "Multi-chain support", "Premium analytics suite"],
+      completed: false
+    }
+  ];
+
+  const teamMembers = [
+    { name: "Alex Chen", role: "Founder & CEO", desc: "Ex-quant trader at Jump Trading. Built HFT systems, now exposing them.", avatar: "AC" },
+    { name: "Sarah Kim", role: "Head of AI", desc: "PhD in Machine Learning from MIT. Former Google DeepMind researcher.", avatar: "SK" },
+    { name: "Marcus Webb", role: "Lead Developer", desc: "10+ years in blockchain. Previously at Chainlink and Uniswap.", avatar: "MW" }
+  ];
+
+  const partners = [
+    { name: "Chainlink", icon: LinkIcon },
+    { name: "Dune Analytics", icon: BarChart3 },
+    { name: "Nansen", icon: Activity },
+    { name: "CoinGecko", icon: TrendingUp },
+    { name: "Certik", icon: Shield },
+    { name: "The Graph", icon: Zap }
+  ];
+
+  const faqItems = [
+    { q: "How does ShantiAI detect manipulation?", a: "Our AI analyzes order book patterns, whale movements, and on-chain data to identify suspicious activity before it affects prices." },
+    { q: "Do I need to hold tokens to use the platform?", a: "Basic alerts are free. Premium features like predictive models and whale tracking require staking $SHANTI tokens." },
+    { q: "Is this financial advice?", a: "No. ShantiAI provides data and analytics tools for research purposes only. Always do your own research." },
+    { q: "How accurate are the predictions?", a: "Our models have shown 85%+ accuracy in backtesting. However, past performance doesn't guarantee future results." },
+    { q: "When is the token launch?", a: "Fair launch on Pump.fun is scheduled for Q1 2024. Follow our Telegram for updates." },
+    { q: "Which exchanges do you monitor?", a: "We currently monitor Binance, Coinbase, Kraken, OKX, Bybit, and more. Premium tiers get access to 15+ exchanges." }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-primary selection:text-black font-body overflow-x-hidden">
@@ -18,10 +122,7 @@ export default function Home() {
       
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Animated Background Grid */}
         <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" />
-        
-        {/* Glow Effects */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
         
@@ -64,7 +165,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
-              <CyberButton className="w-full sm:w-auto h-14 text-base px-10">
+              <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
                 Become a User
               </CyberButton>
             </a>
@@ -72,13 +173,13 @@ export default function Home() {
               variant="secondary" 
               className="w-full sm:w-auto h-14 text-base px-10"
               onClick={scrollToAbout}
+              data-testid="button-explore"
             >
               Explore ShantiAI
             </CyberButton>
           </motion.div>
         </div>
         
-        {/* Scroll Indicator */}
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
@@ -88,8 +189,38 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* HOW IT WORKS SECTION */}
+      <section id="how-it-works" className="py-24 bg-black relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>How It Works</SectionHeading>
+          <p className="text-center text-gray-400 mb-16 font-mono">
+            Three simple steps to start trading with transparency
+          </p>
+          
+          <div className="space-y-6">
+            {howItWorksSteps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-[#111115] border border-white/10 rounded-lg p-6 text-center"
+                data-testid={`card-step-${step.num}`}
+              >
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-display font-bold text-white">{step.num}</span>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-gray-400 font-mono text-sm">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT SECTION */}
-      <section id="about" className="py-24 bg-black relative">
+      <section id="about" className="py-24 bg-[#050508] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -136,8 +267,7 @@ export default function Home() {
       </section>
 
       {/* TECHNOLOGY SECTION */}
-      <section id="technology" className="py-24 bg-[#050508] relative overflow-hidden">
-        {/* Horizontal scan line */}
+      <section id="technology" className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -145,24 +275,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                icon: TrendingUp,
-                title: "Predictive Analytics",
-                desc: "Advanced algorithms analyze market data to identify profitable opportunities with precision forecasting.",
-                color: "text-primary"
-              },
-              {
-                icon: Cpu,
-                title: "Automated Analysis",
-                desc: "24/7 market monitoring without human limitations or emotional bias, ensuring consistent performance.",
-                color: "text-secondary"
-              },
-              {
-                icon: Shield,
-                title: "Transparent Execution",
-                desc: "Clear, verifiable strategies with detailed performance reporting and full audit capabilities.",
-                color: "text-accent"
-              }
+              { icon: TrendingUp, title: "Predictive Analytics", desc: "Advanced algorithms analyze market data to identify profitable opportunities with precision forecasting.", color: "text-primary" },
+              { icon: Cpu, title: "Automated Analysis", desc: "24/7 market monitoring without human limitations or emotional bias, ensuring consistent performance.", color: "text-secondary" },
+              { icon: Shield, title: "Transparent Execution", desc: "Clear, verifiable strategies with detailed performance reporting and full audit capabilities.", color: "text-accent" }
             ].map((feature, i) => (
               <CyberCard key={i} delay={i * 0.2} className="h-full">
                 <div className={`mb-6 p-4 bg-white/5 inline-block rounded-sm border border-white/10 ${feature.color}`}>
@@ -176,8 +291,300 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TOKEN UTILITY SECTION */}
+      <section id="token-utility" className="py-24 bg-[#050508] relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Token Utility</SectionHeading>
+          <p className="text-center text-gray-400 mb-12 font-mono">
+            $SHANTI is the fuel that powers the platform
+          </p>
+          
+          <div className="space-y-4">
+            {tokenUtilityFeatures.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#111115] border border-white/10 rounded-lg p-6"
+                data-testid={`card-utility-${i}`}
+              >
+                <div className="flex items-start gap-4">
+                  <feature.icon className={`w-6 h-6 ${feature.color} shrink-0 mt-1`} />
+                  <div>
+                    <h3 className={`text-lg font-display font-bold ${feature.color} mb-2`}>{feature.title}</h3>
+                    <p className="text-gray-400 text-sm">{feature.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TOKENOMICS SECTION */}
+      <section id="tokenomics" className="py-24 bg-black relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Tokenomics</SectionHeading>
+          <p className="text-center text-gray-400 mb-12 font-mono">
+            Fair launch with transparent distribution
+          </p>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-primary/20 to-purple-900/30 border border-white/10 rounded-lg p-8 mb-8"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <BarChart3 className="w-6 h-6 text-primary" />
+              <span className="text-white font-display font-bold">Token Distribution Chart</span>
+            </div>
+            <p className="text-gray-400 text-sm font-mono">(Pie chart visualization)</p>
+            
+            <div className="mt-6 flex gap-2 h-4 rounded-full overflow-hidden">
+              {tokenomicsData.map((item, i) => (
+                <div key={i} className={`${item.color}`} style={{ width: `${item.percent}%` }} />
+              ))}
+            </div>
+          </motion.div>
+          
+          <div className="space-y-4">
+            {tokenomicsData.map((item, i) => (
+              <div key={i} className="flex justify-between items-center py-3 border-b border-white/10">
+                <span className="text-gray-300">{item.label}</span>
+                <span className="text-primary font-display font-bold">{item.percent}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ROADMAP SECTION */}
+      <section id="roadmap" className="py-24 bg-[#050508] relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Roadmap</SectionHeading>
+          <p className="text-center text-gray-400 mb-16 font-mono">
+            Our path to becoming the #1 anti-manipulation platform
+          </p>
+          
+          <div className="relative">
+            <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-purple-500 to-gray-700" />
+            
+            <div className="space-y-8">
+              {roadmapData.map((phase, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="relative pl-12"
+                  data-testid={`card-roadmap-${i}`}
+                >
+                  <div className={`absolute left-0 top-1 w-8 h-8 rounded-full flex items-center justify-center ${phase.completed ? 'bg-primary' : 'bg-gray-700'}`}>
+                    <div className="w-3 h-3 rounded-full bg-white" />
+                  </div>
+                  
+                  <div className="bg-[#111115] border border-white/10 rounded-lg p-6">
+                    <div className="text-primary font-mono text-sm mb-2">{phase.quarter}</div>
+                    <h3 className="text-xl font-display font-bold text-white mb-4">{phase.title}</h3>
+                    <ul className="space-y-2">
+                      {phase.items.map((item, j) => (
+                        <li key={j} className="flex items-start gap-2 text-gray-400 text-sm">
+                          <CheckCircle className={`w-4 h-4 shrink-0 mt-0.5 ${phase.completed ? 'text-green-400' : 'text-gray-600'}`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM SECTION */}
+      <section id="team" className="py-24 bg-black relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Team</SectionHeading>
+          <p className="text-center text-gray-400 mb-12 font-mono">
+            Built by traders and engineers who've been rekt by market manipulation
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-[#111115] border border-white/10 rounded-lg p-6 text-center"
+                data-testid={`card-team-${i}`}
+              >
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-primary flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-display font-bold text-white">{member.avatar}</span>
+                </div>
+                <h3 className="text-lg font-display font-bold text-white mb-1">{member.name}</h3>
+                <p className="text-primary text-sm mb-3">{member.role}</p>
+                <p className="text-gray-400 text-sm">{member.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNERS SECTION */}
+      <section id="partners" className="py-24 bg-[#050508] relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Partners & Integrations</SectionHeading>
+          <p className="text-center text-gray-400 mb-12 font-mono">
+            Trusted data sources and ecosystem partners
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {partners.map((partner, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-[#111115] border border-white/10 rounded-lg p-6 flex items-center gap-3"
+                data-testid={`card-partner-${i}`}
+              >
+                <partner.icon className="w-5 h-5 text-primary" />
+                <span className="text-white font-medium">{partner.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section id="faq" className="py-24 bg-black relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Frequently Asked Questions</SectionHeading>
+          
+          <div className="space-y-4 mt-12">
+            {faqItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-[#111115] border border-white/10 rounded-lg overflow-hidden"
+                data-testid={`faq-item-${i}`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left"
+                  data-testid={`button-faq-${i}`}
+                >
+                  <span className="text-white font-medium pr-4">{item.q}</span>
+                  <ChevronDown className={`w-5 h-5 text-primary shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-gray-400 text-sm border-t border-white/10 pt-4">
+                    {item.a}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY SECTION */}
+      <section id="community" className="py-24 bg-[#050508] relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading centered>Join The Community</SectionHeading>
+          <p className="text-center text-gray-400 mb-12 font-mono">
+            Connect with traders fighting against market manipulation
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-[#111115] border border-white/10 rounded-lg p-8 text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-[#1DA1F2]/20 flex items-center justify-center mx-auto mb-4">
+                <Twitter className="w-8 h-8 text-[#1DA1F2]" />
+              </div>
+              <h3 className="text-xl font-display font-bold text-white mb-1">Twitter</h3>
+              <p className="text-primary text-lg font-bold mb-4">12.5K</p>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <CyberButton variant="secondary" className="w-full" data-testid="button-twitter">
+                  Follow Us
+                </CyberButton>
+              </a>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-[#111115] border border-white/10 rounded-lg p-8 text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-[#0088cc]/20 flex items-center justify-center mx-auto mb-4">
+                <Send className="w-8 h-8 text-[#0088cc]" />
+              </div>
+              <h3 className="text-xl font-display font-bold text-white mb-1">Telegram</h3>
+              <p className="text-primary text-lg font-bold mb-4">8.3K</p>
+              <a href="https://t.me/shantiAIwealth" target="_blank" rel="noopener noreferrer">
+                <CyberButton variant="secondary" className="w-full" data-testid="button-telegram">
+                  Join Chat
+                </CyberButton>
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* WAITLIST SECTION */}
+      <section id="waitlist" className="py-24 bg-black relative">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <SectionHeading centered>Join The Waitlist</SectionHeading>
+          <p className="text-gray-400 mb-8 font-mono">
+            Be among the first to test our platform and get early access to the token launch
+          </p>
+          
+          <form onSubmit={handleSubscribe} className="space-y-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              className="w-full bg-[#111115] border border-white/20 rounded-full px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-primary"
+              required
+              data-testid="input-email"
+            />
+            <CyberButton 
+              type="submit" 
+              className="w-full h-14"
+              disabled={subscribeMutation.isPending}
+              data-testid="button-waitlist"
+            >
+              {subscribeMutation.isPending ? "Joining..." : "Join Waitlist"}
+            </CyberButton>
+          </form>
+          
+          <p className="mt-6 text-gray-500 text-sm flex items-center justify-center gap-2">
+            <span className="text-lg">🎯</span>
+            Selected members will receive exclusive early access to test the platform before public launch
+          </p>
+        </div>
+      </section>
+
       {/* TESTIMONIALS SECTION */}
-      <section id="testimonials" className="py-24 bg-black relative">
+      <section id="testimonials" className="py-24 bg-[#050508] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading>What Clients Say</SectionHeading>
           <p className="text-gray-400 mb-12 max-w-2xl font-mono">
@@ -185,7 +592,6 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Review 1 */}
             <CyberCard delay={0}>
               <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center font-display font-bold text-primary">
@@ -212,7 +618,6 @@ export default function Home() {
               </div>
             </CyberCard>
 
-            {/* Review 2 */}
             <CyberCard delay={0.2}>
               <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
                 <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center font-display font-bold text-secondary">
@@ -236,7 +641,6 @@ export default function Home() {
               </div>
             </CyberCard>
 
-            {/* Review 3 */}
             <CyberCard delay={0.4}>
               <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
                 <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center font-display font-bold text-accent">
@@ -264,7 +668,7 @@ export default function Home() {
       </section>
 
       {/* PHILOSOPHY SECTION */}
-      <section id="philosophy" className="py-24 bg-[#050508] relative">
+      <section id="philosophy" className="py-24 bg-black relative">
         <div className="absolute inset-0 bg-cyber-grid opacity-10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
