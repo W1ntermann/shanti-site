@@ -1,4 +1,4 @@
-import { Send, Bot, Twitter, MessageCircle as Telegram, Github } from "lucide-react";
+import { Twitter, MessageCircle as Telegram, Github } from "lucide-react";
 
 export function Footer() {
   const productLinks = [

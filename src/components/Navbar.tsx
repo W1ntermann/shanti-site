@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { CyberButton } from "./CyberButton";
-import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [location] = useLocation();
 
   const navLinks = [
     { name: "About", href: "#about" },

@@ -7,11 +7,10 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { 
   Cpu, Activity, Shield, TrendingUp, ChevronDown, Zap, 
-  Key, DollarSign, Vote, CreditCard, CheckCircle, 
-  Link as LinkIcon, BarChart3, Users, Twitter, Send
+  Key, DollarSign, Vote, CheckCircle, 
+  Link as LinkIcon, BarChart3, Twitter, Send
 } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import { useCreateSubscriber } from "@/hooks/use-subscribers";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
@@ -19,26 +18,21 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const subscribeMutation = useMutation({
-    mutationFn: async (email: string) => {
-      return apiRequest('/api/subscribers', {
-        method: 'POST',
-        body: JSON.stringify({ email }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-    },
-    onSuccess: () => {
-      toast({ title: "Success!", description: "You've been added to the waitlist." });
-      setEmail("");
-    },
-    onError: () => {
-      toast({ title: "Error", description: "Failed to subscribe. Try again.", variant: "destructive" });
-    }
-  });
+  const subscribeMutation = useCreateSubscriber();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) subscribeMutation.mutate(email);
+    if (email) {
+      subscribeMutation.mutate({ email }, {
+        onSuccess: () => {
+          toast({ title: "Success!", description: "You've been added to the waitlist." });
+          setEmail("");
+        },
+        onError: (error) => {
+          toast({ title: "Error", description: error.message || "Failed to subscribe. Try again.", variant: "destructive" });
+        }
+      });
+    }
   };
   
   const scrollToAbout = () => {
