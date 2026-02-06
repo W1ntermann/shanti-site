@@ -15,9 +15,9 @@ export function SectionHeading({ children, className, centered = false }: Sectio
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-5xl font-display font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
+        className="text-3xl md:text-5xl font-display font-black uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent text-glow-cyan"
       >
-        <span className="text-primary mr-2">/</span>
+        <span className="text-secondary mr-2 animate-neon-flicker">/</span>
         {children}
       </motion.h2>
       <motion.div 
@@ -26,7 +26,7 @@ export function SectionHeading({ children, className, centered = false }: Sectio
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
         className={cn(
-          "h-1 bg-gradient-to-r from-primary to-transparent mt-4",
+          "h-1 bg-gradient-to-r from-primary via-secondary to-accent mt-4 shadow-[0_0_10px_rgba(10,189,198,0.5)]",
           centered ? "mx-auto w-24" : "w-24"
         )} 
       />
