@@ -4,9 +4,7 @@ import { CyberButton } from "@/components/CyberButton";
 import { CyberCard } from "@/components/CyberCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TeamSlider } from "@/components/TeamSlider";
-import { TeamStats } from "@/components/TeamStats";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { TeamFilter } from "@/components/TeamFilter";
 import { RoadmapTimeline } from "@/components/RoadmapTimeline";
 import { BetaLiveCard } from "@/components/BetaLiveCard";
 import { PhilosophySection } from "@/components/PhilosophySection";
@@ -24,7 +22,6 @@ export default function Home() {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [teamFilter, setTeamFilter] = useState("all");
 
   const subscribeMutation = useCreateSubscriber();
 
@@ -76,7 +73,7 @@ export default function Home() {
     { 
       icon: DollarSign, 
       title: "Tiered Alpha Access", 
-      desc: "Tier 1 (5000 SHANTI): Standard AI signals • Tier 2 (15000 SHANTI): Whale Tracking + Liquidation Heatmaps • Tier 3 (50000 SHANTI): 'Cartel Detection' alerts", 
+      desc: "Tier 1 (10000 SHANTI): Standard AI signals \n Tier 2 (20000 SHANTI): Whale Tracking + Liquidation Heatmaps \n  Tier 3 (50000 SHANTI): 'Cartel Detection' alerts", 
       color: "text-green-400" 
     },
     { 
@@ -136,7 +133,7 @@ export default function Home() {
       items: [
         "✅ Premium analytics suite (heatmaps, flow analysis)",
         "✅ Telegram bot soft launch (invite-only)",
-        "✅ Full system backtests (2017–2025 historical data)",
+        "✅ Full system backtests (2013–2025 historical data)",
         "✅ Performance dashboard (win rate, Sharpe ratio, drawdowns)",
         "✅ Multi-timeframe signal optimization"
       ],
@@ -147,11 +144,11 @@ export default function Home() {
       title: "MVP Launch",
       items: [
         "✅ Telegram mini-app development begins",
-        "Multi-chain monitoring support (EVM + Solana)",
+        "✅ Multi-chain monitoring support (EVM + Solana)",
         "✅ Referral system implementation",
-        "✅ Security audit #1 (smart contracts + infrastructure)"
+        "✅ Security infrastructure audit #1"
       ],
-      completed: false
+      completed: true
     },
     {
       quarter: "Q1 2026",
@@ -362,156 +359,191 @@ export default function Home() {
       <Navbar />
       
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+
+
+      <section className="relative min-h-[120vh] flex items-center justify-center pt-32 overflow-hidden">
   <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" />
   <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" />
   <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" />
   <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/15 rounded-full blur-[100px] pointer-events-none animate-pulse" />
   
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Левая колонка - История */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="lg:pr-12"
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    {/* Заголовок AI FOR MODERN FINANCE по центру */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-12"
+    >
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold tracking-widest uppercase text-gray-400 mb-6">
+        ai for modern finance
+      </h1>
+      <p className="text-gray-400 font-mono text-sm max-w-2xl mx-auto">
+        An autonomous AI engine that detects market manipulation, identifies opportunities, 
+        and executes strategies with precision — 24/7, free from emotion or fatigue.
+      </p>
+    </motion.div>
+
+    {/* Кнопки по центру */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+    >
+      <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
+        <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
+          Become a User
+        </CyberButton>
+      </a>
+      <CyberButton 
+        variant="secondary" 
+        className="w-full sm:w-auto h-14 text-base px-10"
+        onClick={scrollToAbout}
+        data-testid="button-explore"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-8"
-        >
-          <div className="inline-block px-4 py-1 border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm mb-6">
-            <span className="text-accent font-mono text-xs tracking-widest uppercase flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_rgba(255,234,0,0.8)]" />
-              Our Story
-            </span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight mb-6 leading-tight">
-            From Forum Lurkers<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
-              To Cartel Fighters
-            </span>
-          </h1>
-          
-          {/* История - английский вариант */}
-          <div className="space-y-4 mb-8">
-            <p className="text-gray-300 text-lg leading-relaxed border-l-2 border-primary/50 pl-6">
-              It all started in 2015 on obscure crypto forums. We were traders, developers, and dreamers—captivated by blockchain technology and the promise of decentralization.
-            </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              What began as curiosity turned into obsession during the 2017 bull run. We watched our portfolios 10x, then crash 90%. We made fortunes and lost them in days. <span className="text-primary font-medium">But we learned.</span>
-            </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              In that chaos, our team formed organically—strangers united by a shared belief that crypto markets could be different.
-            </p>
-            <p className="text-gray-300 text-lg leading-relaxed font-medium">
-              One question consumed us: <span className="text-accent">What if we could level the playing field?</span>
-            </p>
-          </div>
-          
-          {/* Заголовок AI FOR MODERN FINANCE - уменьшенный и стилизованный */}
-          <div className="mt-10 pt-8 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-mono font-bold tracking-widest uppercase text-gray-400 mb-4">
-              ai for modern finance
-            </h2>
-            <p className="text-gray-400 font-mono text-sm">
-              An autonomous AI engine that detects market manipulation, identifies opportunities, 
-              and executes strategies with precision — 24/7, free from emotion or fatigue.
-            </p>
-          </div>
-        </motion.div>
+        Explore ShantiAI
+      </CyberButton>
+    </motion.div>
+
+    {/* Історія */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      className="space-y-8"
+    >
+      {/* Заголовок історії */}
+      <div className="text-center">
+        <div className="inline-block px-4 py-1 border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm mb-4">
+          <span className="text-accent font-mono text-xs tracking-widest uppercase flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_rgba(255,234,0,0.8)]" />
+            Our Story
+          </span>
+        </div>
         
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight leading-tight mb-6">
+          From Forum Lurkers<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+            To Cartel Fighters
+          </span>
+        </h2>
+      </div>
+
+      {/* Текст історії */}
+      <div className="space-y-6">
+        <p className="text-gray-300 text-lg leading-relaxed text-center">
+          It all started in 2015 on obscure crypto forums. We were traders, developers, and dreamers—captivated by blockchain technology and the promise of decentralization.
+        </p>
+        <p className="text-gray-300 text-lg leading-relaxed text-center">
+          What began as curiosity turned into obsession during the 2017 bull run. We watched our portfolios 10x, then crash 90%. We made fortunes and lost them in days. <span className="text-primary font-medium">But we learned.</span>
+        </p>
+        <p className="text-gray-300 text-lg leading-relaxed text-center">
+          In that chaos, our team formed organically—strangers united by a shared belief that crypto markets could be different. We spent years sharpening our edge: reading hundreds of news sources daily, tracking whale wallets, analyzing orderbook anomalies, spotting volume spikes before pumps and dumps.
+        </p>
+        <p className="text-gray-300 text-lg leading-relaxed text-center">
+          We learned to see what others missed—the invisible hand of market makers, coordinated liquidations, billions extracted from retail by exchanges and crypto cartels.
+        </p>
+        <p className="text-gray-300 text-lg leading-relaxed text-center font-medium">
+          One question consumed us: <span className="text-accent">What if we could level the playing field?</span>
+        </p>
+      </div>
+
+      {/* Ключові моменти в 2 колонки */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        {/* Ліва колонка - Продовження історії */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center gap-6 mt-10"
+          className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg p-6"
         >
-          <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
-            <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
-              Become a User
-            </CyberButton>
-          </a>
-          <CyberButton 
-            variant="secondary" 
-            className="w-full sm:w-auto h-14 text-base px-10"
-            onClick={scrollToAbout}
-            data-testid="button-explore"
-          >
-            Explore ShantiAI
-          </CyberButton>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-primary" />
+                <span>The Journey Continues</span>
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Behind every candle on TradingView is a story—whale movements, exchange manipulation, narrative shifts. We learned to read it all. We identified future scenarios before they unfolded. We mastered entry points, stop-loss placement, exit strategies. But manual analysis had limits. We needed something more.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
+                <Cpu className="w-5 h-5 text-secondary" />
+                <span>The AI Breakthrough</span>
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Then came AI. We realized we could automate what we'd spent years learning—pattern recognition, anomaly detection, on-chain data analysis, sentiment tracking. We could build a "brain" that never sleeps, never misses a signal, and never trades on emotion.
+              </p>
+              <p className="text-primary text-sm font-medium mt-3">
+                A system that detects manipulation before it happens.
+              </p>
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
-      
-      {/* Правая колонка - Продолжение истории и ключевые моменты */}
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg p-8 lg:p-10"
-      >
-        <div className="space-y-6">
-          <div className="pb-6 border-b border-white/10">
-            <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
-              <Activity className="w-5 h-5 text-primary" />
-              <span>Our Evolution</span>
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              We spent years sharpening our edge: reading hundreds of news sources daily, 
-              tracking whale wallets, analyzing orderbook anomalies, spotting volume spikes 
-              before pumps and dumps.
-            </p>
-            <p className="text-gray-300 text-sm leading-relaxed mt-3">
-              We learned to see what others missed—the invisible hand of market makers, 
-              coordinated liquidations, billions extracted from retail by exchanges and crypto cartels.
-            </p>
-          </div>
-          
-          <div className="pb-6 border-b border-white/10">
-            <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-secondary" />
-              <span>The AI Breakthrough</span>
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Then came AI. We realized we could automate what we'd spent years learning—pattern 
-              recognition, anomaly detection, on-chain data analysis, sentiment tracking.
-            </p>
-            <p className="text-primary text-sm font-medium mt-3">
-              A system that detects manipulation before it happens.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
-              <Zap className="w-5 h-5 text-accent" />
-              <span>What's Next</span>
-            </h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
-                <p className="text-gray-300 text-sm">
-                  <span className="text-white font-medium">18+ months</span> of live market testing
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></div>
-                <p className="text-gray-300 text-sm">
-                  <span className="text-white font-medium">Telegram bot live</span> — test with verified trade history
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></div>
-                <p className="text-gray-300 text-sm">
-                  <span className="text-white font-medium">$SHANTI token</span> — fair launch on Pump.fun
-                </p>
+
+        {/* Права колонка - Докази та майбутнє */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg p-6"
+        >
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-accent" />
+                <span>The Proof & Progress</span>
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                For over 18 months, we've tested this AI on live markets. It works. Now we're ready to share it with the world. Our Telegram bot is live—you can deposit, test the system, and see verified trade history spanning over a year.
+              </p>
+              <div className="mt-4 space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+                  <p className="text-gray-300 text-sm">
+                    <span className="text-white font-medium">18+ months</span> of live market testing
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></div>
+                  <p className="text-gray-300 text-sm">
+                    <span className="text-white font-medium">Telegram bot live</span> — test with verified trade history
+                  </p>
+                </div>
               </div>
             </div>
             
-            <div className="mt-8 p-4 bg-primary/10 border border-primary/30 rounded-lg">
+            <div>
+              <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-green-400" />
+                <span>The Future: $SHANTI Token</span>
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></div>
+                  <p className="text-gray-300 text-sm">
+                    Not just any token—<span className="text-white font-medium">$SHANTI</span> is the fuel that powers the entire ecosystem
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 mt-2 shrink-0"></div>
+                  <p className="text-gray-300 text-sm">
+                    Grants access to alpha signals, passive income through staking, and governance over the platform's future
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 shrink-0"></div>
+                  <p className="text-gray-300 text-sm">
+                    Fair launch on Pump.fun. <span className="text-white font-medium">No VCs. No private rounds.</span> Everyone gets equal access
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 p-4 bg-primary/10 border border-primary/30 rounded-lg">
               <p className="text-primary font-bold text-sm mb-2">Our Mission</p>
               <p className="text-white text-sm font-medium">
                 This is our fight. This is our mission.
@@ -521,9 +553,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
+    </motion.div>
   </div>
   
   <motion.div 
@@ -647,7 +679,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading centered>Token Utility</SectionHeading>
           <p className="text-center text-gray-400 mb-12 font-mono">
-          $SHANTI is the fuel of the ecosystem. It is designed to create a constant supply crunch through real-world platform integration.
+          SHANTI is the fuel of the ecosystem. It is designed to create a constant supply crunch through real-world platform integration.
           </p>
           
           <div className="space-y-4">
@@ -692,7 +724,6 @@ export default function Home() {
               <BarChart3 className="w-6 h-6 text-primary" />
               <span className="text-white font-display font-bold">Token Distribution Chart</span>
             </div>
-            <p className="text-gray-400 text-sm font-mono">(Pie chart visualization)</p>
             
             <div className="mt-6 flex gap-2 h-4 rounded-full overflow-hidden">
               {tokenomicsData.map((item, i) => (
@@ -736,20 +767,7 @@ export default function Home() {
           <p className="text-center text-muted-foreground mb-16 font-mono text-lg">
             Built by traders and engineers who've been rekt by market manipulation
           </p>
-          
-          <TeamStats />
-          <TeamFilter activeFilter={teamFilter} onFilterChange={setTeamFilter} />
           <TeamSlider members={teamMembers} />
-          
-          {/* View All Team Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center mt-12"
-          >
-          </motion.div>
         </div>
       </section>
 

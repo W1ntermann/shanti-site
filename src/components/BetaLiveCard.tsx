@@ -101,7 +101,7 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
               <CyberButton className="w-full sm:w-auto px-8 py-3 text-sm">
                 <Zap className="w-4 h-4 mr-2" />
-                Deposit USDT Now
+                Deposit  Now
               </CyberButton>
             </a>
             <CyberButton 
