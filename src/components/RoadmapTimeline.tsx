@@ -176,7 +176,7 @@ export function RoadmapTimeline({ phases }: RoadmapTimelineProps) {
         
         <div className="bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/30 backdrop-blur-sm p-6 clip-corner-br">
           <h4 className="text-xl font-display font-bold text-accent mb-2">
-            Beyond 2025
+            Beyond 2027
           </h4>
           <p className="text-muted-foreground text-sm">
             Continuous innovation, global expansion, and the future of decentralized finance.

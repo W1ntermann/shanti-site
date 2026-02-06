@@ -112,62 +112,119 @@ export function PhilosophySection() {
         </div>
 
         {/* Mission statement */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/20 backdrop-blur-md p-12 clip-corner-tl-br text-center relative overflow-hidden"
-        >
-          {/* Animated background pattern */}
-          <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" />
+        {/* Mission statement */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/20 backdrop-blur-md p-12 clip-corner-tl-br text-center relative overflow-hidden"
+>
+  {/* Animated background pattern */}
+  <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" />
+  
+  {/* Content */}
+  <div className="relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full mb-6"
+    >
+      <Heart className="w-4 h-4 text-accent" />
+      <span className="text-accent font-mono text-xs font-bold uppercase tracking-widest">
+        Core Mission
+      </span>
+    </motion.div>
+
+    <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 uppercase tracking-wide">
+      Democratizing Financial Intelligence
+    </h3>
+    
+    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-10">
+      We're not just building another trading bot. We're creating a movement towards 
+      <span className="text-primary font-medium"> fair, transparent, and accessible</span> financial markets 
+      powered by cutting-edge AI technology.
+    </p>
+
+    {/* Join Us Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.3 }}
+      className="mb-10"
+    >
+      <a 
+        href="https://t.me/sshanti_bot" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-block"
+      >
+        <button className="relative group px-10 py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-display font-bold text-white text-lg uppercase tracking-wider overflow-hidden">
+          {/* Button glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-100 group-hover:opacity-0 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
-          {/* Content */}
-          <div className="relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full mb-6"
-            >
-              <Heart className="w-4 h-4 text-accent" />
-              <span className="text-accent font-mono text-xs font-bold uppercase tracking-widest">
-                Core Mission
-              </span>
-            </motion.div>
+          {/* Button text */}
+          <span className="relative z-10 flex items-center gap-3">
+            Join Us
+            <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+          
+          {/* Animated border */}
+          <div className="absolute inset-0 rounded-lg border border-primary/50 group-hover:border-white/50 transition-all duration-300" />
+        </button>
+      </a>
+    </motion.div>
 
-            <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 uppercase tracking-wide">
-              Democratizing Financial Intelligence
-            </h3>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
-              We're not just building another trading bot. We're creating a movement towards 
-              <span className="text-primary font-medium"> fair, transparent, and accessible</span> financial markets 
-              powered by cutting-edge AI technology.
-            </p>
+    {/* Three badges */}
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10">
+      <div className="flex items-center gap-3 px-4 py-3 bg-black/30 backdrop-blur-sm rounded-lg border border-white/5 hover:border-primary/30 transition-colors group">
+        <Shield className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+        <span className="font-mono text-sm font-bold text-gray-300">Not Financial Advice</span>
+      </div>
+      
+      <div className="hidden sm:block w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+      
+      <div className="flex items-center gap-3 px-4 py-3 bg-black/30 backdrop-blur-sm rounded-lg border border-white/5 hover:border-secondary/30 transition-colors group">
+        <Brain className="w-5 h-5 text-secondary group-hover:scale-110 transition-transform" />
+        <span className="font-mono text-sm font-bold text-gray-300">Research Project</span>
+      </div>
+      
+      <div className="hidden sm:block w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+      
+      <div className="flex items-center gap-3 px-4 py-3 bg-black/30 backdrop-blur-sm rounded-lg border border-white/5 hover:border-accent/30 transition-colors group">
+        <Target className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+        <span className="font-mono text-sm font-bold text-gray-300">Open Source</span>
+      </div>
+    </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <div className="flex items-center gap-2 text-primary">
-                <Shield className="w-5 h-5" />
-                <span className="font-mono text-sm font-bold">Not Financial Advice</span>
-              </div>
-              <div className="w-px h-4 bg-border hidden sm:block" />
-              <div className="flex items-center gap-2 text-secondary">
-                <Brain className="w-5 h-5" />
-                <span className="font-mono text-sm font-bold">Research Project</span>
-              </div>
-              <div className="w-px h-4 bg-border hidden sm:block" />
-              <div className="flex items-center gap-2 text-accent">
-                <Target className="w-5 h-5" />
-                <span className="font-mono text-sm font-bold">Open Source</span>
-              </div>
-            </div>
+    {/* Alternative compact layout */}
+    {/* <div className="flex flex-wrap justify-center items-center gap-6 pt-8 border-t border-white/10">
+      <div className="flex items-center gap-2 text-primary">
+        <Shield className="w-5 h-5" />
+        <span className="font-mono text-sm font-bold">Not Financial Advice</span>
+      </div>
+      <div className="hidden sm:block w-px h-4 bg-border" />
+      <div className="flex items-center gap-2 text-secondary">
+        <Brain className="w-5 h-5" />
+        <span className="font-mono text-sm font-bold">Research Project</span>
+      </div>
+      <div className="hidden sm:block w-px h-4 bg-border" />
+      <div className="flex items-center gap-2 text-accent">
+        <Target className="w-5 h-5" />
+        <span className="font-mono text-sm font-bold">Open Source</span>
+      </div>
+    </div> */}
 
-            {/* Decorative elements */}
-            <div className="absolute top-4 right-4 w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <div className="absolute bottom-4 left-4 w-3 h-3 bg-accent rounded-full animate-pulse opacity-60" />
-          </div>
-        </motion.div>
+    {/* Decorative elements */}
+    <div className="absolute top-4 right-4 w-2 h-2 bg-primary rounded-full animate-pulse" />
+    <div className="absolute bottom-4 left-4 w-3 h-3 bg-accent rounded-full animate-pulse opacity-60" />
+  </div>
+</motion.div>
       </div>
     </section>
   );

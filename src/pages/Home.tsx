@@ -13,8 +13,11 @@ import { useState } from "react";
 import { 
   Cpu, Activity, Shield, TrendingUp, ChevronDown, Zap, 
   Key, DollarSign, Vote, 
-  Link as LinkIcon, BarChart3, Twitter, Send
+  Link as LinkIcon, BarChart3, Twitter, Send,
+  Database, Eye, LineChart, Terminal, Brain,
+  Satellite, Gauge, Network,
 } from "lucide-react";
+
 import { useCreateSubscriber } from "@/hooks/use-subscribers";
 import { useToast } from "@/hooks/use-toast";
 
@@ -155,11 +158,9 @@ export default function Home() {
       title: "Platform Development",
       items: [
         "✅ Custom platform development initiated",
-        "✅ Public AI model transparency reports",
         "✅ Trading signal customization in Telegram app",
         "✅ Waitlist campaign launch (10,000+ target)",
         "⏳ KOL partnerships secured (10–20 tier-1 influencers)",
-        "⏳ Token smart contract audit (CertiK/Hacken)"
       ],
       completed: false
     },
@@ -168,12 +169,13 @@ export default function Home() {
       title: "Token Launch & Ecosystem Activation",
       items: [
         "🔄 Fair Launch on Pump.fun",
+        "🔄 Token ecosystem activation",
         "🔄 Web dashboard launch (real-time analytics)",
         "🔄 Staking platform live (50% revenue share)",
-        "🔄 Buyback & Burn mechanism activated",
+        "🔄 Buyback & Burn mechanism activations",
         "🔄 Tier-based access system live (Tier 1/2/3)",
-        "🔄 First DAO proposal framework published",
-        "🔄 CEX listing applications submitted (Tier-2 exchanges)"
+        "🔄 CEX listing applications submitted (Tier-2 exchanges)",
+        "🔄 First DAO proposal framework published"
       ],
       completed: false
     },
@@ -186,7 +188,7 @@ export default function Home() {
         "🔄 Copy-trading feature beta (AI strategy mirroring)",
         "🔄 NFT-based premium memberships (lifetime access)",
         "🔄 First CEX listing",
-        "🔄 Cross-chain bridge integration (SHANTI on ETH/BSC)",
+        "🔄 Cross-chain bridge integration (SHANTI Solana to EVM ERC-20 chains)",
         "🔄 Partnership with DeFi protocols (liquidity incentives)",
         "🔄 Community grants program ($100k fund)"
       ],
@@ -198,11 +200,11 @@ export default function Home() {
       items: [
         "🔄 Institutional API tier (hedge funds, prop traders)",
         "🔄 White-label solution for partner projects",
-        "New: AI model marketplace (community-built strategies)",
+        "🔄 AI model marketplace (community-built strategies)",
         "🔄 Advanced risk management tools (portfolio hedging)",
         "🔄 Second major CEX listing",
         "🔄 SHANTI listed on CoinGecko & CoinMarketCap (Top 500 target)",
-        "🔄 Security audit #2 (full platform penetration test)",
+        "🔄 Security audit #3 (full platform penetration test)",
         "🔄 Year-end transparency report (revenue, burns, staking APY)"
       ],
       completed: false
@@ -214,7 +216,7 @@ export default function Home() {
         "🔄 Decentralized AI nodes: Community can run AI inference nodes, earn SHANTI rewards",
         "🔄 On-chain AI proofs: Verifiable AI predictions stored on-chain (transparency++)",
         "🔄 Multi-language support: Platform available in 10+ languages",
-        "🔄 Fiat on-ramp integration: Buy $SHANTI directly with credit card",
+        "🔄 Fiat on-ramp integration: Buy SHANTI directly with credit card",
         "🔄 First institutional client onboarded (hedge fund/family office)"
       ],
       completed: false
@@ -338,11 +340,17 @@ export default function Home() {
 
   const partners = [
     { name: "Chainlink", icon: LinkIcon },
-    { name: "Dune Analytics", icon: BarChart3 },
-    { name: "Nansen", icon: Activity },
+    { name: "Dune Analytics", icon: Database },
+    { name: "Nansen", icon: Eye },
     { name: "CoinGecko", icon: TrendingUp },
     { name: "Certik", icon: Shield },
-    { name: "The Graph", icon: Zap }
+    { name: "The Graph", icon: Network },
+    { name: "Arkham", icon: Satellite },
+    { name: "Lookonchain", icon: LineChart },
+    { name: "Glassnode", icon: Gauge },
+    { name: "DexCheck", icon: Terminal },
+    { name: "DexScreener", icon: BarChart3 },
+    { name: "Santiment", icon: Brain }
   ];
 
   const faqItems = [
@@ -350,7 +358,7 @@ export default function Home() {
     { q: "Do I need to hold tokens to use the platform?", a: "Basic alerts are free. Premium features like predictive models and whale tracking require staking $SHANTI tokens." },
     { q: "Is this financial advice?", a: "No. ShantiAI provides data and analytics tools for research purposes only. Always do your own research." },
     { q: "How accurate are the predictions?", a: "Our models have shown 85%+ accuracy in backtesting. However, past performance doesn't guarantee future results." },
-    { q: "When is the token launch?", a: "Fair launch on Pump.fun is scheduled for Q1 2024. Follow our Telegram for updates." },
+    { q: "When is the token launch?", a: "Fair launch on Pump.fun is scheduled for Q2 2026. Follow our Telegram for updates." },
     { q: "Which exchanges do you monitor?", a: "We currently monitor Binance, Coinbase, Kraken, OKX, Bybit, and more. Premium tiers get access to 15+ exchanges." }
   ];
 
@@ -911,7 +919,7 @@ export default function Home() {
           </form>
           
           <p className="mt-6 text-gray-500 text-sm flex items-center justify-center gap-2">
-            <span className="text-lg">🎯</span>
+          
             Selected members will receive exclusive early access to test the platform before public launch
           </p>
         </div>
