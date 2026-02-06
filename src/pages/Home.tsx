@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { 
   Cpu, Activity, Shield, TrendingUp, ChevronDown, Zap, 
-  Key, DollarSign, Vote, CheckCircle, 
+  Key, DollarSign, Vote, 
   Link as LinkIcon, BarChart3, Twitter, Send
 } from "lucide-react";
 import { useCreateSubscriber } from "@/hooks/use-subscribers";
