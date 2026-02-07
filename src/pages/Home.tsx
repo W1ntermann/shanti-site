@@ -696,7 +696,6 @@ export default function Home() {
             <div className="flex-1">
               <h3 className={`text-lg font-display font-bold ${feature.color} mb-2`}>{feature.title}</h3>
               
-              {/* Універсальне відображення з переносами рядків */}
               <div className="text-gray-400 text-sm">
                 {feature.desc.split('\n').map((line, index) => (
                   <p key={index} className={index < feature.desc.split('\n').length - 1 ? 'mb-1' : ''}>
