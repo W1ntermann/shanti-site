@@ -202,24 +202,6 @@ export function PhilosophySection() {
       </div>
     </div>
 
-    {/* Alternative compact layout */}
-    {/* <div className="flex flex-wrap justify-center items-center gap-6 pt-8 border-t border-white/10">
-      <div className="flex items-center gap-2 text-primary">
-        <Shield className="w-5 h-5" />
-        <span className="font-mono text-sm font-bold">Not Financial Advice</span>
-      </div>
-      <div className="hidden sm:block w-px h-4 bg-border" />
-      <div className="flex items-center gap-2 text-secondary">
-        <Brain className="w-5 h-5" />
-        <span className="font-mono text-sm font-bold">Research Project</span>
-      </div>
-      <div className="hidden sm:block w-px h-4 bg-border" />
-      <div className="flex items-center gap-2 text-accent">
-        <Target className="w-5 h-5" />
-        <span className="font-mono text-sm font-bold">Open Source</span>
-      </div>
-    </div> */}
-
     {/* Decorative elements */}
     <div className="absolute top-4 right-4 w-2 h-2 bg-primary rounded-full animate-pulse" />
     <div className="absolute bottom-4 left-4 w-3 h-3 bg-accent rounded-full animate-pulse opacity-60" />

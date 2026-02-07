@@ -159,7 +159,7 @@ export default function Home() {
       items: [
         "✅ Custom platform development initiated",
         "✅ Trading signal customization in Telegram app",
-        "✅ Waitlist campaign launch (10,000+ target)",
+        "⏳ Waitlist campaign launch (10,000+ target)",
         "⏳ KOL partnerships secured (10–20 tier-1 influencers)",
       ],
       completed: false
@@ -228,25 +228,19 @@ export default function Home() {
       name: "Cipher", 
       role: "Co-Founder & CEO", 
       desc: "Visionary. Survivor. Builder. 8 years in crypto. Ex-quantitative trader. Built and exited 2 DeFi protocols (combined $150M TVL). Survived 3 bear markets.", 
-      avatar: "C",
-      twitter: "https://twitter.com/cipher_crypto",
-      linkedin: "https://linkedin.com/in/cipher-crypto"
+      avatar: "C"
     },
     { 
       name: "Ghost", 
       role: "Co-Founder & CTO", 
       desc: "Code is law. Security is religion. Ex-Senior Engineer. Architected HFT infrastructure processing 1M+ transactions/day. 10+ years building scalable systems.", 
-      avatar: "G",
-      github: "https://github.com/ghost-dev",
-      linkedin: "https://linkedin.com/in/ghost-cto"
+      avatar: "G"
     },
     { 
       name: "Dr. Nandini 'Quant'", 
       role: "Head of AI & Chief Data Scientist", 
       desc: "PhD in Machine Learning. Ex-Data Scientist at Renaissance Technologies. Built ML systems. Making institutional-grade AI accessible to everyone.", 
-      avatar: "N",
-      linkedin: "https://linkedin.com/in/nandini-quant",
-      twitter: "https://twitter.com/nandini_ai"
+      avatar: "N"
     },
     { 
       name: "Deepak", 
@@ -277,8 +271,6 @@ export default function Home() {
       role: "Lead Frontend Engineer", 
       desc: "Beautiful UIs that actually work. Built trading dashboards used by 1M+ users. Obsessed with performance and pixel-perfect design.", 
       avatar: "Y",
-      github: "https://github.com/yash-frontend",
-      twitter: "https://twitter.com/yash_ui"
     },
     { 
       name: "Samaira", 
@@ -321,8 +313,6 @@ export default function Home() {
       role: "Lead UI/UX Designer", 
       desc: "Design is not decoration. It's strategy. Designed interfaces that made $100M+ in revenue. Dark mode evangelist.", 
       avatar: "K",
-      twitter: "https://twitter.com/kira_design",
-      linkedin: "https://linkedin.com/in/kira-ux"
     },
     { 
       name: "Marcus", 
@@ -683,36 +673,44 @@ export default function Home() {
       </section>
 
       {/* TOKEN UTILITY SECTION */}
-      <section id="token-utility" className="py-24 bg-[#050508] relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading centered>Token Utility</SectionHeading>
-          <p className="text-center text-gray-400 mb-12 font-mono">
-          SHANTI is the fuel of the ecosystem. It is designed to create a constant supply crunch through real-world platform integration.
-          </p>
-          
-          <div className="space-y-4">
-            {tokenUtilityFeatures.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#111115] border border-white/10 rounded-lg p-6"
-                data-testid={`card-utility-${i}`}
-              >
-                <div className="flex items-start gap-4">
-                  <feature.icon className={`w-6 h-6 ${feature.color} shrink-0 mt-1`} />
-                  <div>
-                    <h3 className={`text-lg font-display font-bold ${feature.color} mb-2`}>{feature.title}</h3>
-                    <p className="text-gray-400 text-sm">{feature.desc}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+<section id="token-utility" className="py-24 bg-[#050508] relative">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading centered>Token Utility</SectionHeading>
+    <p className="text-center text-gray-400 mb-12 font-mono">
+      SHANTI is the fuel of the ecosystem. It is designed to create a constant supply crunch through real-world platform integration.
+    </p>
+    
+    <div className="space-y-4">
+      {tokenUtilityFeatures.map((feature, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className="bg-[#111115] border border-white/10 rounded-lg p-6"
+          data-testid={`card-utility-${i}`}
+        >
+          <div className="flex items-start gap-4">
+            <feature.icon className={`w-6 h-6 ${feature.color} shrink-0 mt-1`} />
+            <div className="flex-1">
+              <h3 className={`text-lg font-display font-bold ${feature.color} mb-2`}>{feature.title}</h3>
+              
+              {/* Універсальне відображення з переносами рядків */}
+              <div className="text-gray-400 text-sm">
+                {feature.desc.split('\n').map((line, index) => (
+                  <p key={index} className={index < feature.desc.split('\n').length - 1 ? 'mb-1' : ''}>
+                    {line.trim()}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* TOKENOMICS SECTION */}
       <section id="tokenomics" className="py-24 bg-black relative">
