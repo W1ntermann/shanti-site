@@ -403,7 +403,7 @@ export default function Home() {
   >
     Explore ShantiAI
   </CyberButton>
-  <a href="https://t.me/your_telegram_group" target="_blank" rel="noopener noreferrer">
+  <a href="https://t.me/shantiAIwealth" target="_blank" rel="noopener noreferrer">
     <CyberButton 
       variant="cyber" 
       className="w-full sm:w-auto h-14 text-base px-10"

@@ -13,7 +13,7 @@ export const CyberButton = React.forwardRef<HTMLButtonElement, CyberButtonProps>
     const variants = {
       primary: "bg-primary text-black hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,243,255,0.4)]",
       secondary: "bg-secondary text-white hover:bg-secondary/90 hover:shadow-[0_0_20px_rgba(255,0,255,0.4)]",
-      cyber: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.5)]",
+      cyber: "bg-gradient-to-r from-fuchsia-600 via-purple-600 to-violet-600 hover:from-fuchsia-700 hover:via-purple-700 hover:to-violet-700 text-white border-fuchsia-400 shadow-[0_0_20px_rgba(217,70,239,0.6)] hover:shadow-[0_0_30px_rgba(217,70,239,0.8)] ring-2 ring-fuchsia-500/30",
       outline: "bg-transparent border border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_10px_rgba(0,243,255,0.2)]"
     };
 
