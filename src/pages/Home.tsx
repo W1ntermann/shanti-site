@@ -383,27 +383,36 @@ export default function Home() {
     </motion.div>
 
     {/* Кнопки по центру */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+    
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+>
+  <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
+    <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
+      Become a User
+    </CyberButton>
+  </a>
+  <CyberButton 
+    variant="secondary" 
+    className="w-full sm:w-auto h-14 text-base px-10"
+    onClick={scrollToAbout}
+    data-testid="button-explore"
+  >
+    Explore ShantiAI
+  </CyberButton>
+  <a href="https://t.me/your_telegram_group" target="_blank" rel="noopener noreferrer">
+    <CyberButton 
+      variant="cyber" 
+      className="w-full sm:w-auto h-14 text-base px-10"
+      data-testid="button-new-strategy"
     >
-      <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
-        <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
-          Become a User
-        </CyberButton>
-      </a>
-      <CyberButton 
-        variant="secondary" 
-        className="w-full sm:w-auto h-14 text-base px-10"
-        onClick={scrollToAbout}
-        data-testid="button-explore"
-      >
-        Explore ShantiAI
-      </CyberButton>
-    </motion.div>
-
+      TEST OUR NEW STRATEGY
+    </CyberButton>
+  </a>
+     </motion.div>
     {/* Історія */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
