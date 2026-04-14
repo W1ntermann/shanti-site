@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Zap, Gift, Clock, TrendingUp, Star, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { CyberButton } from './CyberButton';
 
 interface BetaLiveCardProps {
@@ -7,23 +8,25 @@ interface BetaLiveCardProps {
 }
 
 export function BetaLiveCard({ }: BetaLiveCardProps) {
+  const { t } = useTranslation();
+
   const benefits = [
     {
       icon: Clock,
-      title: "Priority Access",
-      desc: "1 minute early access to $SHANTI token sale",
+      title: t('betaLive.benefits.0.title'),
+      desc: t('betaLive.benefits.0.desc'),
       color: "text-primary"
     },
     {
       icon: Gift,
-      title: "Airdrop Allocation",
-      desc: "10% of total supply reserved for beta users",
+      title: t('betaLive.benefits.1.title'),
+      desc: t('betaLive.benefits.1.desc'),
       color: "text-accent"
     },
     {
       icon: TrendingUp,
-      title: "Higher Multiplier",
-      desc: "Earlier deposits = larger airdrop share",
+      title: t('betaLive.benefits.2.title'),
+      desc: t('betaLive.benefits.2.desc'),
       color: "text-secondary"
     }
   ];
@@ -55,10 +58,10 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
             </div>
             <div>
               <h4 className="text-2xl font-display font-bold text-primary text-glow-cyan uppercase tracking-wider">
-                Beta Is Live
+                {t('betaLive.title')}
               </h4>
               <p className="text-accent font-mono text-sm font-bold uppercase tracking-widest">
-                Early Access Rewards
+                {t('betaLive.subtitle')}
               </p>
             </div>
           </div>
@@ -66,11 +69,10 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
           {/* Main message */}
           <div className="mb-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
             <p className="text-foreground text-lg font-medium leading-relaxed mb-4">
-              Deposit now → Get early access to SHANTI sale + Airdrop. 
-              <span className="text-accent font-bold"> 10% supply reserved for early birds.</span>
+              {t('betaLive.message')} <span className="text-accent font-bold">{t('betaLive.highlight')}</span>
             </p>
             <p className="text-muted-foreground text-sm font-mono">
-              Your deposit = Your airdrop ticket
+              {t('betaLive.ticket')}
             </p>
           </div>
 
@@ -101,7 +103,7 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
               <CyberButton className="w-full sm:w-auto px-8 py-3 text-sm">
                 <Zap className="w-4 h-4 mr-2" />
-                Deposit  Now
+                {t('betaLive.depositNow')}
               </CyberButton>
             </a>
             <CyberButton 
@@ -112,7 +114,7 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
               }}
             >
               <Star className="w-4 h-4 mr-2" />
-              Learn Token Utility
+              {t('betaLive.learnTokenUtility')}
               <ArrowRight className="w-4 h-4 ml-2" />
             </CyberButton>
           </div>

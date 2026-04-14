@@ -1,0 +1,57 @@
+{
+  "navbar": {
+    "home": "首页",
+    "howItWorks": "工作原理",
+    "tokenUtility": "代币效用",
+    "tokenomics": "代币经济学",
+    "roadmap": "路线图",
+    "team": "团队",
+    "partners": "合作伙伴",
+    "faq": "常见问题",
+    "community": "社区",
+    "waitlist": "等待名单",
+    "testimonials": "客户评价",
+    "language": "语言"
+  },
+  "hero": {
+    "aiForModernFinance": "现代金融的人工智能",
+    "description": "一个自主的人工智能引擎，可以检测市场操纵，识别机会，并精确执行策略——24/7，没有情感或疲劳。",
+    "becomeAUser": "成为用户",
+    "exploreShantiAI": "探索 ShantiAI",
+    "testNewStrategy": "测试我们的新策略"
+  },
+  "ourStory": {
+    "sectionTitle": "我们的故事",
+    "fromForumLurkers": "从论坛潜水员",
+    "toCartelFighters": "到卡特尔斗士",
+    "paragraph1": "一切始于2015年，在不为人知的加密论坛上。我们是交易者、开发者和梦想家——被区块链技术和去中心化的承诺所吸引。",
+    "paragraph2": "2017年牛市期间，最初的好奇心演变成了痴迷。我们看着自己的投资组合增长了10倍，然后暴跌了90%。我们几天内赚了财富也失去了财富。但我们学到了。",
+    "paragraph3": "在那场混乱中，我们的团队自然而然地形成了——陌生人因一个共同的信念而团结，即加密市场可以与众不同。我们花费数年磨砺自己的优势：每天阅读数百条新闻来源，追踪巨鲸钱包，分析订单簿异常，在拉盘和砸盘前发现交易量激增。",
+    "paragraph4": "我们学会了看到别人错过的东西——做市商的无形之手，协调的清算，交易所和加密卡特尔从散户那里榨取的数十亿美元。",
+    "paragraph5": "一个问题困扰着我们：如果我们可以平衡竞争环境呢？",
+    "journeyContinuesTitle": "旅程继续",
+    "journeyContinuesText": "TradingView上的每一根K线背后都有一个故事——巨鲸的动向、交易所的操纵、叙事的转变。我们学会了解读这一切。我们在未来情景展开之前识别它们。我们掌握了入场点、止损设置、出场策略。但手动分析有其局限性。我们需要更多。",
+    "aiBreakthroughTitle": "AI突破",
+    "aiBreakthroughText1": "然后是AI。我们意识到我们可以自动化我们多年来学习的一切——模式识别、异常检测、链上数据分析、情绪追踪。我们可以构建一个永不休眠、永不错过信号、永不凭情感交易的“大脑”。",
+    "aiBreakthroughText2": "一个在操纵发生之前检测到它的系统。",
+    "proofProgressTitle": "证据与进展",
+    "proofProgressText1": "在超过18个月的时间里，我们已经在真实市场中测试了这款AI。它有效。现在我们准备好与世界分享它。我们的Telegram机器人已经上线——您可以存款、测试系统，并查看超过一年的经过验证的交易历史记录。",
+    "proofProgressItem1": "18个多月的真实市场测试",
+    "proofProgressItem2": "Telegram机器人上线——通过经过验证的交易历史进行测试",
+    "futureShantiTokenTitle": "未来：$SHANTI 代币",
+    "futureShantiTokenItem1": "不只是任何代币——$SHANTI 是整个生态系统的燃料",
+    "futureShantiTokenItem2": "通过质押获得阿尔法信号、被动收入，并对平台未来进行治理",
+    "futureShantiTokenItem3": "在Pump.fun上公平发行。没有VC。没有私募。人人享有平等访问权",
+    "ourMissionTitle": "我们的使命",
+    "ourMissionText1": "这是我们的战斗。这是我们的使命。",
+    "ourMissionText2": "加入我们，与加密卡特尔对抗，平衡竞争环境。"  },
+  "home": {
+    "waitlist": {
+      "toast": {
+        "successTitle": "成功！",
+        "successDescription": "您已被加入候补名单。",
+        "errorTitle": "错误",
+        "errorDescription": "订阅失败。请再试一次。"
+      }
+    }  }
+}

@@ -1,16 +1,36 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react"; // Додаємо іконку Globe для перемикача мов
 import { CyberButton } from "./CyberButton";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"; // Імпортуємо DropdownMenu компоненти
+
+import { useTranslation } from "react-i18next"; // Імпортуємо useTranslation hook
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { i18n, t } = useTranslation(); // Використовуємо useTranslation hook
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Technology", href: "#technology" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Philosophy", href: "#philosophy" },
+    { name: t('navbar.home'), href: "#hero" },
+    { name: t('navbar.howItWorks'), href: "#how-it-works" },
+    { name: t('navbar.tokenUtility'), href: "#token-utility" },
+    { name: t('navbar.tokenomics'), href: "#tokenomics" },
+    { name: t('navbar.roadmap'), href: "#roadmap" },
+    { name: t('navbar.team'), href: "#team" },
+    { name: t('navbar.partners'), href: "#partners" },
+    { name: t('navbar.faq'), href: "#faq" },
+    { name: t('navbar.community'), href: "#community" },
+    { name: t('navbar.waitlist'), href: "#waitlist" },
+    { name: t('navbar.testimonials'), href: "#testimonials" },
   ];
 
   const handleScroll = (id: string) => {
@@ -54,6 +74,36 @@ export function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <CyberButton variant="outline" size="sm" className="flex items-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  {t('navbar.language')}
+                </CyberButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-40 bg-gray-900 border border-white/20">
+                <DropdownMenuItem onClick={() => changeLanguage('en')} className="cursor-pointer">
+                  {t('navbar.languageOptions.en')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('ru')} className="cursor-pointer">
+                  {t('navbar.languageOptions.ru')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('hi')} className="cursor-pointer">
+                  {t('navbar.languageOptions.hi')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('fa')} className="cursor-pointer">
+                  {t('navbar.languageOptions.fa')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('ar')} className="cursor-pointer">
+                  {t('navbar.languageOptions.ar')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('zh')} className="cursor-pointer">
+                  {t('navbar.languageOptions.zh')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {/* End Language Switcher */}
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
               <CyberButton variant="outline" className="h-10 px-6 text-xs">
                 Launch App
@@ -61,8 +111,35 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and Language Switcher for Mobile */}
+          <div className="md:hidden flex items-center">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <CyberButton variant="ghost" size="icon" className="text-gray-300 mr-2">
+                  <Globe className="w-5 h-5" />
+                </CyberButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-40 bg-gray-900 border border-white/20">
+                <DropdownMenuItem onClick={() => changeLanguage('en')} className="cursor-pointer">
+                  {t('navbar.languageOptions.en')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('ru')} className="cursor-pointer">
+                  {t('navbar.languageOptions.ru')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('hi')} className="cursor-pointer">
+                  {t('navbar.languageOptions.hi')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('fa')} className="cursor-pointer">
+                  {t('navbar.languageOptions.fa')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('ar')} className="cursor-pointer">
+                  {t('navbar.languageOptions.ar')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('zh')} className="cursor-pointer">
+                  {t('navbar.languageOptions.zh')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-400 hover:text-white p-2"

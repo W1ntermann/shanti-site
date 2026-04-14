@@ -1,24 +1,27 @@
 import { Twitter, MessageCircle as Telegram, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   const productLinks = [
-    { name: "Features", href: "#technology" },
-    { name: "Demo", href: "#how-it-works" },
-    { name: "Tokenomics", href: "#tokenomics" },
-    { name: "Roadmap", href: "#roadmap" }
+    { name: t("footer.links.features"), href: "#technology" },
+    { name: t("footer.links.demo"), href: "#how-it-works" },
+    { name: t("footer.links.tokenomics"), href: "#tokenomics" },
+    { name: t("footer.links.roadmap"), href: "#roadmap" }
   ];
 
   const resourceLinks = [
-    { name: "Documentation", href: "#" },
-    { name: "API", href: "#" },
-    { name: "Whitepaper", href: "#" },
-    { name: "FAQ", href: "#faq" }
+    { name: t("footer.links.documentation"), href: "#" },
+    { name: t("footer.links.api"), href: "#" },
+    { name: t("footer.links.whitepaper"), href: "#" },
+    { name: t("footer.links.faq"), href: "#faq" }
   ];
 
   const legalLinks = [
-    { name: "Terms of Service", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Risk Disclaimer", href: "#" }
+    { name: t("footer.links.termsOfService"), href: "#" },
+    { name: t("footer.links.privacyPolicy"), href: "#" },
+    { name: t("footer.links.riskDisclaimer"), href: "#" }
   ];
 
   return (
@@ -31,7 +34,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-xl font-display font-bold text-primary mb-4">ShantiAI</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-sm">
-              Exposing market manipulation with AI-powered on-chain intelligence.
+              {t('footer.description')}
             </p>
             
             <div className="flex gap-4">
@@ -67,7 +70,7 @@ export function Footer() {
 
           {/* Product Links */}
           <div>
-            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">Product</h4>
+            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">{t('footer.product')}</h4>
             <ul className="space-y-3">
               {productLinks.map((link, i) => (
                 <li key={i}>
@@ -85,7 +88,7 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">Resources</h4>
+            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">{t('footer.resources')}</h4>
             <ul className="space-y-3">
               {resourceLinks.map((link, i) => (
                 <li key={i}>
@@ -103,7 +106,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">Legal</h4>
+            <h4 className="text-primary font-display font-bold text-sm uppercase tracking-wider mb-4">{t('footer.legal')}</h4>
             <ul className="space-y-3">
               {legalLinks.map((link, i) => (
                 <li key={i}>
@@ -123,10 +126,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-xs font-mono text-gray-600">
-            © 2024 ShantiAI. All rights reserved.
+            {t('footer.copyright')}
           </div>
           <div className="text-xs font-mono text-gray-600">
-            Built with transparency. Not financial advice.
+            {t('footer.disclaimer')}
           </div>
         </div>
       </div>
