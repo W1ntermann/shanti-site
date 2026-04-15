@@ -361,11 +361,26 @@ export default function Home() {
       {/* HERO SECTION */}
 
 
-      <section className="relative min-h-[120vh] flex items-center justify-center pt-32 overflow-hidden">
-  <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" />
-  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" />
-  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" />
-  <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/15 rounded-full blur-[100px] pointer-events-none animate-pulse" />
+      <section className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      >
+        <source src="/dynamic-hero.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} />
+      
+  <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" style={{ zIndex: 2 }} />
+  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
+  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
+  <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/15 rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ zIndex: 2 }} />
   
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     {/* Заголовок AI FOR MODERN FINANCE по центру */}
@@ -375,17 +390,17 @@ export default function Home() {
       transition={{ duration: 0.8 }}
       className="text-center mb-12"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold tracking-widest uppercase text-gray-400 mb-6">
+      <h1 className="text-xl md:text-2xl lg:text-3xl font-mono font-bold tracking-widest uppercase text-gray-400 mb-4">
         {t('home.hero.title')}
       </h1>
-      <p className="text-gray-400 font-mono text-sm max-w-2xl mx-auto mb-10">
+      <p className="text-gray-400 font-mono text-sm max-w-2xl mx-auto mb-6">
         {t('home.hero.description')}
       </p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
       >
         <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
           <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
@@ -573,8 +588,20 @@ export default function Home() {
 </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="py-24 bg-black relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="how-it-works" className="py-24 bg-black relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage: 'url(/working-system.jpg)',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.howItWorks.title')}</SectionHeading>
           <p className="text-center text-gray-400 mb-16 font-mono">
             {t('home.howItWorks.subtitle')}
@@ -608,8 +635,21 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-24 bg-[#050508] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-48 bg-[#050508] relative overflow-hidden min-h-[800px]">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/about-pict.jpg)',
+            backgroundAttachment: 'fixed',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -656,7 +696,19 @@ export default function Home() {
 
       {/* TECHNOLOGY SECTION */}
       <section id="technology" className="py-24 bg-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/xtended-techomology.jpg)',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
+        
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" style={{ zIndex: 2 }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.technology.title')}</SectionHeading>
@@ -757,7 +809,19 @@ export default function Home() {
 
       {/* ROADMAP SECTION */}
       <section id="roadmap" className="py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid opacity-20" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/cyber-clock.jpg)',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+        
+        <div className="absolute inset-0 bg-cyber-grid opacity-20" style={{ zIndex: 2 }} />
         <ParallaxBackground />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -771,7 +835,17 @@ export default function Home() {
       </section>
 
       {/* TEAM SECTION */}
-      <section id="team" className="py-24 bg-background relative overflow-hidden">
+      <section 
+        id="team" 
+        className="py-24 bg-background relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/team.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-cyber-grid opacity-20" />
         <ParallaxBackground />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

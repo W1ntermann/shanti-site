@@ -11,7 +11,90 @@
     "community": "Community",
     "waitlist": "Waitlist",
     "testimonials": "Testimonials",
-    "language": "Language"
+    "language": "Language",
+    "languageOptions": {
+      "en": "English",
+      "ru": "Русский",
+      "hi": "हिंदी",
+      "fa": "فارسی",
+      "ar": "العربية",
+      "zh": "中文"
+    }
+  },
+  "footer": {
+    "description": "Building the future of decentralized AI trading.",
+    "product": "Product",
+    "resources": "Resources",
+    "legal": "Legal",
+    "copyright": "© 2024 ShantiAI. All rights reserved.",
+    "disclaimer": "Not financial advice. Trade at your own risk.",
+    "links": {
+      "features": "Features",
+      "demo": "Demo",
+      "tokenomics": "Tokenomics",
+      "roadmap": "Roadmap",
+      "documentation": "Documentation",
+      "api": "API",
+      "whitepaper": "Whitepaper",
+      "faq": "FAQ",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "riskDisclaimer": "Risk Disclaimer"
+    }
+  },
+  "philosophy": {
+    "title": "Our Philosophy",
+    "headline": "Designed for the Bold",
+    "lead": "We built ShantiAI for traders who demand",
+    "emphasis": "radical transparency",
+    "disclaimer": "We don't hide behind marketing. We show verified results.",
+    "sublead": "No hidden strategies. No VC-backed agendas. Just pure, unfiltered truth.",
+    "missionBadge": "Our Mission",
+    "missionTitle": "Level the Playing Field",
+    "missionText": "We're here to democratize access to institutional-grade trading. The cartel doesn't get to control the narrative anymore.",
+    "joinUs": "Join the Movement",
+    "badges": [
+      "Transparent",
+      "Data-Driven",
+      "Community-First"
+    ],
+    "principles": [
+      {
+        "title": "Transparency First",
+        "desc": "Every trade is logged. Every signal is documented. No cherry-picked results."
+      },
+      {
+        "title": "Community Driven",
+        "desc": "Your voice shapes the platform. Governance votes, feature requests, and strategy selection."
+      },
+      {
+        "title": "Data Never Lies",
+        "desc": "18+ months of live trading data. Verified on-chain. No backtesting BS."
+      }
+    ]
+  },
+  "betaLive": {
+    "title": "Beta Live Today",
+    "subtitle": "Test with Real Money",
+    "message": "Our Telegram bot is live. Deposit funds, test strategies, and see",
+    "highlight": "verified results",
+    "ticket": "Verified Trade Data",
+    "depositNow": "Deposit Now",
+    "learnTokenUtility": "Learn About Token Utility",
+    "benefits": [
+      {
+        "title": "Real Trades",
+        "desc": "No simulations. Every trade happens on-chain with on-chain settlement."
+      },
+      {
+        "title": "Verified History",
+        "desc": "18+ months of authenticated trading data you can audit yourself."
+      },
+      {
+        "title": "Community Feedback",
+        "desc": "Traders worldwide testing, reporting, and improving the system."
+      }
+    ]
   },
   "hero": {
     "aiForModernFinance": "AI FOR MODERN FINANCE",
@@ -47,13 +130,362 @@
     "ourMissionText2": "Join us in leveling the playing field against crypto cartels."
   },
   "home": {
+    "hero": {
+      "title": "AI FOR MODERN FINANCE",
+      "description": "An autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7, free from emotion or fatigue.",
+      "becomeAUser": "Become a User",
+      "exploreShantiAI": "Explore ShantiAI",
+      "testNewStrategy": "TEST OUR NEW STRATEGY"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Connect your wallet, set your parameters, and let the AI handle the rest",
+      "steps": [
+        {
+          "title": "Connect Your Wallet",
+          "desc": "Link your crypto wallet securely to the platform. We never store your private keys—you maintain full control of your assets."
+        },
+        {
+          "title": "Deposit & Set Parameters",
+          "desc": "Fund your trading account and customize your risk tolerance, position size, and strategy preferences."
+        },
+        {
+          "title": "AI Takes Over",
+          "desc": "Our AI engine monitors 24/7, executes trades automatically based on real-time market analysis, and provides transparent trade history.",
+          "betaNote": "Currently in beta testing with verified live results"
+        }
+      ]
+    },
+    "tokenUtility": {
+      "title": "Token Utility",
+      "subtitle": "Unlock exclusive benefits by holding $SHANTI tokens",
+      "features": [
+        {
+          "title": "Access to Signals",
+          "desc": "Unlock alpha signals and early market alerts available exclusively to $SHANTI holders."
+        },
+        {
+          "title": "Staking Rewards",
+          "desc": "Earn passive income by staking $SHANTI tokens. Higher stakes = higher rewards."
+        },
+        {
+          "title": "Fee Discounts",
+          "desc": "Reduce platform trading fees based on your $SHANTI holdings. The more you own, the less you pay."
+        },
+        {
+          "title": "Governance Rights",
+          "desc": "Vote on platform upgrades, feature prioritization, and the direction of the ShantiAI ecosystem."
+        }
+      ]
+    },
+    "tokenomics": {
+      "subtitle": "Fair distribution designed for community growth and platform sustainability",
+      "title": "Tokenomics",
+      "chartLabel": "Token Distribution",
+      "distribution": [
+        {
+          "label": "Community & Users"
+        },
+        {
+          "label": "Development & Operations"
+        },
+        {
+          "label": "Marketing & Partnerships"
+        },
+        {
+          "label": "Treasury Reserve"
+        }
+      ]
+    },
+    "roadmap": {
+      "subtitle": "From beta launch to full decentralization and global expansion",
+      "title": "Roadmap",
+      "phases": [
+        {
+          "quarter": "Q4 2023",
+          "title": "Foundation & Testing",
+          "items": [
+            "Core AI engine development",
+            "Initial strategy backtesting",
+            "Private alpha with select traders",
+            "Security audits begin",
+            "Telegram bot launch",
+            "First 100 users onboarded",
+            "Token whitepaper released",
+            "Community Discord established"
+          ]
+        },
+        {
+          "quarter": "Q1 2024",
+          "title": "Beta Launch",
+          "items": [
+            "Public beta launch on Telegram",
+            "Multi-strategy support added",
+            "Advanced analytics dashboard",
+            "Risk management tools",
+            "Community governance framework",
+            "Partnership announcements",
+            "Tutorial content series"
+          ]
+        },
+        {
+          "quarter": "Q2 2024",
+          "title": "Ecosystem Expansion",
+          "items": [
+            "Mobile app beta release",
+            "More trading pairs supported",
+            "Advanced order types",
+            "API access for developers",
+            "Liquidity mining program"
+          ]
+        },
+        {
+          "quarter": "Q3 2024",
+          "title": "Token Launch Prep",
+          "items": [
+            "$SHANTI token design finalized",
+            "Fair launch mechanism confirmed",
+            "Exchange partnerships",
+            "Staking contracts developed"
+          ]
+        },
+        {
+          "quarter": "Q4 2024",
+          "title": "Token Launch",
+          "items": [
+            "$SHANTI fair launch on Pump.fun",
+            "DEX listings",
+            "Governance goes live",
+            "Staking rewards begin"
+          ]
+        },
+        {
+          "quarter": "Q1 2025",
+          "title": "Platform Expansion",
+          "items": [
+            "Cross-chain support",
+            "Advanced ML models deployed",
+            "Institutional partnerships",
+            "Verification of 2+ years live trading data",
+            "New strategy modules",
+            "Enhanced security features",
+            "Community ambassador program",
+            "Educational content expansion"
+          ]
+        },
+        {
+          "quarter": "Q2 2025",
+          "title": "Advanced Features",
+          "items": [
+            "Portfolio optimization tools",
+            "Multi-asset trading",
+            "Risk parity strategies",
+            "Yield farming integration",
+            "Advanced charting",
+            "Real-time alerts",
+            "Performance analytics",
+            "Risk assessment tools"
+          ]
+        },
+        {
+          "quarter": "Q3 2025",
+          "title": "Global Access",
+          "items": [
+            "Multi-language support",
+            "Regional partnerships",
+            "Localized compliance",
+            "24/7 support team",
+            "Mobile app full release",
+            "Desktop platform launch",
+            "Browser extension",
+            "API v2 release"
+          ]
+        },
+        {
+          "quarter": "Q4 2025",
+          "title": "Ecosystem Integration",
+          "items": [
+            "Full decentralization roadmap",
+            "DAO governance",
+            "Community-driven development",
+            "Third-party integrations"
+          ]
+        }
+      ]
+    },
+    "team": {
+      "subtitle": "Crypto traders and builders united by a mission to level the playing field",
+      "title": "The Team",
+      "members": [
+        {
+          "role": "Founder & Vision",
+          "desc": "Led the team from forum lurkers to market analysts. Obsessed with detecting manipulation and building fair systems."
+        },
+        {
+          "role": "Co-Founder & Strategy",
+          "desc": "Master of market mechanics. Spent years perfecting entry/exit strategies and identifying whale movements."
+        },
+        {
+          "role": "AI/ML Lead",
+          "desc": "PhD in quantitative finance. Architected the core AI engine that powers our market analysis."
+        },
+        {
+          "role": "Backend Engineer",
+          "desc": "Built the infrastructure that keeps ShantiAI running 24/7 without interruption or downtime."
+        },
+        {
+          "role": "Blockchain Developer",
+          "desc": "Smart contract expert. Ensuring tokenomics, staking, and governance are secure and fair."
+        },
+        {
+          "role": "Data Analyst",
+          "desc": "Transforms raw blockchain data into actionable insights. On-chain analysis is our edge."
+        },
+        {
+          "role": "Frontend Engineer",
+          "desc": "Creates intuitive interfaces so traders can focus on strategy, not complexity."
+        },
+        {
+          "role": "Product Manager",
+          "desc": "Prioritizes features based on community feedback. Keeps us user-focused and agile."
+        },
+        {
+          "role": "Security Lead",
+          "desc": "Obsessed with finding vulnerabilities before attackers do. Multi-layer security is non-negotiable."
+        },
+        {
+          "role": "DevOps Engineer",
+          "desc": "Ensures 99.99% uptime and lightning-fast response times across all systems."
+        },
+        {
+          "role": "Community Manager",
+          "desc": "Bridge between team and community. Your voice is heard. Your feedback drives development."
+        },
+        {
+          "role": "Research Analyst",
+          "desc": "Continuously studies market trends and emerging strategies to keep ShantiAI ahead of the curve."
+        },
+        {
+          "role": "Legal & Compliance",
+          "desc": "Navigates the complex regulatory landscape to ensure ShantiAI operates transparently and legally."
+        },
+        {
+          "role": "Marketing Lead",
+          "desc": "Tells our story honestly. No hype, no false promises—just results and transparency."
+        },
+        {
+          "role": "Partnerships",
+          "desc": "Building integrations with exchanges, oracles, and analytics platforms to strengthen our ecosystem."
+        },
+        {
+          "role": "QA & Testing",
+          "desc": "Tests every edge case. If a bug exists, we find it before users do."
+        },
+        {
+          "role": "Documentation Writer",
+          "desc": "Makes complex concepts easy to understand. Clear docs = more confident traders."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "Is my money safe? Do you have access to my private keys?",
+          "answer": "No. Your private keys never leave your wallet. We never store, transmit, or access your secret phrases. You approve each transaction manually. We're just the strategy engine—you control the funds."
+        },
+        {
+          "question": "What are the fees?",
+          "answer": "Trading fees are minimal and transparent. $SHANTI token holders get discounts based on their holdings. There are no hidden fees. Everything is clearly stated upfront."
+        },
+        {
+          "question": "How accurate is the AI?",
+          "answer": "No system is 100% accurate, and anyone claiming that is lying. Our AI has been live for 18+ months with verified trade history. You can see our exact results and make your own judgment."
+        },
+        {
+          "question": "Can I withdraw anytime?",
+          "answer": "Yes. Your funds are always yours. You can withdraw at any time without penalties or lock-in periods. No questions asked."
+        },
+        {
+          "question": "What if the markets are too volatile?",
+          "answer": "Our system has risk management built in. You set your maximum loss tolerance, position size, and strategy preferences. The AI respects these parameters in all conditions."
+        },
+        {
+          "question": "When is the $SHANTI token launching?",
+          "answer": "Fair launch on Pump.fun with no VCs, no private rounds, and no unfair pre-sales. Equal access for everyone. Date will be announced when we're ready. No rushing."
+        }
+      ]
+    },
+    "about": {
+      "title": "About ShantiAI",
+      "paragraph1": "Born from the trenches of crypto trading, ShantiAI was created by traders who experienced firsthand the manipulation and unfair advantages that plague crypto markets. We've spent years developing the technology to level the playing field.",
+      "paragraph2": "Our mission is simple: give every trader access to the same institutional-grade AI tools that only the elite have. No hidden strategies, no cherry-picked results—just verified, transparent data and technology that works."
+    },
+    "technology": {
+      "title": "Advanced Technology",
+      "features": [
+        {
+          "title": "Real-Time Market Analysis",
+          "desc": "Our AI analyzes on-chain data, orderbook patterns, and market sentiment in real-time to identify trading opportunities before they're obvious."
+        },
+        {
+          "title": "Manipulation Detection",
+          "desc": "Advanced algorithms detect whale movements, coordinated dumps, liquidity traps, and other forms of market manipulation—giving you the edge."
+        },
+        {
+          "title": "Enterprise-Grade Security",
+          "desc": "Your assets never leave your control. We use industry-leading security protocols and never store your private keys. Full transparency, full safety."
+        }
+      ]
+    },
+    "partners": {
+      "title": "Our Partners",
+      "subtitle": "Building the future with leading crypto and AI platforms"
+    },
+    "community": {
+      "title": "Join Our Community",
+      "subtitle": "Connect with traders worldwide and stay updated on the latest strategies",
+      "twitter": "Follow Us on Twitter",
+      "twitterFollowers": "5.2K Followers",
+      "followUs": "Follow",
+      "telegram": "Join Our Telegram",
+      "telegramFollowers": "8.9K Members",
+      "joinChat": "Join Chat"
+    },
     "waitlist": {
+      "title": "Join the Waitlist",
+      "subtitle": "Get early access and stay updated on new features",
+      "placeholder": "Enter your email",
+      "button": "Join Now",
+      "joining": "Joining...",
+      "note": "We'll notify you when new features are ready. No spam, ever.",
       "toast": {
         "successTitle": "Success!",
         "successDescription": "You've been added to the waitlist.",
         "errorTitle": "Error",
         "errorDescription": "Failed to subscribe. Try again."
       }
+    },
+    "testimonials": {
+      "title": "What Traders Are Saying",
+      "subtitle": "Real results from real traders using ShantiAI",
+      "cards": [
+        {
+          "name": "Alex Chen",
+          "status": "Bitcoin Trader",
+          "quote": "ShantiAI has changed how I trade. The AI catches patterns I would have missed. My returns are up 34% since I started using it."
+        },
+        {
+          "name": "Maria Rodriguez",
+          "status": "Alt-Coin Strategist",
+          "quote": "Finally, a platform that's transparent about results. I can see every trade, verify the data, and trust the system. This is what crypto needed."
+        },
+        {
+          "name": "James Wilson",
+          "status": "Quantitative Analyst",
+          "quote": "The manipulation detection is incredible. I've avoided 3 coordinated dumps since using the alerts. Worth every penny."
+        }
+      ]
     }
   }
 }
