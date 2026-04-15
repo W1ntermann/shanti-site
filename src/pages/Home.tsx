@@ -21,10 +21,8 @@ import {
 
 import { useCreateSubscriber } from "@/hooks/use-subscribers";
 import { useToast } from "@/hooks/use-toast";
-import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Home() {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
