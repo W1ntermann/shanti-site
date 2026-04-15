@@ -21,8 +21,10 @@ import {
 
 import { useCreateSubscriber } from "@/hooks/use-subscribers";
 import { useToast } from "@/hooks/use-toast";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Home() {
+  const isDesktop = useMediaQuery('(min-width: 768px)');
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -362,25 +364,35 @@ export default function Home() {
 
 
       <section className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background - Disabled on mobile for performance */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
         style={{ zIndex: 0 }}
       >
         <source src="/dynamic-hero.mp4" type="video/mp4" />
       </video>
       
+      {/* Mobile fallback background */}
+      <div 
+        className="absolute inset-0 w-full h-full md:hidden"
+        style={{
+          background: 'linear-gradient(135deg, #111115 0%, #050508 100%)',
+          zIndex: 0
+        }}
+      />
+      
       {/* Overlay for better readability */}
       <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} />
       
   <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" style={{ zIndex: 2 }} />
-  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
-  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
-  <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/15 rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ zIndex: 2 }} />
+  {/* Large blur elements - optimized for mobile */}
+  <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
+  <div className="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-secondary/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none animate-cyber-pulse" style={{ zIndex: 2 }} />
+  <div className="absolute top-1/2 right-1/3 w-32 h-32 md:w-64 md:h-64 bg-accent/15 rounded-full blur-[60px] md:blur-[100px] pointer-events-none animate-pulse" style={{ zIndex: 2 }} />
   
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     {/* Заголовок AI FOR MODERN FINANCE по центру */}
@@ -591,9 +603,10 @@ export default function Home() {
       <section id="how-it-works" className="py-24 bg-black relative overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/working-system.jpg)',
+            backgroundAttachment: 'scroll',
             zIndex: 0
           }}
         />
@@ -635,13 +648,15 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-48 bg-[#050508] relative overflow-hidden min-h-[800px]">
+      <section id="about" className="py-24 md:py-48 bg-[#050508] relative overflow-hidden min-h-[600px] md:min-h-[800px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/about-pict.jpg)',
-            backgroundAttachment: 'fixed',
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             zIndex: 0
           }}
         />
@@ -698,9 +713,11 @@ export default function Home() {
       <section id="technology" className="py-24 bg-black relative overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
+          className="absolute inset-0 w-full h-full bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/xtended-techomology.jpg)',
+            backgroundSize: 'contain',
+            backgroundAttachment: 'scroll',
             zIndex: 0
           }}
         />
@@ -808,12 +825,15 @@ export default function Home() {
       </section>
 
       {/* ROADMAP SECTION */}
-      <section id="roadmap" className="py-32 bg-background relative overflow-hidden">
+      <section id="roadmap" className="py-24 md:py-32 bg-background relative overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/cyber-clock.jpg)',
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             zIndex: 0
           }}
         />
@@ -842,7 +862,7 @@ export default function Home() {
           backgroundImage: "url('/team.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'scroll'
         }}
       >
         <div className="absolute inset-0 bg-black/40" />
