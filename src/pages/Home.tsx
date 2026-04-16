@@ -362,7 +362,7 @@ export default function Home() {
 
 
       <section className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Video Background - Disabled on mobile for performance */}
+      {/* Desktop Background Video */}
       <video
         autoPlay
         loop
@@ -374,11 +374,13 @@ export default function Home() {
         <source src="/dynamic-hero.mp4" type="video/mp4" />
       </video>
       
-      {/* Mobile fallback background */}
+      {/* Mobile Background Image */}
       <div 
-        className="absolute inset-0 w-full h-full md:hidden"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          background: 'linear-gradient(135deg, #111115 0%, #050508 100%)',
+          backgroundImage: 'url(/hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           zIndex: 0
         }}
       />
@@ -599,12 +601,21 @@ export default function Home() {
 
       {/* HOW IT WORKS SECTION */}
       <section id="how-it-works" className="py-24 bg-black relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Hidden on mobile for performance */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
           style={{
             backgroundImage: 'url(/working-system.jpg)',
             backgroundAttachment: 'scroll',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Mobile fallback - Gradient background */}
+        <div 
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #111115 0%, #050508 50%, #111115 100%)',
             zIndex: 0
           }}
         />
@@ -647,14 +658,23 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-24 md:py-48 bg-[#050508] relative overflow-hidden min-h-[600px] md:min-h-[800px]">
-        {/* Background Image */}
+        {/* Background Image - Hidden on mobile for performance */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
           style={{
             backgroundImage: 'url(/about-pict.jpg)',
             backgroundAttachment: 'scroll',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Mobile fallback - Gradient background */}
+        <div 
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #050508 0%, #111115 50%, #050508 100%)',
             zIndex: 0
           }}
         />
@@ -709,13 +729,22 @@ export default function Home() {
 
       {/* TECHNOLOGY SECTION */}
       <section id="technology" className="py-24 bg-black relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Hidden on mobile for performance */}
         <div 
-          className="absolute inset-0 w-full h-full bg-center bg-no-repeat"
+          className="absolute inset-0 w-full h-full bg-center bg-no-repeat hidden md:block"
           style={{
             backgroundImage: 'url(/xtended-techomology.jpg)',
             backgroundSize: 'contain',
             backgroundAttachment: 'scroll',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Mobile fallback - Gradient background */}
+        <div 
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #111115 0%, #050508 50%, #111115 100%)',
             zIndex: 0
           }}
         />
@@ -824,14 +853,23 @@ export default function Home() {
 
       {/* ROADMAP SECTION */}
       <section id="roadmap" className="py-24 md:py-32 bg-background relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Hidden on mobile for performance */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
           style={{
             backgroundImage: 'url(/cyber-clock.jpg)',
             backgroundAttachment: 'scroll',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Mobile fallback - Gradient background */}
+        <div 
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #0a0a0f 0%, #050508 50%, #0a0a0f 100%)',
             zIndex: 0
           }}
         />
@@ -856,13 +894,28 @@ export default function Home() {
       <section 
         id="team" 
         className="py-24 bg-background relative overflow-hidden"
-        style={{
-          backgroundImage: "url('/team.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'scroll'
-        }}
       >
+        {/* Background Image - Hidden on mobile for performance */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+          style={{
+            backgroundImage: "url('/team.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'scroll',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Mobile fallback - Gradient background */}
+        <div 
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #0a0a0f 0%, #050508 50%, #0a0a0f 100%)',
+            zIndex: 0
+          }}
+        />
+        
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-cyber-grid opacity-20" />
         <ParallaxBackground />
