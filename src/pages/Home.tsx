@@ -601,21 +601,13 @@ export default function Home() {
 
       {/* HOW IT WORKS SECTION */}
       <section id="how-it-works" className="py-24 bg-black relative overflow-hidden">
-        {/* Background Image - Hidden on mobile for performance */}
+        {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/working-system.jpg)',
-            backgroundAttachment: 'scroll',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Mobile fallback - Gradient background */}
-        <div 
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            background: 'linear-gradient(135deg, #111115 0%, #050508 50%, #111115 100%)',
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
             zIndex: 0
           }}
         />
@@ -658,23 +650,14 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-24 md:py-48 bg-[#050508] relative overflow-hidden min-h-[600px] md:min-h-[800px]">
-        {/* Background Image - Hidden on mobile for performance */}
+        {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/about-pict.jpg)',
-            backgroundAttachment: 'scroll',
+            backgroundAttachment: 'fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Mobile fallback - Gradient background */}
-        <div 
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            background: 'linear-gradient(135deg, #050508 0%, #111115 50%, #050508 100%)',
             zIndex: 0
           }}
         />
@@ -729,22 +712,13 @@ export default function Home() {
 
       {/* TECHNOLOGY SECTION */}
       <section id="technology" className="py-24 bg-black relative overflow-hidden">
-        {/* Background Image - Hidden on mobile for performance */}
+        {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-center bg-no-repeat hidden md:block"
+          className="absolute inset-0 w-full h-full bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/xtended-techomology.jpg)',
             backgroundSize: 'contain',
-            backgroundAttachment: 'scroll',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Mobile fallback - Gradient background */}
-        <div 
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            background: 'linear-gradient(135deg, #111115 0%, #050508 50%, #111115 100%)',
+            backgroundAttachment: 'fixed',
             zIndex: 0
           }}
         />
@@ -853,23 +827,14 @@ export default function Home() {
 
       {/* ROADMAP SECTION */}
       <section id="roadmap" className="py-24 md:py-32 bg-background relative overflow-hidden">
-        {/* Background Image - Hidden on mobile for performance */}
+        {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/cyber-clock.jpg)',
-            backgroundAttachment: 'scroll',
+            backgroundAttachment: 'fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Mobile fallback - Gradient background */}
-        <div 
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            background: 'linear-gradient(135deg, #0a0a0f 0%, #050508 50%, #0a0a0f 100%)',
             zIndex: 0
           }}
         />
@@ -895,23 +860,14 @@ export default function Home() {
         id="team" 
         className="py-24 bg-background relative overflow-hidden"
       >
-        {/* Background Image - Hidden on mobile for performance */}
+        {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: "url('/team.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'scroll',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Mobile fallback - Gradient background */}
-        <div 
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            background: 'linear-gradient(135deg, #0a0a0f 0%, #050508 50%, #0a0a0f 100%)',
+            backgroundAttachment: 'fixed',
             zIndex: 0
           }}
         />
