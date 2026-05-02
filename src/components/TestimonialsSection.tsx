@@ -100,9 +100,9 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
   }, [initialScroll]);
 
   return (
-    <div className="relative w-full mt-8 sm:mt-10">
+    <div className="relative w-full mt-6 sm:mt-8 lg:mt-10">
       <div
-        className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none] py-4 sm:py-5 px-4 sm:px-6 lg:px-8"
+        className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none] py-4 sm:py-5 px-2 sm:px-4 lg:px-0"
         ref={carouselRef}
         onScroll={checkScrollability}
       >
@@ -111,7 +111,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
             "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l",
           )}
         />
-        <div className="flex flex-row gap-3 sm:gap-4">
+        <div className="flex flex-row gap-2 sm:gap-3 lg:gap-4 px-1 sm:px-0">
           {items.map((item, index) => {
             return (
               <motion.div
@@ -139,22 +139,22 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
           })}
         </div>
       </div>
-      <div className="flex justify-end gap-2 mt-6 sm:mt-4 px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-center sm:justify-end gap-2 mt-5 sm:mt-6 px-2 sm:px-4 lg:px-0">
         <button
-          className="relative z-40 h-9 sm:h-10 w-9 sm:w-10 rounded-full bg-[#0a0a0f] border border-[#00f0ff]/30 flex items-center justify-center disabled:opacity-50 hover:bg-[#00f0ff]/10 transition-colors duration-200 active:scale-95"
+          className="relative z-40 h-8 sm:h-9 lg:h-10 w-8 sm:w-9 lg:w-10 rounded-full bg-[#0a0a0f] border border-[#00f0ff]/30 flex items-center justify-center disabled:opacity-50 hover:bg-[#00f0ff]/10 transition-colors duration-200 active:scale-95"
           onClick={handleScrollLeft}
           disabled={!canScrollLeft}
           aria-label="Scroll left"
         >
-          <ArrowLeft className="h-5 sm:h-6 w-5 sm:w-6 text-[#00f0ff]" />
+          <ArrowLeft className="h-4 sm:h-5 lg:h-6 w-4 sm:w-5 lg:w-6 text-[#00f0ff]" />
         </button>
         <button
-          className="relative z-40 h-9 sm:h-10 w-9 sm:w-10 rounded-full bg-[#0a0a0f] border border-[#00f0ff]/30 flex items-center justify-center disabled:opacity-50 hover:bg-[#00f0ff]/10 transition-colors duration-200 active:scale-95"
+          className="relative z-40 h-8 sm:h-9 lg:h-10 w-8 sm:w-9 lg:w-10 rounded-full bg-[#0a0a0f] border border-[#00f0ff]/30 flex items-center justify-center disabled:opacity-50 hover:bg-[#00f0ff]/10 transition-colors duration-200 active:scale-95"
           onClick={handleScrollRight}
           disabled={!canScrollRight}
           aria-label="Scroll right"
         >
-          <ArrowRight className="h-5 sm:h-6 w-5 sm:w-6 text-[#00f0ff]" />
+          <ArrowRight className="h-4 sm:h-5 lg:h-6 w-4 sm:w-5 lg:w-6 text-[#00f0ff]" />
         </button>
       </div>
     </div>
@@ -231,7 +231,7 @@ const TestimonialCard = ({
     <>
       <AnimatePresence>
         {isExpanded && (
-          <div className="fixed inset-0 h-screen overflow-hidden z-50 flex items-center justify-center p-4 sm:p-0">
+          <div className="fixed inset-0 h-screen overflow-hidden z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -240,15 +240,15 @@ const TestimonialCard = ({
               onClick={handleCollapse}
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              exit={{ opacity: 0, scale: 0.9, y: 40 }}
               ref={containerRef}
               layoutId={layout ? `card-${testimonial.name}` : undefined}
-              className="max-w-4xl w-full mx-auto bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border border-[#00f0ff]/20 z-[60] p-6 sm:p-8 md:p-10 rounded-3xl relative md:mt-10 overflow-y-auto max-h-[90vh] sm:max-h-screen shadow-2xl"
+              className="max-w-4xl w-full mx-auto bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border border-[#00f0ff]/20 z-[60] p-4 sm:p-6 md:p-8 lg:p-10 rounded-t-3xl sm:rounded-3xl relative overflow-y-auto max-h-[90vh] sm:max-h-screen shadow-2xl"
             >
               <button
-                className="sticky top-0 h-8 w-8 ml-auto rounded-full flex items-center justify-center bg-[#1a1a2e] border border-[#00f0ff]/30 hover:bg-[#00f0ff]/20 transition-colors z-10"
+                className="sticky top-0 h-8 w-8 ml-auto rounded-full flex items-center justify-center bg-[#1a1a2e] border border-[#00f0ff]/30 hover:bg-[#00f0ff]/20 transition-colors z-10 flex-shrink-0"
                 onClick={handleCollapse}
                 aria-label="Close"
               >
@@ -256,10 +256,10 @@ const TestimonialCard = ({
               </button>
 
               {/* Expanded view content */}
-              <div className="mt-4">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/10">
+              <div className="mt-3 sm:mt-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-8 pb-4 sm:pb-6 md:pb-8 border-b border-white/10">
                   <div
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center font-display font-bold text-xl sm:text-2xl overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] flex-shrink-0"
+                    className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center font-display font-bold text-lg sm:text-xl md:text-2xl overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] flex-shrink-0"
                     style={{
                       border: `1px solid ${theme.primary}40`,
                       color: theme.primary,
@@ -276,9 +276,9 @@ const TestimonialCard = ({
                     )}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-xl sm:text-2xl text-white">{testimonial.name}</h4>
+                    <h4 className="font-bold text-lg sm:text-xl md:text-2xl text-white">{testimonial.name}</h4>
                     <span
-                      className="text-xs sm:text-sm font-mono px-3 py-1 rounded-full inline-block mt-2"
+                      className="text-xs sm:text-sm font-mono px-2.5 sm:px-3 py-1 rounded-full inline-block mt-1.5 sm:mt-2"
                       style={{
                         background: theme.secondary,
                         color: theme.primary,
@@ -289,15 +289,15 @@ const TestimonialCard = ({
                   </div>
                 </div>
 
-                <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed sm:leading-8 mb-6 sm:mb-8 italic">
-                  <Quote className="h-6 w-6 sm:h-8 sm:w-8 inline mr-2 opacity-50" />
+                <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed sm:leading-7 md:leading-8 mb-4 sm:mb-6 md:mb-8 italic">
+                  <Quote className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 inline mr-2 opacity-50" />
                   {testimonial.description}
                 </p>
 
                 {testimonial.proofImages && testimonial.proofImages.length > 0 && (
                   <div className="mt-6 sm:mt-8">
-                    <h5 className="text-[#00f0ff] font-mono text-xs sm:text-sm mb-4">PROOF OF RESULTS</h5>
-                    <div className={`grid gap-3 sm:gap-4 ${
+                    <h5 className="text-[#00f0ff] font-mono text-xs sm:text-sm mb-3 sm:mb-4">PROOF OF RESULTS</h5>
+                    <div className={`grid gap-2 sm:gap-3 md:gap-4 ${
                       testimonial.proofImages.length === 3 
                         ? "grid-cols-1 sm:grid-cols-3" 
                         : testimonial.proofImages.length === 2 
@@ -329,7 +329,7 @@ const TestimonialCard = ({
         whileTap={{ scale: 0.98 }}
       >
         <div
-          className={`rounded-3xl bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border h-auto sm:h-[500px] md:h-[550px] w-full sm:w-80 md:w-96 overflow-hidden flex flex-col relative z-10 shadow-2xl transition-all duration-300 p-5 sm:p-6 gap-4 sm:gap-0`}
+          className={`rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border h-auto sm:h-[480px] lg:h-[550px] w-64 sm:w-72 md:w-80 lg:w-96 overflow-hidden flex flex-col relative z-10 shadow-2xl transition-all duration-300 p-4 sm:p-5 lg:p-6 gap-3 sm:gap-0`}
           style={{
             borderColor: `${theme.primary}20`,
             boxShadow: `0 0 30px ${theme.primary}10`,
@@ -345,9 +345,9 @@ const TestimonialCard = ({
 
           <div className="flex-1 flex flex-col sm:hidden">
             {/* Mobile Header */}
-            <div className="flex items-start gap-3 mb-3 pb-3 border-b border-white/10">
+            <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3 pb-2 sm:pb-3 border-b border-white/10">
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-lg overflow-hidden flex-shrink-0"
+                className="w-11 sm:w-12 h-11 sm:h-12 rounded-full flex items-center justify-center font-display font-bold text-base sm:text-lg overflow-hidden flex-shrink-0"
                 style={{
                   background: `linear-gradient(135deg, ${theme.primary}20, transparent)`,
                   border: `1px solid ${theme.primary}40`,
@@ -381,16 +381,16 @@ const TestimonialCard = ({
             </div>
 
             {/* Mobile Quote */}
-            <p className="text-gray-300 text-sm leading-relaxed mb-3 italic flex-1">
-              <Quote className="h-3 w-3 inline mr-1 opacity-50" />
-              {testimonial.description.length > 100
-                ? `${testimonial.description.slice(0, 100)}...`
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3 italic flex-1">
+              <Quote className="h-2.5 w-2.5 sm:h-3 sm:w-3 inline mr-1 opacity-50" />
+              {testimonial.description.length > 80
+                ? `${testimonial.description.slice(0, 80)}...`
                 : testimonial.description}
             </p>
 
             {/* Mobile proof images */}
             {testimonial.proofImages && testimonial.proofImages.length > 0 && (
-              <div className={`grid gap-2 mt-2 ${
+              <div className={`grid gap-1.5 sm:gap-2 mt-1.5 sm:mt-2 ${
                 testimonial.proofImages.length === 3 
                   ? "grid-cols-3" 
                   : testimonial.proofImages.length === 2 
@@ -406,8 +406,8 @@ const TestimonialCard = ({
             )}
 
             {/* Mobile read more indicator */}
-            <div className="mt-3 text-center">
-              <span className="text-xs font-mono px-3 py-1 rounded-full inline-block" style={{ background: `${theme.primary}20`, color: theme.primary }}>
+            <div className="mt-2 sm:mt-3 text-center">
+              <span className="text-xs font-mono px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block text-[11px] sm:text-xs" style={{ background: `${theme.primary}20`, color: theme.primary }}>
                 Tap to expand
               </span>
             </div>
@@ -415,9 +415,9 @@ const TestimonialCard = ({
 
           <div className="hidden sm:flex sm:flex-col sm:flex-1">
             {/* Desktop Header */}
-            <div className="flex items-center gap-4 mb-4 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-white/10">
               <div
-                className="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-xl overflow-hidden"
+                className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center font-display font-bold text-base sm:text-xl overflow-hidden"
                 style={{
                   background: `linear-gradient(135deg, ${theme.primary}20, transparent)`,
                   border: `1px solid ${theme.primary}40`,
@@ -435,32 +435,32 @@ const TestimonialCard = ({
                 )}
               </div>
               <div className="text-left">
-                <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
+                <h4 className="font-bold text-white text-base sm:text-lg">{testimonial.name}</h4>
                 <span
-                  className="text-xs font-mono px-2 py-0.5 rounded inline-block mt-1"
+                  className="text-xs font-mono px-2 py-0.5 rounded inline-block mt-1 text-[11px] sm:text-xs"
                   style={{
                     background: theme.secondary,
                     color: theme.primary,
                   }}
                 >
-                  {testimonial.designation.length > 20 
-                    ? `${testimonial.designation.slice(0, 20)}...`
+                  {testimonial.designation.length > 18 
+                    ? `${testimonial.designation.slice(0, 18)}...`
                     : testimonial.designation}
                 </span>
               </div>
             </div>
 
             {/* Desktop Quote */}
-            <p className="text-gray-300 text-sm leading-relaxed mb-4 italic flex-1">
-              <Quote className="h-3 w-3 inline mr-1 opacity-50" />
-              {testimonial.description.length > 120
-                ? `${testimonial.description.slice(0, 120)}...`
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 italic flex-1">
+              <Quote className="h-2.5 w-2.5 sm:h-3 sm:w-3 inline mr-1 opacity-50" />
+              {testimonial.description.length > 100
+                ? `${testimonial.description.slice(0, 100)}...`
                 : testimonial.description}
             </p>
 
             {/* Desktop proof images grid */}
             {testimonial.proofImages && testimonial.proofImages.length > 0 && (
-              <div className={`grid gap-2 mt-2 ${
+              <div className={`grid gap-1.5 sm:gap-2 mt-2 ${
                 testimonial.proofImages.length === 3 
                   ? "grid-cols-3" 
                   : testimonial.proofImages.length === 2 
@@ -586,7 +586,7 @@ const TestimonialsSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-3 sm:px-4 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -594,12 +594,12 @@ const TestimonialsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#00f0ff] via-[#ff00f0] to-[#ffcc00] bg-clip-text text-transparent mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#00f0ff] via-[#ff00f0] to-[#ffcc00] bg-clip-text text-transparent mb-2 sm:mb-3 lg:mb-4">
               What Our Members Say
             </h2>
-            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto font-mono px-2">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400 max-w-2xl mx-auto font-mono px-2">
               Join hundreds of successful traders who trust Shanti AI for their daily trading decisions
             </p>
           </motion.div>
