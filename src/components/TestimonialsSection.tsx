@@ -99,10 +99,10 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
     }
   }, [initialScroll]);
 
-  return (
+return (
     <div className="relative w-full mt-6 sm:mt-8 lg:mt-10">
       <div
-        className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none] py-4 sm:py-5 px-2 sm:px-4 lg:px-0"
+        className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none] py-4 sm:py-5 px-2 sm:px-4 lg:px-0 snap-x snap-mandatory"
         ref={carouselRef}
         onScroll={checkScrollability}
       >
@@ -127,7 +127,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
                   },
                 }}
                 key={`card-${index}`}
-                className="last:pr-[5%] rounded-3xl flex-shrink-0"
+                className="last:pr-[5%] rounded-3xl flex-shrink-0 snap-center"
               >
                 {React.cloneElement(item, {
                   onCardClose: () => {
@@ -139,7 +139,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
           })}
         </div>
       </div>
-      <div className="flex justify-center sm:justify-end gap-2 mt-5 sm:mt-6 px-2 sm:px-4 lg:px-0">
+<div className="flex justify-center sm:justify-end gap-2 mt-5 sm:mt-6 px-0 sm:px-4 lg:px-0">
         <button
           className="relative z-40 h-8 sm:h-9 lg:h-10 w-8 sm:w-9 lg:w-10 rounded-full bg-[#0a0a0f] border border-[#00f0ff]/30 flex items-center justify-center disabled:opacity-50 hover:bg-[#00f0ff]/10 transition-colors duration-200 active:scale-95"
           onClick={handleScrollLeft}
@@ -328,8 +328,8 @@ const TestimonialCard = ({
         }}
         whileTap={{ scale: 0.98 }}
       >
-        <div
-          className={`rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border h-auto sm:h-[480px] lg:h-[550px] w-64 sm:w-72 md:w-80 lg:w-96 overflow-hidden flex flex-col relative z-10 shadow-2xl transition-all duration-300 p-4 sm:p-5 lg:p-6 gap-3 sm:gap-0`}
+<div
+          className={`rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0a0a0f] to-[#12121a] border h-auto sm:h-[480px] lg:h-[550px] w-[85vw] sm:w-72 md:w-80 lg:w-96 max-w-[380px] overflow-hidden flex flex-col relative z-10 shadow-2xl transition-all duration-300 p-4 sm:p-5 lg:p-6 gap-3 sm:gap-0`}
           style={{
             borderColor: `${theme.primary}20`,
             boxShadow: `0 0 30px ${theme.primary}10`,
