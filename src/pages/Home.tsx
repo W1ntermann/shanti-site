@@ -8,6 +8,8 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { RoadmapTimeline } from "@/components/RoadmapTimeline";
 import { BetaLiveCard } from "@/components/BetaLiveCard";
 import { PhilosophySection } from "@/components/PhilosophySection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -915,6 +917,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIALS SECTION */}
+      <TestimonialsSection />
+
       {/* PARTNERS SECTION */}
       <section id="partners" className="py-24 bg-[#050508] relative overflow-hidden partners-section">
         {/* Background image for partners section */}
@@ -1103,104 +1108,6 @@ export default function Home() {
           <p className="mt-6 text-gray-500 text-sm flex items-center justify-center gap-2">
             {t('home.waitlist.note')}
           </p>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS SECTION */}
-      <section id="testimonials" className="py-24 bg-[#050508] relative overflow-hidden testimonials-section">
-        {/* Background image for testimonials */}
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/traders-saying.jpg')",
-            backgroundAttachment: 'scroll',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0
-          }}
-        />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeading>{t('home.testimonials.title')}</SectionHeading>
-          <p className="text-gray-400 mb-12 max-w-2xl font-mono">
-            {t('home.testimonials.subtitle')}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <CyberCard delay={0}>
-              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center font-display font-bold text-primary">
-                  V
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">{t('home.testimonials.cards.0.name')}</h4>
-                  <span className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{t('home.testimonials.cards.0.status')}</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                {t('home.testimonials.cards.0.quote')}
-              </p>
-              <div className="grid grid-cols-3 gap-2 mt-4">
-                <div className="aspect-square bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/83ffd4af-e805-471a-9de0-b769f1be45fb.jpg" alt="Proof 1" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="aspect-square bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/10ce5257-0ba5-4714-9867-b4953c5678ce.jpg" alt="Proof 2" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="aspect-square bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/ef096ae0-3ad2-47b3-ab74-63d175142a18.jpg" alt="Proof 3" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            </CyberCard>
-
-            <CyberCard delay={0.2}>
-              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
-                <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center font-display font-bold text-secondary">
-                  P
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">{t('home.testimonials.cards.1.name')}</h4>
-                  <span className="text-xs text-secondary font-mono bg-secondary/10 px-2 py-1 rounded">{t('home.testimonials.cards.1.status')}</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                {t('home.testimonials.cards.1.quote')}
-              </p>
-              <div className="grid grid-cols-2 gap-2 mt-4">
-                <div className="aspect-video bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/edb66963-1817-4ac9-a311-c10e1b1130be.jpg" alt="Proof 4" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="aspect-video bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/ede899bf-e330-4215-9ca1-5dc9073a3d76.jpg" alt="Proof 5" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            </CyberCard>
-
-            <CyberCard delay={0.4}>
-              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center font-display font-bold text-accent">
-                  A
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">{t('home.testimonials.cards.2.name')}</h4>
-                  <span className="text-xs text-accent font-mono bg-accent/10 px-2 py-1 rounded">{t('home.testimonials.cards.2.status')}</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                {t('home.testimonials.cards.2.quote')}
-              </p>
-              <div className="grid grid-cols-2 gap-2 mt-4">
-                <div className="aspect-video bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/f189a2eb-83c2-4cc5-8d77-dc248af40d35.jpg" alt="Proof 6" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="aspect-video bg-gray-800 rounded overflow-hidden border border-white/10 group">
-                  <img src="https://shanti-ai.netlify.app/dbac7662-3e58-4118-95e6-31e648e7c145.jpg" alt="Proof 7" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            </CyberCard>
-          </div>
         </div>
       </section>
 
