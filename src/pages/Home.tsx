@@ -363,7 +363,7 @@ export default function Home() {
       {/* HERO SECTION */}
 
 
-      <section className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
+<section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
       {/* Desktop Background Video */}
       <video
         autoPlay
