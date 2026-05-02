@@ -1006,8 +1006,13 @@ export default function Home() {
       </section>
 
       {/* COMMUNITY SECTION */}
-      <section id="community" className="py-24 bg-[#050508] relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="community" className="py-24 bg-[#050508] relative overflow-hidden">
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/second-join.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}
+        />
+        <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }} />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.community.title')}</SectionHeading>
           <p className="text-center text-gray-400 mb-12 font-mono">
             {t('home.community.subtitle')}
@@ -1055,8 +1060,21 @@ export default function Home() {
       </section>
 
       {/* WAITLIST SECTION */}
-      <section id="waitlist" className="py-24 bg-black relative">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section id="waitlist" className="py-24 bg-black relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/join.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
+        
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <SectionHeading centered>{t('home.waitlist.title')}</SectionHeading>
           <p className="text-gray-400 mb-8 font-mono">
             {t('home.waitlist.subtitle')}

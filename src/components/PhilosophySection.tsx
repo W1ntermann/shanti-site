@@ -27,9 +27,14 @@ export function PhilosophySection() {
   ];
 
   return (
-    <section id="philosophy" className="py-32 bg-background relative overflow-hidden">
+    <section
+      id="philosophy"
+      className="py-32 bg-background relative overflow-hidden"
+      style={{ backgroundImage: "url('/designed-for-bold.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+    >
       {/* Background effects */}
       <div className="absolute inset-0 bg-cyber-grid opacity-20" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/8 rounded-full blur-[120px] pointer-events-none" />
       
