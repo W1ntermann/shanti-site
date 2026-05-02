@@ -269,3 +269,155 @@
     animation: none !important;
   }
 }
+
+/* Tokenomics card background (uses /tokenomics.jpg in public) */
+.tokenomics-card {
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Make background position and overlay stronger on small screens */
+@media (max-width: 767px) {
+  .tokenomics-card {
+    background-position: center top;
+    background-size: cover;
+    padding: 1.25rem; /* keep spacing consistent */
+  }
+
+  .tokenomics-card > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.75));
+  }
+
+  .tokenomics-card .text-white, .tokenomics-card .text-muted-foreground {
+    color: #f8fafc;
+  }
+}
+
+@media (min-width: 768px) {
+  .tokenomics-card > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
+  }
+}
+
+/* Partners section background tweaks */
+.partners-section {
+  /* fallback color already provided on element */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .partners-section > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  }
+
+  .partners-section {
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-section, .partners-section * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Technology section background tweaks */
+.technology-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .technology-section > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  }
+
+  .technology-section {
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-section, .technology-section * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Token Utility section background tweaks */
+.utility-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .utility-section > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  }
+
+  .utility-section {
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .utility-section, .utility-section * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* FAQ section background tweaks */
+.faq-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .faq-section > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  }
+
+  .faq-section {
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-section, .faq-section * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Testimonials / What Traders Are Saying section */
+.testimonials-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .testimonials-section > .absolute.inset-0 {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  }
+
+  .testimonials-section {
+    background-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-section, .testimonials-section * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

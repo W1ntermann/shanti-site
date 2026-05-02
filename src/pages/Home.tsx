@@ -711,20 +711,21 @@ export default function Home() {
       </section>
 
       {/* TECHNOLOGY SECTION */}
-      <section id="technology" className="py-24 bg-black relative overflow-hidden">
+      <section id="technology" className="py-24 bg-black relative overflow-hidden technology-section">
         {/* Background Image - Optimized for all devices */}
         <div 
-          className="absolute inset-0 w-full h-full bg-center bg-no-repeat"
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/xtended-techomology.jpg)',
-            backgroundSize: 'contain',
-            backgroundAttachment: 'fixed',
+            backgroundImage: 'url(/technology.jpg)',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'scroll',
+            backgroundPosition: 'center',
             zIndex: 0
           }}
         />
-        
+
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
         
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" style={{ zIndex: 2 }} />
         
@@ -750,8 +751,22 @@ export default function Home() {
       </section>
 
       {/* TOKEN UTILITY SECTION */}
-<section id="token-utility" className="py-24 bg-[#050508] relative">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="token-utility" className="py-24 bg-[#050508] relative overflow-hidden utility-section">
+        {/* Background image for token utility section */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/utility.jpg')",
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <SectionHeading centered>{t('home.tokenUtility.title')}</SectionHeading>
     <p className="text-center text-gray-400 mb-12 font-mono">
       {t('home.tokenUtility.subtitle')}
@@ -789,8 +804,22 @@ export default function Home() {
 </section>
 
       {/* TOKENOMICS SECTION */}
-      <section id="tokenomics" className="py-24 bg-black relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="tokenomics" className="py-24 bg-black relative overflow-hidden tokenomics-section">
+        {/* Background image for tokenomics section */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/tokenomics.jpg')",
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.tokenomics.title')}</SectionHeading>
           <p className="text-center text-gray-400 mb-12 font-mono">
             {t('home.tokenomics.subtitle')}
@@ -800,8 +829,10 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-primary/20 to-purple-900/30 border border-white/10 rounded-lg p-8 mb-8"
+            className="tokenomics-card bg-cover bg-center relative overflow-hidden border border-white/10 rounded-lg p-8 mb-8"
           >
+            {/* Background overlay for readability */}
+            <div className="absolute inset-0 bg-black/55 sm:bg-black/45 pointer-events-none" />
             <div className="flex items-center gap-3 mb-4">
               <BarChart3 className="w-6 h-6 text-primary" />
               <span className="text-white font-display font-bold">{t('home.tokenomics.chartLabel')}</span>
@@ -885,8 +916,22 @@ export default function Home() {
       </section>
 
       {/* PARTNERS SECTION */}
-      <section id="partners" className="py-24 bg-[#050508] relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="partners" className="py-24 bg-[#050508] relative overflow-hidden partners-section">
+        {/* Background image for partners section */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/partners.jpg')",
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.partners.title')}</SectionHeading>
           <p className="text-center text-gray-400 mb-12 font-mono">
             {t('home.partners.subtitle')}
@@ -912,8 +957,22 @@ export default function Home() {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="py-24 bg-black relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="faq" className="py-24 bg-black relative overflow-hidden faq-section">
+        {/* Background image for FAQ section */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/faq.jpg')",
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading centered>{t('home.faq.title')}</SectionHeading>
           
           <div className="space-y-4 mt-12">
@@ -1030,8 +1089,22 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section id="testimonials" className="py-24 bg-[#050508] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="testimonials" className="py-24 bg-[#050508] relative overflow-hidden testimonials-section">
+        {/* Background image for testimonials */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/traders-saying.jpg')",
+            backgroundAttachment: 'scroll',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0
+          }}
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading>{t('home.testimonials.title')}</SectionHeading>
           <p className="text-gray-400 mb-12 max-w-2xl font-mono">
             {t('home.testimonials.subtitle')}
