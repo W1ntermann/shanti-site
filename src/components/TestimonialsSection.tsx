@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // ===== Types and Interfaces =====
 export interface iTestimonial {
@@ -175,6 +176,7 @@ const TestimonialCard = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   const handleExpand = () => {
     return setIsExpanded(true);
@@ -296,7 +298,7 @@ const TestimonialCard = ({
 
                 {testimonial.proofImages && testimonial.proofImages.length > 0 && (
                   <div className="mt-6 sm:mt-8">
-                    <h5 className="text-[#00f0ff] font-mono text-xs sm:text-sm mb-3 sm:mb-4">PROOF OF RESULTS</h5>
+                    <h5 className="text-[#00f0ff] font-mono text-xs sm:text-sm mb-3 sm:mb-4">{t('navbar.proofOfResults')}</h5>
                     <div className={`grid gap-2 sm:gap-3 md:gap-4 ${
                       testimonial.proofImages.length === 3 
                         ? "grid-cols-1 sm:grid-cols-3" 
@@ -408,7 +410,7 @@ const TestimonialCard = ({
             {/* Mobile read more indicator */}
             <div className="mt-2 sm:mt-3 text-center">
               <span className="text-xs font-mono px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block text-[11px] sm:text-xs" style={{ background: `${theme.primary}20`, color: theme.primary }}>
-                Tap to expand
+                {t('navbar.tapToExpand')}
               </span>
             </div>
           </div>
@@ -478,7 +480,7 @@ const TestimonialCard = ({
             {/* Desktop read more indicator */}
             <div className="mt-3 text-right">
               <span className="text-xs font-mono" style={{ color: theme.primary }}>
-                Click to expand →
+                {t('navbar.clickToExpand')}
               </span>
             </div>
           </div>
@@ -496,73 +498,61 @@ const TestimonialCard = ({
   );
 };
 
-// ===== Your Testimonial Data =====
-export interface TestimonialDetails extends iTestimonial {
-  id: string;
-}
+// ===== Static image assets (not translatable) =====
+const profileImages = [
+  "https://randomuser.me/api/portraits/men/32.jpg",
+  "https://randomuser.me/api/portraits/men/45.jpg",
+  "https://randomuser.me/api/portraits/men/67.jpg",
+  "https://randomuser.me/api/portraits/women/42.jpg",
+  "https://randomuser.me/api/portraits/men/55.jpg",
+];
 
-const testimonialData: TestimonialDetails[] = [
-  {
-    id: "1",
-    name: "Viktor",
-    designation: "Verified Trader",
-    description: "The trading signals from Shanti AI have been incredibly accurate. My portfolio has grown 40% in just 2 months. The AI's market analysis is spot-on and I've never felt more confident in my trades.",
-    profileImage: "https://randomuser.me/api/portraits/men/32.jpg",
-    proofImages: [
-      "https://shanti-ai.netlify.app/83ffd4af-e805-471a-9de0-b769f1be45fb.jpg",
-      "https://shanti-ai.netlify.app/10ce5257-0ba5-4714-9867-b4953c5678ce.jpg",
-      "https://shanti-ai.netlify.app/ef096ae0-3ad2-47b3-ab74-63d175142a18.jpg",
-    ],
-  },
-  {
-    id: "2",
-    name: "Petro",
-    designation: "Pro Trader",
-    description: "This AI trading system is a game-changer. The entry and exit signals are precise, and I've doubled my trading profits. The community support is amazing too!",
-    profileImage: "https://randomuser.me/api/portraits/men/45.jpg",
-    proofImages: [
-      "https://shanti-ai.netlify.app/edb66963-1817-4ac9-a311-c10e1b1130be.jpg",
-      "https://shanti-ai.netlify.app/ede899bf-e330-4215-9ca1-5dc9073a3d76.jpg",
-    ],
-  },
-  {
-    id: "3",
-    name: "Andriy",
-    designation: "Elite Member",
-    description: "I was skeptical at first, but Shanti AI proved me wrong. The AI predictions are consistently profitable. Best investment I've made for my trading career.",
-    profileImage: "https://randomuser.me/api/portraits/men/67.jpg",
-    proofImages: [
-      "https://shanti-ai.netlify.app/f189a2eb-83c2-4cc5-8d77-dc248af40d35.jpg",
-      "https://shanti-ai.netlify.app/dbac7662-3e58-4118-95e6-31e648e7c145.jpg",
-    ],
-  },
-  {
-    id: "4",
-    name: "Sophia",
-    designation: "Advanced Trader",
-    description: "Shanti AI has transformed my trading approach completely. The risk management features are exceptional, and I've consistently achieved 35% monthly returns. Highly recommended!",
-    profileImage: "https://randomuser.me/api/portraits/women/42.jpg",
-    proofImages: [
-      "https://shanti-ai.netlify.app/83ffd4af-e805-471a-9de0-b769f1be45fb.jpg",
-      "https://shanti-ai.netlify.app/10ce5257-0ba5-4714-9867-b4953c5678ce.jpg",
-    ],
-  },
-  {
-    id: "5",
-    name: "Maksym",
-    designation: "VIP Member",
-    description: "The most sophisticated AI trading platform I've ever used. Real-time analytics, accurate predictions, and seamless integration. My trading journey has never been better!",
-    profileImage: "https://randomuser.me/api/portraits/men/55.jpg",
-    proofImages: [
-      "https://shanti-ai.netlify.app/edb66963-1817-4ac9-a311-c10e1b1130be.jpg",
-      "https://shanti-ai.netlify.app/ede899bf-e330-4215-9ca1-5dc9073a3d76.jpg",
-      "https://shanti-ai.netlify.app/ef096ae0-3ad2-47b3-ab74-63d175142a18.jpg",
-    ],
-  },
+const proofImagesList = [
+  [
+    "https://shanti-ai.netlify.app/83ffd4af-e805-471a-9de0-b769f1be45fb.jpg",
+    "https://shanti-ai.netlify.app/10ce5257-0ba5-4714-9867-b4953c5678ce.jpg",
+    "https://shanti-ai.netlify.app/ef096ae0-3ad2-47b3-ab74-63d175142a18.jpg",
+  ],
+  [
+    "https://shanti-ai.netlify.app/edb66963-1817-4ac9-a311-c10e1b1130be.jpg",
+    "https://shanti-ai.netlify.app/ede899bf-e330-4215-9ca1-5dc9073a3d76.jpg",
+  ],
+  [
+    "https://shanti-ai.netlify.app/f189a2eb-83c2-4cc5-8d77-dc248af40d35.jpg",
+    "https://shanti-ai.netlify.app/dbac7662-3e58-4118-95e6-31e648e7c145.jpg",
+  ],
+  [
+    "https://shanti-ai.netlify.app/83ffd4af-e805-471a-9de0-b769f1be45fb.jpg",
+    "https://shanti-ai.netlify.app/10ce5257-0ba5-4714-9867-b4953c5678ce.jpg",
+  ],
+  [
+    "https://shanti-ai.netlify.app/edb66963-1817-4ac9-a311-c10e1b1130be.jpg",
+    "https://shanti-ai.netlify.app/ede899bf-e330-4215-9ca1-5dc9073a3d76.jpg",
+    "https://shanti-ai.netlify.app/ef096ae0-3ad2-47b3-ab74-63d175142a18.jpg",
+  ],
 ];
 
 // ===== Main Component =====
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
+  // Get translated cards data
+  const translatedCards = t('home.testimonials.cards', { returnObjects: true }) as Array<{
+    name: string;
+    designation: string;
+    description: string;
+  }>;
+
+  // Build testimonial data from translations + static images
+  const testimonialData = translatedCards.map((card, index) => ({
+    id: String(index + 1),
+    name: card.name,
+    designation: card.designation,
+    description: card.description,
+    profileImage: profileImages[index] || "",
+    proofImages: proofImagesList[index] || [],
+  }));
+
   const cards = testimonialData.map((testimonial, index) => (
     <TestimonialCard
       key={testimonial.id}
@@ -597,10 +587,10 @@ const TestimonialsSection = () => {
             className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#00f0ff] via-[#ff00f0] to-[#ffcc00] bg-clip-text text-transparent mb-2 sm:mb-3 lg:mb-4">
-              What Our Members Say
+              {t('home.testimonials.title')}
             </h2>
             <p className="text-xs sm:text-sm lg:text-base text-gray-400 max-w-2xl mx-auto font-mono px-2">
-              Join hundreds of successful traders who trust Shanti AI for their daily trading decisions
+              {t('home.testimonials.subtitle')}
             </p>
           </motion.div>
 

@@ -44,6 +44,15 @@ export function Navbar() {
     }
   };
 
+  const languageOptions = [
+    { code: 'en', name: t('navbar.languageOptions.en') },
+    { code: 'ru', name: t('navbar.languageOptions.ru') },
+    { code: 'hi', name: t('navbar.languageOptions.hi') },
+    { code: 'fa', name: t('navbar.languageOptions.fa') },
+    { code: 'ar', name: t('navbar.languageOptions.ar') },
+    { code: 'zh', name: t('navbar.languageOptions.zh') }
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +78,7 @@ export function Navbar() {
                 }}
               >
                 <img 
-                  src="https://shanti-ai.netlify.app/shanti_logo.jpg" 
+                  src="/logo-for-site.jpg" 
                   alt="Shanti AI" 
                   className="w-full h-full object-cover"
                 />
@@ -118,7 +127,7 @@ export function Navbar() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    More
+                    {t('navbar.more')}
                     <motion.span 
                       className="absolute -bottom-0.5 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                       initial={{ width: 0 }}
@@ -157,14 +166,7 @@ export function Navbar() {
                 </motion.button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
-                {[
-                  { code: 'en', name: t('navbar.languageOptions.en') },
-                  { code: 'ru', name: t('navbar.languageOptions.ru') },
-                  { code: 'hi', name: t('navbar.languageOptions.hi') },
-                  { code: 'fa', name: t('navbar.languageOptions.fa') },
-                  { code: 'ar', name: t('navbar.languageOptions.ar') },
-                  { code: 'zh', name: t('navbar.languageOptions.zh') }
-                ].map(({ code, name }) => (
+                {languageOptions.map(({ code, name }) => (
                   <DropdownMenuItem 
                     key={code}
                     onClick={() => changeLanguage(code)} 
@@ -185,7 +187,7 @@ export function Navbar() {
               transition={{ ...transitions.smooth, delay: 0.2 }}
             >
               <CyberButton className="h-10 px-6 text-sm font-semibold">
-                Launch App
+                {t('navbar.launchApp')}
               </CyberButton>
             </motion.a>
           </div>
@@ -199,14 +201,7 @@ export function Navbar() {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
-                {[
-                  { code: 'en', name: t('navbar.languageOptions.en') },
-                  { code: 'ru', name: t('navbar.languageOptions.ru') },
-                  { code: 'hi', name: t('navbar.languageOptions.hi') },
-                  { code: 'fa', name: t('navbar.languageOptions.fa') },
-                  { code: 'ar', name: t('navbar.languageOptions.ar') },
-                  { code: 'zh', name: t('navbar.languageOptions.zh') }
-                ].map(({ code, name }) => (
+                {languageOptions.map(({ code, name }) => (
                   <DropdownMenuItem 
                     key={code}
                     onClick={() => changeLanguage(code)} 
@@ -219,12 +214,13 @@ export function Navbar() {
             </DropdownMenu>
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
               <CyberButton size="sm" className="h-9 px-4 text-xs font-semibold">
-                Launch
+                {t('navbar.launch')}
               </CyberButton>
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-400 hover:text-primary p-2 transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -239,14 +235,7 @@ export function Navbar() {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
-                {[
-                  { code: 'en', name: t('navbar.languageOptions.en') },
-                  { code: 'ru', name: t('navbar.languageOptions.ru') },
-                  { code: 'hi', name: t('navbar.languageOptions.hi') },
-                  { code: 'fa', name: t('navbar.languageOptions.fa') },
-                  { code: 'ar', name: t('navbar.languageOptions.ar') },
-                  { code: 'zh', name: t('navbar.languageOptions.zh') }
-                ].map(({ code, name }) => (
+                {languageOptions.map(({ code, name }) => (
                   <DropdownMenuItem 
                     key={code}
                     onClick={() => changeLanguage(code)} 
@@ -260,6 +249,7 @@ export function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-400 hover:text-primary p-1.5 transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -289,7 +279,7 @@ export function Navbar() {
               ))}
               <div className="pt-2 px-4">
                 <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <CyberButton className="w-full h-10 text-sm font-semibold">Launch App</CyberButton>
+                  <CyberButton className="w-full h-10 text-sm font-semibold">{t('navbar.launchApp')}</CyberButton>
                 </a>
               </div>
             </div>

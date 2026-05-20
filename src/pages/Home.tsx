@@ -220,8 +220,7 @@ export default function Home() {
         t('home.roadmap.phases.8.items.0'),
         t('home.roadmap.phases.8.items.1'),
         t('home.roadmap.phases.8.items.2'),
-        t('home.roadmap.phases.8.items.3'),
-        t('home.roadmap.phases.8.items.4')
+        t('home.roadmap.phases.8.items.3')
       ],
       completed: false
     }
@@ -496,23 +495,23 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                 <Activity className="w-5 h-5 text-primary" />
-                <span>The Journey Continues</span>
+                <span>{t('ourStory.journeyContinuesTitle')}</span>
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Behind every candle on TradingView is a story—whale movements, exchange manipulation, narrative shifts. We learned to read it all. We identified future scenarios before they unfolded. We mastered entry points, stop-loss placement, exit strategies. But manual analysis had limits. We needed something more.
+                {t('ourStory.journeyContinuesText')}
               </p>
             </div>
             
             <div>
               <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                 <Cpu className="w-5 h-5 text-secondary" />
-                <span>The AI Breakthrough</span>
+                <span>{t('ourStory.aiBreakthroughTitle')}</span>
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Then came AI. We realized we could automate what we'd spent years learning—pattern recognition, anomaly detection, on-chain data analysis, sentiment tracking. We could build a "brain" that never sleeps, never misses a signal, and never trades on emotion.
+                {t('ourStory.aiBreakthroughText1')}
               </p>
               <p className="text-primary text-sm font-medium mt-3">
-                A system that detects manipulation before it happens.
+                {t('ourStory.aiBreakthroughText2')}
               </p>
             </div>
           </div>
@@ -529,23 +528,23 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-accent" />
-                <span>The Proof & Progress</span>
+                <span>{t('ourStory.proofProgressTitle')}</span>
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                For over 18 months, we've tested this AI on live markets. It works. Now we're ready to share it with the world. Our Telegram bot is live—you can deposit, test the system, and see verified trade history spanning over a year.
+                {t('ourStory.proofProgressText1')}
               </p>
               <div className="mt-4 space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
-                  <p className="text-gray-300 text-sm">
-                    <span className="text-white font-medium">18+ months</span> of live market testing
-                  </p>
+                    <p className="text-gray-300 text-sm">
+                      <span className="text-white font-medium">{t('ourStory.proofProgressItem1')}</span>
+                    </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></div>
-                  <p className="text-gray-300 text-sm">
-                    <span className="text-white font-medium">Telegram bot live</span> — test with verified trade history
-                  </p>
+                    <p className="text-gray-300 text-sm">
+                      <span className="text-white font-medium">{t('ourStory.proofProgressItem2')}</span>
+                    </p>
                 </div>
               </div>
             </div>
@@ -553,37 +552,37 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-green-400" />
-                <span>The Future: $SHANTI Token</span>
+                <span>{t('ourStory.futureShantiTokenTitle')}</span>
               </h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></div>
-                  <p className="text-gray-300 text-sm">
-                    Not just any token—<span className="text-white font-medium">$SHANTI</span> is the fuel that powers the entire ecosystem
-                  </p>
+                    <p className="text-gray-300 text-sm">
+                      {t('ourStory.futureShantiTokenItem1')}
+                    </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-green-400 mt-2 shrink-0"></div>
-                  <p className="text-gray-300 text-sm">
-                    Grants access to alpha signals, passive income through staking, and governance over the platform's future
-                  </p>
+                    <p className="text-gray-300 text-sm">
+                      {t('ourStory.futureShantiTokenItem2')}
+                    </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 shrink-0"></div>
-                  <p className="text-gray-300 text-sm">
-                    Fair launch on Pump.fun. <span className="text-white font-medium">No VCs. No private rounds.</span> Everyone gets equal access
-                  </p>
+                    <p className="text-gray-300 text-sm">
+                      {t('ourStory.futureShantiTokenItem3')}
+                    </p>
                 </div>
               </div>
             </div>
             
             <div className="mt-6 p-4 bg-primary/10 border border-primary/30 rounded-lg">
-              <p className="text-primary font-bold text-sm mb-2">Our Mission</p>
+              <p className="text-primary font-bold text-sm mb-2">{t('ourStory.ourMissionTitle')}</p>
               <p className="text-white text-sm font-medium">
-                This is our fight. This is our mission.
+                {t('ourStory.ourMissionText1')}
               </p>
               <p className="text-gray-300 text-xs mt-1">
-                Join us in leveling the playing field against crypto cartels.
+                {t('ourStory.ourMissionText2')}
               </p>
             </div>
           </div>

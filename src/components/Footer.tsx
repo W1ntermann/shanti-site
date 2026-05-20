@@ -65,7 +65,7 @@ export function Footer() {
                     <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
                     <div className="relative w-10 h-10 overflow-hidden rounded border border-primary/50 shadow-[0_0_10px_rgba(0,243,255,0.3)]">
                       <img 
-                        src="https://shanti-ai.netlify.app/shanti_logo.jpg" 
+                        src="/logo-for-site.jpg" 
                         alt="Shanti AI" 
                         className="w-full h-full object-cover"
                       />

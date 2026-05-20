@@ -12,6 +12,12 @@
     "waitlist": "Waitlist",
     "testimonials": "Testimonials",
     "language": "Language",
+    "more": "More",
+    "launchApp": "Launch App",
+    "launch": "Launch",
+    "tapToExpand": "Tap to expand",
+    "clickToExpand": "Click to expand →",
+    "proofOfResults": "PROOF OF RESULTS",
     "languageOptions": {
       "en": "English",
       "ru": "Русский",
@@ -467,23 +473,33 @@
       }
     },
     "testimonials": {
-      "title": "What Traders Are Saying",
-      "subtitle": "Real results from real traders using ShantiAI",
+      "title": "What Our Members Say",
+      "subtitle": "Join hundreds of successful traders who trust Shanti AI for their daily trading decisions",
       "cards": [
         {
-          "name": "Alex Chen",
-          "status": "Bitcoin Trader",
-          "quote": "ShantiAI has changed how I trade. The AI catches patterns I would have missed. My returns are up 34% since I started using it."
+          "name": "Viktor",
+          "designation": "Verified Trader",
+          "description": "The trading signals from Shanti AI have been incredibly accurate. My portfolio has grown 40% in just 2 months. The AI's market analysis is spot-on and I've never felt more confident in my trades."
         },
         {
-          "name": "Maria Rodriguez",
-          "status": "Alt-Coin Strategist",
-          "quote": "Finally, a platform that's transparent about results. I can see every trade, verify the data, and trust the system. This is what crypto needed."
+          "name": "Petro",
+          "designation": "Pro Trader",
+          "description": "This AI trading system is a game-changer. The entry and exit signals are precise, and I've doubled my trading profits. The community support is amazing too!"
         },
         {
-          "name": "James Wilson",
-          "status": "Quantitative Analyst",
-          "quote": "The manipulation detection is incredible. I've avoided 3 coordinated dumps since using the alerts. Worth every penny."
+          "name": "Andriy",
+          "designation": "Elite Member",
+          "description": "I was skeptical at first, but Shanti AI proved me wrong. The AI predictions are consistently profitable. Best investment I've made for my trading career."
+        },
+        {
+          "name": "Sophia",
+          "designation": "Advanced Trader",
+          "description": "Shanti AI has transformed my trading approach completely. The risk management features are exceptional, and I've consistently achieved 35% monthly returns. Highly recommended!"
+        },
+        {
+          "name": "Maksym",
+          "designation": "VIP Member",
+          "description": "The most sophisticated AI trading platform I've ever used. Real-time analytics, accurate predictions, and seamless integration. My trading journey has never been better!"
         }
       ]
     }

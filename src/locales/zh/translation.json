@@ -12,6 +12,12 @@
     "waitlist": "等待名单",
     "testimonials": "客户评价",
     "language": "语言",
+    "more": "更多",
+    "launchApp": "启动应用",
+    "launch": "启动",
+    "tapToExpand": "点击展开",
+    "clickToExpand": "点击展开 →",
+    "proofOfResults": "结果证明",
     "languageOptions": {
       "en": "English",
       "ru": "Русский",
@@ -466,23 +472,33 @@
       }
     },
     "testimonials": {
-      "title": "交易者怎么说",
-      "subtitle": "使用ShantiAI的真实交易者的真实成果",
+      "title": "我们的会员怎么说",
+      "subtitle": "加入数以百计的成功交易者，他们信任 Shanti AI 进行日常交易决策",
       "cards": [
         {
-          "name": "亚历克斯·陈",
-          "status": "比特币交易者",
-          "quote": "ShantiAI改变了我的交易方式。人工智能捕捉到我会错过的模式。自从开始使用以来，我的回报增长了34%。"
+          "name": "维克托",
+          "designation": "认证交易者",
+          "description": "Shanti AI 的交易信号非常准确。我的投资组合在短短2个月内增长了40%。AI 的市场分析非常精准，我从未在交易中感到如此自信。"
         },
         {
-          "name": "玛丽亚·罗德里格斯",
-          "status": "山寨币策略专家",
-          "quote": "终于有一个关于结果诚实的平台。我可以看到每笔交易，验证数据，对系统放心。"
+          "name": "彼得罗",
+          "designation": "专业交易者",
+          "description": "这个 AI 交易系统改变了游戏规则。进场和出场信号非常精确，我的交易利润翻了一番。社区支持也非常棒！"
         },
         {
-          "name": "詹姆斯·威尔逊",
-          "status": "量化分析师",
-          "quote": "操纵检测令人难以置信。由于使用警报，我避开了3次协调抛售。物超所值。"
+          "name": "安德烈",
+          "designation": "精英会员",
+          "description": "起初我持怀疑态度，但 Shanti AI 证明我错了。AI 的预测持续盈利。这是我交易生涯中最好的投资。"
+        },
+        {
+          "name": "索菲亚",
+          "designation": "高级交易者",
+          "description": "Shanti AI 彻底改变了我交易的方式。风险管理功能非常出色，我持续实现每月35%的回报。强烈推荐！"
+        },
+        {
+          "name": "马克西姆",
+          "designation": "VIP会员",
+          "description": "这是我用过的最复杂的 AI 交易平台。实时分析、准确预测和无缝集成。我的交易之旅从未如此美好！"
         }
       ]
     }
