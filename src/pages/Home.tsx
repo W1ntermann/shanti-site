@@ -833,7 +833,7 @@ export default function Home() {
             className="tokenomics-card bg-cover bg-center relative overflow-hidden border border-white/10 rounded-lg p-8 mb-8"
           >
             {/* Background overlay for readability */}
-            <div className="absolute inset-0 bg-black/55 sm:bg-black/45 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/35 sm:bg-black/45 pointer-events-none" />
             <div className="flex items-center gap-3 mb-4">
               <BarChart3 className="w-6 h-6 text-primary" />
               <span className="text-white font-display font-bold">{t('home.tokenomics.chartLabel')}</span>
