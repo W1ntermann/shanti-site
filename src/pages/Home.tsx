@@ -9,6 +9,7 @@ import { RoadmapTimeline } from "@/components/RoadmapTimeline";
 import { BetaLiveCard } from "@/components/BetaLiveCard";
 import { PhilosophySection } from "@/components/PhilosophySection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { TokenomicsSection } from "@/components/TokenomicsSection";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -95,13 +96,6 @@ export default function Home() {
       desc: t('home.tokenUtility.features.3.desc'),
       color: "text-yellow-400"
     },
-  ];
-
-  const tokenomicsData = [
-    { label: t('home.tokenomics.distribution.0.label'), percent: 70, color: "bg-primary" },
-    { label: t('home.tokenomics.distribution.1.label'), percent: 10, color: "bg-purple-500" },
-    { label: t('home.tokenomics.distribution.2.label'), percent: 10, color: "bg-blue-500" },
-    { label: t('home.tokenomics.distribution.3.label'), percent: 10, color: "bg-pink-500" }
   ];
 
   const roadmapData = [
@@ -800,95 +794,7 @@ export default function Home() {
 </section>
 
       {/* TOKENOMICS SECTION */}
-      <section id="tokenomics" className="py-24 bg-black relative overflow-hidden tokenomics-section">
-        {/* Background image for tokenomics section */}
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/tokenomics2.jpg')",
-            backgroundAttachment: 'scroll',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0
-          }}
-        />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-10">
-            <SectionHeading centered>{t('home.tokenomics.title')}</SectionHeading>
-            <p className="text-center text-white/90 font-mono text-base mt-4">
-              {t('home.tokenomics.subtitle')}
-            </p>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="tokenomics-card bg-cover bg-center relative overflow-hidden border border-white/10 rounded-lg p-6 sm:p-8"
-          >
-            {/* Light overlay so background image is visible but text is readable */}
-            <div className="absolute inset-0 pointer-events-none" />
-            
-            {/* Header */}
-            <div className="relative z-10 flex items-center gap-3 mb-6">
-              <div className="p-2 bg-primary/20 rounded-lg">
-                <BarChart3 className="w-5 h-5 text-primary" />
-              </div>
-              <span className="text-white font-display font-bold text-lg">{t('home.tokenomics.chartLabel')}</span>
-            </div>
-            
-            {/* Progress bar with segment labels inside */}
-            <div className="relative z-10 mb-8">
-              <div className="flex gap-1 h-5 rounded-full overflow-hidden">
-                {tokenomicsData.map((item, i) => (
-                  <div
-                    key={i}
-                    className={`${item.color} relative group cursor-pointer transition-all duration-300 hover:opacity-90`}
-                    style={{ width: `${item.percent}%` }}
-                  >
-                    {/* Tooltip on hover */}
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap bg-black/80 text-white text-xs font-mono px-2 py-1 rounded">
-                      {item.percent}%
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {/* Percent labels below bar */}
-              <div className="flex mt-2">
-                {tokenomicsData.map((item, i) => (
-                  <div key={i} className="text-center" style={{ width: `${item.percent}%` }}>
-                    <span className="text-xs font-mono font-bold text-white/80">{item.percent}%</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Distribution items integrated inside the card */}
-            <div className="relative z-10 space-y-2">
-              {tokenomicsData.map((item, i) => {
-                const dotColors = ["bg-primary", "bg-purple-500", "bg-blue-500", "bg-pink-500"];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center justify-between py-3 px-4 rounded-lg border border-white/5 bg-black/30 backdrop-blur-sm hover:bg-black/40 dist-item"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full ${dotColors[i]} shadow-[0_0_6px_rgba(0,243,255,0.3)]`} />
-                      <span className="text-gray-200 font-medium text-sm">{item.label}</span>
-                    </div>
-                    <span className="text-primary font-display font-bold">{item.percent}%</span>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <TokenomicsSection />
 
       {/* ROADMAP SECTION */}
       <section id="roadmap" className="py-24 md:py-32 bg-background relative overflow-hidden">
