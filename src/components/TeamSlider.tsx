@@ -80,7 +80,7 @@ export function TeamSlider({ members }: TeamSliderProps) {
       {/* Loading Indicator */}
       {isLoading && (
         <div className="flex items-center justify-center py-20">
-          <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
         </div>
       )}
 
@@ -96,53 +96,49 @@ export function TeamSlider({ members }: TeamSliderProps) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-card/80 border border-border backdrop-blur-sm p-8 overflow-hidden clip-corner-br group hover:border-primary/50 team-card-hover h-full"
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                className="group relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.06] rounded-2xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/20"
               >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/30 group-hover:border-primary group-hover:shadow-[0_0_10px_rgba(0,243,255,0.5)] transition-all duration-300" />
-                <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-secondary/30 group-hover:border-secondary group-hover:shadow-[0_0_10px_rgba(255,0,255,0.5)] transition-all duration-300" />
-                
-                {/* Grid background overlay */}
-                <div className="absolute inset-0 bg-cyber-grid opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
-                
                 <div className="relative z-10 text-center h-full flex flex-col">
                   {/* Avatar */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto box-glow-cyan group-hover:scale-110 avatar-pulse transition-transform duration-300">
-                      <span className="text-3xl font-display font-bold text-primary-foreground">
-                        {member.avatar}
-                      </span>
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative">
+                      <div className="w-20 h-20 rounded-full bg-white/[0.08] border border-white/[0.08] flex items-center justify-center transition-all duration-300 group-hover:border-white/[0.15] group-hover:bg-white/[0.12]">
+                        <span className="text-xl font-semibold text-white/80 tracking-tight">
+                          {member.avatar}
+                        </span>
+                      </div>
+                      {/* Subtle ring on hover */}
+                      <div className="absolute -inset-[3px] rounded-full border border-transparent group-hover:border-white/[0.06] transition-all duration-500" />
                     </div>
-                    {/* Animated ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:border-primary/60 group-hover:scale-125 transition-all duration-500" />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 text-glow-cyan">
+                    <h3 className="text-lg font-semibold text-white mb-1.5 tracking-tight">
                       {member.name}
                     </h3>
-                    <p className="text-primary text-sm mb-4 font-mono uppercase tracking-wider">
+                    <p className="text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-4">
                       {member.role}
                     </p>
-                    <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
+                    <p className="text-sm text-white/50 leading-relaxed flex-1 mb-6">
                       {member.desc}
                     </p>
 
+                    {/* Divider */}
+                    <div className="w-8 h-px bg-white/[0.06] mx-auto mb-5 group-hover:w-16 group-hover:bg-white/[0.12] transition-all duration-300" />
+
                     {/* Social Links */}
-                    <div className="flex justify-center gap-3 mt-auto">
+                    <div className="flex justify-center gap-2 mt-auto">
                       {member.linkedin && (
                         <a
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-8 h-8 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/20 hover:shadow-[0_0_10px_rgba(0,243,255,0.5)] transition-all duration-300 group/link"
+                          className="w-9 h-9 rounded-full flex items-center justify-center text-white/30 hover:text-[#0A66C2] hover:bg-[#0A66C2]/10 transition-all duration-200"
+                          aria-label={`${member.name} LinkedIn`}
                         >
-                          <Linkedin className="w-4 h-4 text-muted-foreground group-hover/link:text-primary" />
+                          <Linkedin className="w-4 h-4" />
                         </a>
                       )}
                       {member.twitter && (
@@ -150,9 +146,10 @@ export function TeamSlider({ members }: TeamSliderProps) {
                           href={member.twitter}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-8 h-8 bg-card border border-border rounded-full flex items-center justify-center hover:border-secondary hover:bg-secondary/20 hover:shadow-[0_0_10px_rgba(255,0,255,0.5)] transition-all duration-300 group/link"
+                          className="w-9 h-9 rounded-full flex items-center justify-center text-white/30 hover:text-[#1DA1F2] hover:bg-[#1DA1F2]/10 transition-all duration-200"
+                          aria-label={`${member.name} Twitter`}
                         >
-                          <Twitter className="w-4 h-4 text-muted-foreground group-hover/link:text-secondary" />
+                          <Twitter className="w-4 h-4" />
                         </a>
                       )}
                       {member.github && (
@@ -160,9 +157,10 @@ export function TeamSlider({ members }: TeamSliderProps) {
                           href={member.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-8 h-8 bg-card border border-border rounded-full flex items-center justify-center hover:border-accent hover:bg-accent/20 hover:shadow-[0_0_10px_rgba(255,234,0,0.5)] transition-all duration-300 group/link"
+                          className="w-9 h-9 rounded-full flex items-center justify-center text-white/30 hover:text-white hover:bg-white/10 transition-all duration-200"
+                          aria-label={`${member.name} GitHub`}
                         >
-                          <Github className="w-4 h-4 text-muted-foreground group-hover/link:text-accent" />
+                          <Github className="w-4 h-4" />
                         </a>
                       )}
                     </div>
@@ -174,51 +172,54 @@ export function TeamSlider({ members }: TeamSliderProps) {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-center items-center gap-4 mt-8">
+      {/* Navigation Controls */}
+      <div className="flex justify-center items-center gap-5 mt-10">
         <button
           className={cn(
-            "w-12 h-12 border border-border bg-card/50 backdrop-blur-sm clip-corner-br flex items-center justify-center transition-all duration-300 hover:border-primary hover:bg-primary/20 hover:shadow-[0_0_15px_rgba(0,243,255,0.4)]",
-            prevBtnDisabled && "opacity-50 cursor-not-allowed"
+            "w-10 h-10 rounded-full border border-white/[0.08] bg-white/[0.02] flex items-center justify-center transition-all duration-200 hover:border-white/[0.15] hover:bg-white/[0.06]",
+            prevBtnDisabled && "opacity-30 cursor-not-allowed hover:border-white/[0.08] hover:bg-white/[0.02]"
           )}
           onClick={scrollPrev}
           disabled={prevBtnDisabled}
+          aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5 text-primary" />
+          <ChevronLeft className="w-4 h-4 text-white/60" />
         </button>
 
         {/* Dots Indicator */}
-        <div className="flex gap-2">
+        <div className="flex gap-2.5">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
               className={cn(
                 "w-2 h-2 rounded-full transition-all duration-300",
                 index === selectedIndex
-                  ? "bg-primary shadow-[0_0_10px_rgba(0,243,255,0.8)] scale-125"
-                  : "bg-border hover:bg-primary/50"
+                  ? "bg-white w-6"
+                  : "bg-white/[0.15] hover:bg-white/[0.3]"
               )}
               onClick={() => scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
         <button
           className={cn(
-            "w-12 h-12 border border-border bg-card/50 backdrop-blur-sm clip-corner-br flex items-center justify-center transition-all duration-300 hover:border-primary hover:bg-primary/20 hover:shadow-[0_0_15px_rgba(0,243,255,0.4)]",
-            nextBtnDisabled && "opacity-50 cursor-not-allowed"
+            "w-10 h-10 rounded-full border border-white/[0.08] bg-white/[0.02] flex items-center justify-center transition-all duration-200 hover:border-white/[0.15] hover:bg-white/[0.06]",
+            nextBtnDisabled && "opacity-30 cursor-not-allowed hover:border-white/[0.08] hover:bg-white/[0.02]"
           )}
           onClick={scrollNext}
           disabled={nextBtnDisabled}
+          aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 text-primary" />
+          <ChevronRight className="w-4 h-4 text-white/60" />
         </button>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full h-1 bg-border/30 rounded-full mt-6 overflow-hidden">
+      <div className="w-full h-0.5 bg-white/[0.04] rounded-full mt-8 overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 shadow-[0_0_10px_rgba(0,243,255,0.5)]"
+          className="h-full bg-white/25 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${((selectedIndex + 1) / scrollSnaps.length) * 100}%` }}
         />
       </div>

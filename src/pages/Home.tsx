@@ -6,10 +6,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { TeamSlider } from "@/components/TeamSlider";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { RoadmapTimeline } from "@/components/RoadmapTimeline";
-import { BetaLiveCard } from "@/components/BetaLiveCard";
 import { PhilosophySection } from "@/components/PhilosophySection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { TokenomicsSection } from "@/components/TokenomicsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -51,25 +51,6 @@ export default function Home() {
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const howItWorksSteps = [
-    {
-      num: 1,
-      title: t('home.howItWorks.steps.0.title'),
-      desc: t('home.howItWorks.steps.0.desc')
-    },
-    {
-      num: 2,
-      title: t('home.howItWorks.steps.1.title'),
-      desc: t('home.howItWorks.steps.1.desc')
-    },
-    {
-      num: 3,
-      title: t('home.howItWorks.steps.2.title'),
-      desc: t('home.howItWorks.steps.2.desc'),
-      betaNote: t('home.howItWorks.steps.2.betaNote')
-    }
-  ];
 
   const tokenUtilityFeatures = [
     {
@@ -593,53 +574,7 @@ export default function Home() {
 </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="py-24 bg-black relative overflow-hidden">
-        {/* Background Image - Optimized for all devices */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/working-system.jpg)',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
-            zIndex: 0
-          }}
-        />
-        
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/70" style={{ zIndex: 1 }} />
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeading centered>{t('home.howItWorks.title')}</SectionHeading>
-          <p className="text-center text-gray-400 mb-16 font-mono">
-            {t('home.howItWorks.subtitle')}
-          </p>
-          
-          <div className="space-y-6">
-            {howItWorksSteps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-[#111115] border border-white/10 rounded-lg p-6 text-center"
-                data-testid={`card-step-${step.num}`}
-              >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-display font-bold text-white">{step.num}</span>
-                </div>
-                <h3 className="text-xl font-display font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-gray-400 font-mono text-sm mb-4">{step.desc}</p>
-                
-                {/* Beta Live Card */}
-                {step.betaNote && (
-                  <BetaLiveCard betaNote={step.betaNote} />
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-24 md:py-48 bg-[#050508] relative overflow-hidden min-h-[600px] md:min-h-[800px]">
