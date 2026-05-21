@@ -280,14 +280,8 @@
 
 /* Make background position and overlay stronger on small screens */
 @media (max-width: 767px) {
-  .tokenomics-card {
-    background-position: center top;
-    background-size: cover;
-    padding: 1.25rem; /* keep spacing consistent */
-  }
-
   .tokenomics-card > .absolute.inset-0 {
-    background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.75));
+    background: linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.30));
   }
 
   .tokenomics-card .text-white, .tokenomics-card .text-muted-foreground {
@@ -297,8 +291,17 @@
 
 @media (min-width: 768px) {
   .tokenomics-card > .absolute.inset-0 {
-    background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
+    background: linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.20));
   }
+}
+
+/* Enhanced tokenomics distribution items */
+.tokenomics-card .dist-item {
+  transition: all 0.3s ease;
+}
+.tokenomics-card .dist-item:hover {
+  background: rgba(0, 243, 255, 0.08);
+  border-color: rgba(0, 243, 255, 0.25);
 }
 
 /* Partners section background tweaks */

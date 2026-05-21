@@ -363,31 +363,29 @@ export default function Home() {
 
 
 <section id="hero" className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Desktop Background Video */}
+      {/* Fullscreen Background Video – all devices */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        preload="metadata"
+        poster="/hero.jpg"
+        disablePictureInPicture
+        className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
       >
-        <source src="/dynamic-hero.mp4" type="video/mp4" />
+        <source src="/for-site.mp4" type="video/mp4" />
       </video>
       
-      {/* Mobile Background Image */}
+      {/* Cinematic gradient overlay: darker top/bottom, lighter center */}
       <div 
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
-        style={{
-          backgroundImage: 'url(/hero.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0
+        className="absolute inset-0 pointer-events-none"
+        style={{ 
+          zIndex: 1,
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.20) 40%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.75) 100%)'
         }}
       />
-      
-      {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} />
       
   <div className="absolute inset-0 bg-cyber-grid opacity-30 animate-pulse" style={{ zIndex: 2 }} />
   {/* Large blur elements - optimized for mobile */}
@@ -764,9 +762,6 @@ export default function Home() {
             zIndex: 0
           }}
         />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
-
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <SectionHeading centered>{t('home.tokenUtility.title')}</SectionHeading>
     <p className="text-center text-gray-400 mb-12 font-mono">
@@ -810,50 +805,88 @@ export default function Home() {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: "url('/tokenomics.jpg')",
+            backgroundImage: "url('/tokenomics2.jpg')",
             backgroundAttachment: 'scroll',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             zIndex: 0
           }}
         />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/65" style={{ zIndex: 1 }} />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeading centered>{t('home.tokenomics.title')}</SectionHeading>
-          <p className="text-center text-gray-400 mb-12 font-mono">
-            {t('home.tokenomics.subtitle')}
-          </p>
+          <div className="mb-10">
+            <SectionHeading centered>{t('home.tokenomics.title')}</SectionHeading>
+            <p className="text-center text-white/90 font-mono text-base mt-4">
+              {t('home.tokenomics.subtitle')}
+            </p>
+          </div>
           
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="tokenomics-card bg-cover bg-center relative overflow-hidden border border-white/10 rounded-lg p-8 mb-8"
+            className="tokenomics-card bg-cover bg-center relative overflow-hidden border border-white/10 rounded-lg p-6 sm:p-8"
           >
-            {/* Background overlay for readability */}
-            <div className="absolute inset-0 bg-black/35 sm:bg-black/45 pointer-events-none" />
-            <div className="flex items-center gap-3 mb-4">
-              <BarChart3 className="w-6 h-6 text-primary" />
-              <span className="text-white font-display font-bold">{t('home.tokenomics.chartLabel')}</span>
+            {/* Light overlay so background image is visible but text is readable */}
+            <div className="absolute inset-0 pointer-events-none" />
+            
+            {/* Header */}
+            <div className="relative z-10 flex items-center gap-3 mb-6">
+              <div className="p-2 bg-primary/20 rounded-lg">
+                <BarChart3 className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-white font-display font-bold text-lg">{t('home.tokenomics.chartLabel')}</span>
             </div>
             
-            <div className="mt-6 flex gap-2 h-4 rounded-full overflow-hidden">
-              {tokenomicsData.map((item, i) => (
-                <div key={i} className={`${item.color}`} style={{ width: `${item.percent}%` }} />
-              ))}
+            {/* Progress bar with segment labels inside */}
+            <div className="relative z-10 mb-8">
+              <div className="flex gap-1 h-5 rounded-full overflow-hidden">
+                {tokenomicsData.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`${item.color} relative group cursor-pointer transition-all duration-300 hover:opacity-90`}
+                    style={{ width: `${item.percent}%` }}
+                  >
+                    {/* Tooltip on hover */}
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap bg-black/80 text-white text-xs font-mono px-2 py-1 rounded">
+                      {item.percent}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/* Percent labels below bar */}
+              <div className="flex mt-2">
+                {tokenomicsData.map((item, i) => (
+                  <div key={i} className="text-center" style={{ width: `${item.percent}%` }}>
+                    <span className="text-xs font-mono font-bold text-white/80">{item.percent}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Distribution items integrated inside the card */}
+            <div className="relative z-10 space-y-2">
+              {tokenomicsData.map((item, i) => {
+                const dotColors = ["bg-primary", "bg-purple-500", "bg-blue-500", "bg-pink-500"];
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center justify-between py-3 px-4 rounded-lg border border-white/5 bg-black/30 backdrop-blur-sm hover:bg-black/40 dist-item"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${dotColors[i]} shadow-[0_0_6px_rgba(0,243,255,0.3)]`} />
+                      <span className="text-gray-200 font-medium text-sm">{item.label}</span>
+                    </div>
+                    <span className="text-primary font-display font-bold">{item.percent}%</span>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
-          
-          <div className="space-y-4">
-            {tokenomicsData.map((item, i) => (
-              <div key={i} className="flex justify-between items-center py-3 border-b border-white/10">
-                <span className="text-gray-300">{item.label}</span>
-                <span className="text-primary font-display font-bold">{item.percent}%</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
