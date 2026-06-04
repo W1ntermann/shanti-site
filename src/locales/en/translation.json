@@ -32,7 +32,7 @@
     "product": "Product",
     "resources": "Resources",
     "legal": "Legal",
-    "copyright": "© 2024 ShantiAI. All rights reserved.",
+    "copyright": "© 2024 StarQuantum AI. All rights reserved.",
     "disclaimer": "Not financial advice. Trade at your own risk.",
     "links": {
       "features": "Features",
@@ -51,7 +51,7 @@
   "philosophy": {
     "title": "Our Philosophy",
     "headline": "Designed for the Bold",
-    "lead": "We built ShantiAI for traders who demand",
+    "lead": "We built StarQuantum AI for traders who demand",
     "emphasis": "radical transparency",
     "disclaimer": "We don't hide behind marketing. We show verified results.",
     "sublead": "No hidden strategies. No VC-backed agendas. Just pure, unfiltered truth.",
@@ -106,7 +106,7 @@
     "aiForModernFinance": "AI FOR MODERN FINANCE",
     "description": "An autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7, free from emotion or fatigue.",
     "becomeAUser": "Become a User",
-    "exploreShantiAI": "Explore ShantiAI",
+    "exploreStarQuantumAI": "Explore StarQuantum AI",
     "testNewStrategy": "TEST OUR NEW STRATEGY"
   },
   "ourStory": {
@@ -127,10 +127,10 @@
     "proofProgressText1": "For over 18 months, we've tested this AI on live markets. It works. Now we're ready to share it with the world. Our Telegram bot is live—you can deposit, test the system, and see verified trade history spanning over a year.",
     "proofProgressItem1": "18+ months of live market testing",
     "proofProgressItem2": "Telegram bot live — test with verified trade history",
-    "futureShantiTokenTitle": "The Future: $SHANTI Token",
-    "futureShantiTokenItem1": "Not just any token—$SHANTI is the fuel that powers the entire ecosystem",
-    "futureShantiTokenItem2": "Grants access to alpha signals, passive income through staking, and governance over the platform's future",
-    "futureShantiTokenItem3": "Fair launch on Pump.fun. No VCs. No private rounds. Everyone gets equal access",
+    "futureStarQuantumTokenTitle": "The Future: $StarQuantum Token",
+    "futureStarQuantumTokenItem1": "Not just any token—$StarQuantum is the fuel that powers the entire ecosystem",
+    "futureStarQuantumTokenItem2": "Grants access to alpha signals, passive income through staking, and governance over the platform's future",
+    "futureStarQuantumTokenItem3": "Fair launch on Pump.fun. No VCs. No private rounds. Everyone gets equal access",
     "ourMissionTitle": "Our Mission",
     "ourMissionText1": "This is our fight. This is our mission.",
     "ourMissionText2": "Join us in leveling the playing field against crypto cartels."
@@ -140,7 +140,7 @@
       "title": "AI FOR MODERN FINANCE",
       "description": "An autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7, free from emotion or fatigue.",
       "becomeAUser": "Become a User",
-      "exploreShantiAI": "Explore ShantiAI",
+      "exploreStarQuantumAI": "Explore StarQuantum AI",
       "testNewStrategy": "TEST OUR NEW STRATEGY"
     },
     "howItWorks": {
@@ -164,23 +164,23 @@
     },
     "tokenUtility": {
       "title": "Token Utility",
-      "subtitle": "Unlock exclusive benefits by holding $SHANTI tokens",
+      "subtitle": "Unlock exclusive benefits by holding $StarQuantum tokens",
       "features": [
         {
           "title": "Access to Signals",
-          "desc": "Unlock alpha signals and early market alerts available exclusively to $SHANTI holders."
+          "desc": "Unlock alpha signals and early market alerts available exclusively to $StarQuantum holders."
         },
         {
           "title": "Staking Rewards",
-          "desc": "Earn passive income by staking $SHANTI tokens. Higher stakes = higher rewards."
+          "desc": "Earn passive income by staking $StarQuantum tokens. Higher stakes = higher rewards."
         },
         {
           "title": "Fee Discounts",
-          "desc": "Reduce platform trading fees based on your $SHANTI holdings. The more you own, the less you pay."
+          "desc": "Reduce platform trading fees based on your $StarQuantum holdings. The more you own, the less you pay."
         },
         {
           "title": "Governance Rights",
-          "desc": "Vote on platform upgrades, feature prioritization, and the direction of the ShantiAI ecosystem."
+          "desc": "Vote on platform upgrades, feature prioritization, and the direction of the StarQuantum AI ecosystem."
         }
       ]
     },
@@ -249,7 +249,7 @@
           "quarter": "Q3 2024",
           "title": "Token Launch Prep",
           "items": [
-            "$SHANTI token design finalized",
+            "$StarQuantum token design finalized",
             "Fair launch mechanism confirmed",
             "Exchange partnerships",
             "Staking contracts developed"
@@ -259,7 +259,7 @@
           "quarter": "Q4 2024",
           "title": "Token Launch",
           "items": [
-            "$SHANTI fair launch on Pump.fun",
+            "$StarQuantum fair launch on Pump.fun",
             "DEX listings",
             "Governance goes live",
             "Staking rewards begin"
@@ -337,7 +337,7 @@
         },
         {
           "role": "Backend Engineer",
-          "desc": "Built the infrastructure that keeps ShantiAI running 24/7 without interruption or downtime."
+          "desc": "Built the infrastructure that keeps StarQuantum AI running 24/7 without interruption or downtime."
         },
         {
           "role": "Blockchain Developer",
@@ -369,11 +369,11 @@
         },
         {
           "role": "Research Analyst",
-          "desc": "Continuously studies market trends and emerging strategies to keep ShantiAI ahead of the curve."
+          "desc": "Continuously studies market trends and emerging strategies to keep StarQuantum AI ahead of the curve."
         },
         {
           "role": "Legal & Compliance",
-          "desc": "Navigates the complex regulatory landscape to ensure ShantiAI operates transparently and legally."
+          "desc": "Navigates the complex regulatory landscape to ensure StarQuantum AI operates transparently and legally."
         },
         {
           "role": "Marketing Lead",
@@ -402,7 +402,7 @@
         },
         {
           "question": "What are the fees?",
-          "answer": "Trading fees are minimal and transparent. $SHANTI token holders get discounts based on their holdings. There are no hidden fees. Everything is clearly stated upfront."
+          "answer": "Trading fees are minimal and transparent. $StarQuantum token holders get discounts based on their holdings. There are no hidden fees. Everything is clearly stated upfront."
         },
         {
           "question": "How accurate is the AI?",
@@ -417,14 +417,14 @@
           "answer": "Our system has risk management built in. You set your maximum loss tolerance, position size, and strategy preferences. The AI respects these parameters in all conditions."
         },
         {
-          "question": "When is the $SHANTI token launching?",
+          "question": "When is the $StarQuantum token launching?",
           "answer": "Fair launch on Pump.fun with no VCs, no private rounds, and no unfair pre-sales. Equal access for everyone. Date will be announced when we're ready. No rushing."
         }
       ]
     },
     "about": {
-      "title": "About ShantiAI",
-      "paragraph1": "Born from the trenches of crypto trading, ShantiAI was created by traders who experienced firsthand the manipulation and unfair advantages that plague crypto markets. We've spent years developing the technology to level the playing field.",
+      "title": "About StarQuantum AI",
+      "paragraph1": "Born from the trenches of crypto trading, StarQuantum AI was created by traders who experienced firsthand the manipulation and unfair advantages that plague crypto markets. We've spent years developing the technology to level the playing field.",
       "paragraph2": "Our mission is simple: give every trader access to the same institutional-grade AI tools that only the elite have. No hidden strategies, no cherry-picked results—just verified, transparent data and technology that works."
     },
     "technology": {
@@ -474,12 +474,12 @@
     },
     "testimonials": {
       "title": "What Our Members Say",
-      "subtitle": "Join hundreds of successful traders who trust Shanti AI for their daily trading decisions",
+      "subtitle": "Join hundreds of successful traders who trust StarQuantum AI for their daily trading decisions",
       "cards": [
         {
           "name": "Viktor",
           "designation": "Verified Trader",
-          "description": "The trading signals from Shanti AI have been incredibly accurate. My portfolio has grown 40% in just 2 months. The AI's market analysis is spot-on and I've never felt more confident in my trades."
+          "description": "The trading signals from StarQuantum AI have been incredibly accurate. My portfolio has grown 40% in just 2 months. The AI's market analysis is spot-on and I've never felt more confident in my trades."
         },
         {
           "name": "Petro",
@@ -489,12 +489,12 @@
         {
           "name": "Andriy",
           "designation": "Elite Member",
-          "description": "I was skeptical at first, but Shanti AI proved me wrong. The AI predictions are consistently profitable. Best investment I've made for my trading career."
+          "description": "I was skeptical at first, but StarQuantum AI proved me wrong. The AI predictions are consistently profitable. Best investment I've made for my trading career."
         },
         {
           "name": "Sophia",
           "designation": "Advanced Trader",
-          "description": "Shanti AI has transformed my trading approach completely. The risk management features are exceptional, and I've consistently achieved 35% monthly returns. Highly recommended!"
+          "description": "StarQuantum AI has transformed my trading approach completely. The risk management features are exceptional, and I've consistently achieved 35% monthly returns. Highly recommended!"
         },
         {
           "name": "Maksym",

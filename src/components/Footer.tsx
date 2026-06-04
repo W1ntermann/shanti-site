@@ -66,14 +66,14 @@ export function Footer() {
                     <div className="relative w-10 h-10 overflow-hidden rounded border border-primary/50 shadow-[0_0_10px_rgba(0,243,255,0.3)]">
                       <img 
                         src="/logo-for-site.jpg" 
-                        alt="Shanti AI" 
+                        alt="StarQuantum AI" 
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-bold text-xl tracking-tight">ShantiAI</span>
+                    <span className="text-white font-bold text-xl tracking-tight">StarQuantum AI</span>
                     <span className="text-[10px] text-primary/60 tracking-wider uppercase">Artificial Intelligence</span>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export function Footer() {
               <DIcons.Heart className="text-red-500 mx-1 h-3 w-3 animate-pulse hover:scale-125 transition-transform" />
               <span>by</span>
               <span className="text-primary/80 hover:text-primary transition-colors cursor-pointer">
-                ShantiAI Team
+                StarQuantum AI Team
               </span>
             </div>
             <div className="text-xs font-mono text-gray-500 hover:text-gray-400 transition-colors">

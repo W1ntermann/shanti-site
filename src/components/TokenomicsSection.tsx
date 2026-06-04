@@ -53,7 +53,7 @@ const tokenDistribution: TokenomicsItem[] = [
 ];
 
 const keyMetrics = [
-  { label: "Ticker", value: "$SHANTI", icon: Coins, color: "text-primary border-primary/30" },
+  { label: "Ticker", value: "$StarQuantum", icon: Coins, color: "text-primary border-primary/30" },
   { label: "Total Supply", value: "1,000,000,000", icon: Layers, color: "text-purple-400 border-purple-500/30" },
   { label: "Blockchain", value: "Solana", icon: Network, color: "text-blue-400 border-blue-500/30" },
   { label: "Token Standard", value: "SPL", icon: CircleDollarSign, color: "text-pink-400 border-pink-500/30" },
@@ -294,7 +294,7 @@ export function TokenomicsSection() {
                   <p className="text-lg font-display font-bold text-white flex items-center justify-center gap-2">
                     <Infinity className="w-4 h-4 text-primary" />
                     1,000,000,000
-                    <span className="text-primary text-sm">$SHANTI</span>
+                    <span className="text-primary text-sm">$StarQuantum</span>
                   </p>
                 </div>
               </div>

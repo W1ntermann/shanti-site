@@ -399,7 +399,7 @@ export default function Home() {
           onClick={scrollToAbout}
           data-testid="button-explore"
         >
-          {t('home.hero.exploreShantiAI')}
+          {t('home.hero.exploreStarQuantumAI')}
         </CyberButton>
         <a href="https://t.me/shantiAIwealth" target="_blank" rel="noopener noreferrer">
           <CyberButton 
@@ -525,25 +525,25 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-green-400" />
-                <span>{t('ourStory.futureShantiTokenTitle')}</span>
+                  <span>{t('ourStory.futureStarQuantumTokenTitle')}</span>
               </h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></div>
                     <p className="text-gray-300 text-sm">
-                      {t('ourStory.futureShantiTokenItem1')}
+                      {t('ourStory.futureStarQuantumTokenItem1')}
                     </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-green-400 mt-2 shrink-0"></div>
                     <p className="text-gray-300 text-sm">
-                      {t('ourStory.futureShantiTokenItem2')}
+                      {t('ourStory.futureStarQuantumTokenItem2')}
                     </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 shrink-0"></div>
                     <p className="text-gray-300 text-sm">
-                      {t('ourStory.futureShantiTokenItem3')}
+                      {t('ourStory.futureStarQuantumTokenItem3')}
                     </p>
                 </div>
               </div>

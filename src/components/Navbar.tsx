@@ -79,7 +79,7 @@ export function Navbar() {
               >
                 <img 
                   src="/logo-for-site.jpg" 
-                  alt="Shanti AI" 
+                  alt="StarQuantum AI" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
@@ -90,7 +90,7 @@ export function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ ...transitions.smooth, delay: 0.1 }}
               >
-                SHANTI<span className="text-primary">.AI</span>
+                STARQUANTUM<span className="text-primary">.AI</span>
               </motion.span>
             </motion.div>
           </motion.div>
