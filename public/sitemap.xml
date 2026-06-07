@@ -4,6 +4,7 @@
   <!-- English (default) -->
   <url>
     <loc>https://starquantum.io/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
@@ -16,6 +17,7 @@
   <!-- Russian -->
   <url>
     <loc>https://starquantum.io/ru/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
@@ -28,6 +30,7 @@
   <!-- Hindi / Hinglish -->
   <url>
     <loc>https://starquantum.io/hi/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
@@ -40,6 +43,7 @@
   <!-- Farsi -->
   <url>
     <loc>https://starquantum.io/fa/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
@@ -52,6 +56,7 @@
   <!-- Arabic -->
   <url>
     <loc>https://starquantum.io/ar/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
@@ -64,6 +69,7 @@
   <!-- Chinese -->
   <url>
     <loc>https://starquantum.io/zh/</loc>
+    <lastmod>2026-06-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi/"/>
