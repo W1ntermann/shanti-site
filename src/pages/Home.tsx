@@ -388,7 +388,7 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
       >
-        <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/Star_Quantum_Bot" target="_blank" rel="noopener noreferrer">
           <CyberButton className="w-full sm:w-auto h-14 text-base px-10" data-testid="button-become-user">
             {t('home.hero.becomeAUser')}
           </CyberButton>
@@ -401,7 +401,7 @@ export default function Home() {
         >
           {t('home.hero.exploreStarQuantumAI')}
         </CyberButton>
-        <a href="https://t.me/shantiAIwealth" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/+ObGnIkpcUF5lNTc5" target="_blank" rel="noopener noreferrer">
           <CyberButton 
             variant="cyber" 
             className="w-full sm:w-auto h-14 text-base px-10"
@@ -927,7 +927,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-display font-bold text-white mb-1">{t('home.community.telegram')}</h3>
               <p className="text-primary text-lg font-bold mb-4">{t('home.community.telegramFollowers')}</p>
-              <a href="https://t.me/shantiAIwealth" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/+ObGnIkpcUF5lNTc5" target="_blank" rel="noopener noreferrer">
                 <CyberButton variant="secondary" className="w-full" data-testid="button-telegram">
                   {t('home.community.joinChat')}
                 </CyberButton>

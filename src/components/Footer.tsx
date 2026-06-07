@@ -29,7 +29,7 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Twitter, href: "https://twitter.com", label: "Twitter", testId: "link-footer-twitter" },
-    { icon: Telegram, href: "https://t.me/shantiAIwealth", label: "Telegram", testId: "link-footer-telegram" },
+    { icon: Telegram, href: "https://t.me/+ObGnIkpcUF5lNTc5", label: "Telegram", testId: "link-footer-telegram" },
     { icon: Github, href: "https://github.com", label: "Github", testId: "link-footer-github" },
   ];
 
