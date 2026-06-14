@@ -8,7 +8,10 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -78,6 +81,24 @@
     "postcss": "^8.4.47",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.3.1",
-    "typescript": "^5.8.0"
+    "typescript": "^5.8.0",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^16.2.9",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^32.0.0",
+    "stylelint-config-tailwindcss": "^0.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.0"
+  }
+  ,
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint --silent",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:styles --silent",
+      "git add"
+    ]
   }
 }
