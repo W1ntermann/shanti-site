@@ -198,7 +198,7 @@ export function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ ...transitions.smooth, delay: 0.2 }}
             >
-              <CyberButton className="h-10 px-6 text-sm font-semibold">
+              <CyberButton className="h-10 px-6 text-sm font-semibold whitespace-nowrap">
                 {t("navbar.launchApp")}
               </CyberButton>
             </motion.a>
