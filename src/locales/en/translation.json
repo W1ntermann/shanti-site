@@ -185,21 +185,43 @@
       ]
     },
     "tokenomics": {
+      "pillBadge": "Token Economics",
       "subtitle": "Fair distribution designed for community growth and platform sustainability",
       "title": "Tokenomics",
       "chartLabel": "Token Distribution",
+      "donutCenter": "To Community",
+      "totalSupplyLabel": "Total Supply",
+      "distributionTitle": "Distribution Breakdown",
+      "share": "Share:",
+      "amount": "Amount:",
+      "vestingLockup": "Vesting & Lockup",
+      "vestingLockupDetail": "Multi-sig secured • Audited smart contracts",
+      "metrics": {
+        "ticker": "Ticker",
+        "totalSupply": "Total Supply",
+        "blockchain": "Blockchain",
+        "tokenStandard": "Token Standard"
+      },
       "distribution": [
         {
-          "label": "Community & Users"
+          "label": "Community & Users",
+          "desc": "Airdrops, trading rewards, staking incentives, and ecosystem growth programs",
+          "vesting": "40% at TGE, 60% linear over 24 months"
         },
         {
-          "label": "Development & Operations"
+          "label": "Development & Ops",
+          "desc": "AI model training, infrastructure, engineering team, and ongoing R&D",
+          "vesting": "12-month cliff, then linear over 36 months"
         },
         {
-          "label": "Marketing & Partnerships"
+          "label": "Marketing & Partners",
+          "desc": "Strategic partnerships, exchange listings, community campaigns, and brand awareness",
+          "vesting": "6-month cliff, then linear over 18 months"
         },
         {
-          "label": "Treasury Reserve"
+          "label": "Treasury Reserve",
+          "desc": "Protocol-owned liquidity, insurance fund, and long-term ecosystem sustainability",
+          "vesting": "Multi-sig controlled, strategic releases"
         }
       ]
     },
@@ -471,6 +493,28 @@
         "errorTitle": "Error",
         "errorDescription": "Failed to subscribe. Try again."
       }
+    },
+    "seo": {
+      "title": "StarQuantum AI — Autonomous AI Trading Engine | 24/7 Market Analysis",
+      "description": "StarQuantum AI is an autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7. 18+ months verified live trading history.",
+      "keywords": [
+        "StarQuantum AI",
+        "crypto trading bot",
+        "AI trading engine",
+        "automated trading",
+        "market manipulation detection",
+        "crypto signals",
+        "decentralized trading",
+        "on-chain trading",
+        "Telegram trading bot",
+        "token utility",
+        "staking rewards",
+        "governance token",
+        "AI for finance",
+        "trading signals",
+        "crypto market analysis"
+      ],
+      "ogLocale": "en_US"
     },
     "testimonials": {
       "title": "What Our Members Say",

@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { 
   BarChart3, Coins, CircleDollarSign, 
@@ -19,58 +20,18 @@ interface TokenomicsItem {
   vesting?: string;
 }
 
-const tokenDistribution: TokenomicsItem[] = [
-  {
-    label: "Community & Users",
-    percent: 70,
-    color: "#00f3ff",
-    icon: Users,
-    description: "Airdrops, trading rewards, staking incentives, and ecosystem growth programs",
-    vesting: "40% at TGE, 60% linear over 24 months"
-  },
-  {
-    label: "Development & Ops",
-    percent: 10,
-    color: "#a855f7",
-    icon: Cog,
-    description: "AI model training, infrastructure, engineering team, and ongoing R&D",
-    vesting: "12-month cliff, then linear over 36 months"
-  },
-  {
-    label: "Marketing & Partners",
-    percent: 10,
-    color: "#3b82f6",
-    icon: Megaphone,
-    description: "Strategic partnerships, exchange listings, community campaigns, and brand awareness",
-    vesting: "6-month cliff, then linear over 18 months"
-  },
-  {
-    label: "Treasury Reserve",
-    percent: 10,
-    color: "#ec4899",
-    icon: PiggyBank,
-    description: "Protocol-owned liquidity, insurance fund, and long-term ecosystem sustainability",
-    vesting: "Multi-sig controlled, strategic releases"
-  }
-];
-
-const keyMetrics = [
-  { label: "Ticker", value: "$StarQuantum", icon: Coins, color: "text-primary border-primary/30" },
-  { label: "Total Supply", value: "1,000,000,000", icon: Layers, color: "text-purple-400 border-purple-500/30" },
-  { label: "Blockchain", value: "Solana", icon: Network, color: "text-blue-400 border-blue-500/30" },
-  { label: "Token Standard", value: "SPL", icon: CircleDollarSign, color: "text-pink-400 border-pink-500/30" },
-];
-
 function DonutChart({ 
   data,
   size = 280,
   strokeWidth = 40,
-  className
+  className,
+  centerLabel
 }: { 
   data: TokenomicsItem[];
   size?: number;
   strokeWidth?: number;
   className?: string;
+  centerLabel: string;
 }) {
   const ref = useRef<SVGSVGElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -160,7 +121,9 @@ function DonutChart({
       {/* Center text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
         <span className="text-3xl font-display font-black text-white">70%</span>
-        <span className="text-[10px] font-mono text-primary uppercase tracking-widest mt-1">To Community</span>
+        <span className="text-[10px] font-mono text-primary uppercase tracking-widest mt-1">
+          {centerLabel}
+        </span>
       </div>
     </div>
   );
@@ -214,6 +177,50 @@ function MetricCard({
 }
 
 export function TokenomicsSection() {
+  const { t } = useTranslation();
+
+  const tokenDistribution: TokenomicsItem[] = [
+    {
+      label: t("home.tokenomics.distribution.0.label"),
+      percent: 70,
+      color: "#00f3ff",
+      icon: Users,
+      description: t("home.tokenomics.distribution.0.desc"),
+      vesting: t("home.tokenomics.distribution.0.vesting")
+    },
+    {
+      label: t("home.tokenomics.distribution.1.label"),
+      percent: 10,
+      color: "#a855f7",
+      icon: Cog,
+      description: t("home.tokenomics.distribution.1.desc"),
+      vesting: t("home.tokenomics.distribution.1.vesting")
+    },
+    {
+      label: t("home.tokenomics.distribution.2.label"),
+      percent: 10,
+      color: "#3b82f6",
+      icon: Megaphone,
+      description: t("home.tokenomics.distribution.2.desc"),
+      vesting: t("home.tokenomics.distribution.2.vesting")
+    },
+    {
+      label: t("home.tokenomics.distribution.3.label"),
+      percent: 10,
+      color: "#ec4899",
+      icon: PiggyBank,
+      description: t("home.tokenomics.distribution.3.desc"),
+      vesting: t("home.tokenomics.distribution.3.vesting")
+    }
+  ];
+
+  const keyMetrics = [
+    { label: t("home.tokenomics.metrics.ticker"), value: "$StarQuantum", icon: Coins, color: "text-primary border-primary/30" },
+    { label: t("home.tokenomics.metrics.totalSupply"), value: "1,000,000,000", icon: Layers, color: "text-purple-400 border-purple-500/30" },
+    { label: t("home.tokenomics.metrics.blockchain"), value: "Solana", icon: Network, color: "text-blue-400 border-blue-500/30" },
+    { label: t("home.tokenomics.metrics.tokenStandard"), value: "SPL", icon: CircleDollarSign, color: "text-pink-400 border-pink-500/30" },
+  ];
+
   return (
     <section id="tokenomics" className="py-24 bg-black relative overflow-hidden tokenomics-section">
       {/* Background image */}
@@ -250,18 +257,18 @@ export function TokenomicsSection() {
           <div className="inline-block px-4 py-1 border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm mb-4">
             <span className="text-primary font-mono text-xs tracking-widest uppercase flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(0,243,255,0.8)]" />
-              Token Economics
+              {t("home.tokenomics.pillBadge")}
             </span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-pink-400">
-              Tokenomics
+              {t("home.tokenomics.title")}
             </span>
           </h2>
 
           <p className="text-gray-400 font-mono text-sm mt-4 max-w-2xl mx-auto">
-            Fair distribution designed for community growth and platform sustainability
+            {t("home.tokenomics.subtitle")}
           </p>
         </motion.div>
 
@@ -288,11 +295,13 @@ export function TokenomicsSection() {
               <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-primary/40" />
               
               <div className="flex flex-col items-center">
-                <DonutChart data={tokenDistribution} size={260} strokeWidth={36} className="mb-4" />
+                <DonutChart data={tokenDistribution} size={260} strokeWidth={36} className="mb-4" centerLabel={t("home.tokenomics.donutCenter")} />
                 
                 {/* Total supply note */}
                 <div className="text-center mt-2">
-                  <p className="text-xs font-mono text-gray-500 uppercase tracking-wider">Total Supply</p>
+                  <p className="text-xs font-mono text-gray-500 uppercase tracking-wider">
+                    {t("home.tokenomics.totalSupplyLabel")}
+                  </p>
                   <p className="text-lg font-display font-bold text-white flex items-center justify-center gap-2">
                     <Infinity className="w-4 h-4 text-primary" />
                     1,000,000,000
@@ -315,7 +324,9 @@ export function TokenomicsSection() {
               <div className="p-2 bg-primary/20 rounded-lg">
                 <BarChart3 className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-white font-display font-bold text-lg">Distribution Breakdown</span>
+              <span className="text-white font-display font-bold text-lg">
+                {t("home.tokenomics.distributionTitle")}
+              </span>
             </motion.div>
 
             {tokenDistribution.map((item, i) => (
@@ -396,11 +407,11 @@ export function TokenomicsSection() {
                             className="w-2 h-2 rounded-full"
                             style={{ backgroundColor: item.color }}
                           />
-                          Share: <span className="text-white font-bold">{item.percent}%</span>
+                          {t("home.tokenomics.share")} <span className="text-white font-bold">{item.percent}%</span>
                         </span>
                         <span className="flex items-center gap-1">
                           <Layers className="w-3 h-3" />
-                          Amount: <span className="text-white font-bold">{(item.percent / 100 * 1000000000).toLocaleString("en-US")}</span>
+                          {t("home.tokenomics.amount")} <span className="text-white font-bold">{(item.percent / 100 * 1000000000).toLocaleString("en-US")}</span>
                         </span>
                       </div>
                     </div>
@@ -419,10 +430,12 @@ export function TokenomicsSection() {
             >
               <div className="flex items-center gap-2">
                 <Lock className="w-4 h-4 text-primary" />
-                <span className="text-xs font-mono text-gray-400">Vesting & Lockup</span>
+                <span className="text-xs font-mono text-gray-400">
+                  {t("home.tokenomics.vestingLockup")}
+                </span>
               </div>
               <span className="text-xs font-mono text-primary">
-                Multi-sig secured &bull; Audited smart contracts
+                {t("home.tokenomics.vestingLockupDetail")}
               </span>
             </motion.div>
           </div>

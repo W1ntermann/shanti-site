@@ -225,6 +225,28 @@
       "note": "当新功能准备就绪时，我们会通知您。无垃圾邮件。",
       "toast": { "successTitle": "成功！", "successDescription": "您已被添加到等候名单。", "errorTitle": "错误", "errorDescription": "订阅失败。请重试。" }
     },
+    "seo": {
+      "title": "StarQuantum AI — 自主AI交易引擎 | 24/7 市场分析",
+      "description": "StarQuantum AI 是一个自主AI引擎，可检测市场操纵、识别机会并精确执行策略 — 24/7 全天候运行。18+ 个月经过验证的实时交易历史。",
+      "keywords": [
+        "StarQuantum AI",
+        "AI交易机器人",
+        "加密货币交易",
+        "自动交易",
+        "市场操纵检测",
+        "加密信号",
+        "去中心化交易",
+        "链上交易",
+        "Telegram交易机器人",
+        "代币实用性",
+        "质押奖励",
+        "治理代币",
+        "金融AI",
+        "交易信号",
+        "加密市场分析"
+      ],
+      "ogLocale": "zh_CN"
+    },
     "testimonials": {
       "title": "我们的会员怎么说",
       "subtitle": "加入数以百计的成功交易者，他们信任 StarQuantum AI 进行日常交易决策",

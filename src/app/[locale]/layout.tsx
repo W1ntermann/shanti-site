@@ -3,18 +3,25 @@ import { I18nProvider } from "../components/I18nProvider";
 import { Providers } from "./providers";
 import type { Metadata } from "next";
 
+import enSeo from "@/locales/en/translation.json";
+import ruSeo from "@/locales/ru/translation.json";
+import hiSeo from "@/locales/hi/translation.json";
+import faSeo from "@/locales/fa/translation.json";
+import arSeo from "@/locales/ar/translation.json";
+import zhSeo from "@/locales/zh/translation.json";
+
+const seoData: Record<string, { title: string; description: string; keywords: string[]; ogLocale: string }> = {
+  en: enSeo.home.seo as any,
+  ru: ruSeo.home.seo as any,
+  hi: hiSeo.home.seo as any,
+  fa: faSeo.home.seo as any,
+  ar: arSeo.home.seo as any,
+  zh: zhSeo.home.seo as any,
+};
+
 export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
 }
-
-const localeLabels: Record<string, string> = {
-  en: "English",
-  ru: "Русский",
-  hi: "हिन्दी",
-  fa: "فارسی",
-  ar: "العربية",
-  zh: "中文",
-};
 
 export async function generateMetadata({
   params,
@@ -22,15 +29,16 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const lang = localeLabels[locale] ?? "English";
+  const seo = seoData[locale] ?? seoData.en;
 
   return {
     title: {
       template: "%s | StarQuantum AI",
-      default: "StarQuantum AI — Autonomous AI Trading Engine",
+      default: seo.title,
     },
-    description:
-      "StarQuantum AI is an autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7.",
+    description: seo.description,
+    keywords: seo.keywords,
+    robots: "index, follow",
     alternates: {
       canonical: `https://starquantum.io/${locale === "en" ? "" : locale}`,
       languages: {
@@ -43,15 +51,36 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      locale: {
-        en: "en_US",
-        ru: "ru_RU",
-        hi: "hi_IN",
-        fa: "fa_IR",
-        ar: "ar_SA",
-        zh: "zh_CN",
-      }[locale],
+      type: "website",
+      url: `https://starquantum.io/${locale === "en" ? "" : locale}`,
+      title: seo.title,
+      description: seo.description,
+      images: [
+        {
+          url: "https://starquantum.io/og-image.jpg",
+          width: 1200,
+          height: 630,
+        },
+      ],
+      siteName: "StarQuantum AI",
+      locale: seo.ogLocale,
     },
+    twitter: {
+      card: "summary_large_image",
+      site: "@starquantumai",
+      title: seo.title,
+      description: seo.description,
+      images: ["https://starquantum.io/og-image.jpg"],
+    },
+    icons: {
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+    manifest: "/site.webmanifest",
   };
 }
 
@@ -62,8 +91,6 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // Note: In Next.js 15, params is a Promise; we can't await in a client-adjacent layout
-  // so we pass locale to a client wrapper that extracts it.
   return (
     <LocaleLayoutInner params={params}>{children}</LocaleLayoutInner>
   );
