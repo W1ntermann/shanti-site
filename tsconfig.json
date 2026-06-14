@@ -26,9 +26,6 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ],
-      "@assets/*": [
-        "./attached_assets/*"
       ]
     }
   },
