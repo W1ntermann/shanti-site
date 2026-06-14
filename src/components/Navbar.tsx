@@ -17,7 +17,15 @@ export function Navbar() {
   const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+    // Navigate to the locale-specific URL so crawlers see separate pages
+    const newPath = lng === "en" ? "/" : `/${lng}`;
+    if (window.location.pathname.replace(/\/+$/, "") !== newPath.replace(/\/+$/, "")) {
+      // Preserve hash for scroll position
+      const hash = window.location.hash || "";
+      window.location.href = newPath + hash;
+    } else {
+      i18n.changeLanguage(lng);
+    }
   };
 
   const mainNavLinks = [

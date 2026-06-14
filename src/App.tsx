@@ -12,10 +12,26 @@ import "./lib/i18n";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./lib/i18n"; // Імпортуйте ваш сконфігурований i18n інстанс
 
+// Supported locale codes mapped from URL path segments
+const SUPPORTED_LOCALES = ["en", "ru", "hi", "fa", "ar", "zh"];
+
+function getLocaleFromPath(): string | null {
+  // Extract locale from URL path: /ru, /ru/, /hi, /hi/ etc.
+  const segments = window.location.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  if (segments.length === 1 && SUPPORTED_LOCALES.includes(segments[0])) {
+    return segments[0];
+  }
+  return null;
+}
 
 function Router() {
   return (
     <Switch>
+      <Route path="/ru" component={Home} />
+      <Route path="/hi" component={Home} />
+      <Route path="/fa" component={Home} />
+      <Route path="/ar" component={Home} />
+      <Route path="/zh" component={Home} />
       <Route path="/" component={Home} />
       <Route component={NotFound} />
     </Switch>
@@ -24,6 +40,12 @@ function Router() {
 
 function App() {
   useEffect(() => {
+    // Detect locale from URL path and sync i18n
+    const localeFromPath = getLocaleFromPath();
+    if (localeFromPath && localeFromPath !== i18n.language) {
+      i18n.changeLanguage(localeFromPath);
+    }
+
     const updateDocumentDirection = (lng: string) => {
       document.documentElement.dir = i18n.dir(lng);
       document.documentElement.lang = lng;
