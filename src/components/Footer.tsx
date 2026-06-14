@@ -1,3 +1,5 @@
+"use client";
+
 import { Twitter, MessageCircle as Telegram, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { DIcons } from "dicons";

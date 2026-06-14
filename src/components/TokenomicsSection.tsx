@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -398,7 +400,7 @@ export function TokenomicsSection() {
                         </span>
                         <span className="flex items-center gap-1">
                           <Layers className="w-3 h-3" />
-                          Amount: <span className="text-white font-bold">{(item.percent / 100 * 1000000000).toLocaleString()}</span>
+                          Amount: <span className="text-white font-bold">{(item.percent / 100 * 1000000000).toLocaleString("en-US")}</span>
                         </span>
                       </div>
                     </div>

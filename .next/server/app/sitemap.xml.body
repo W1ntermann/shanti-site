@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://starquantum.io</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://starquantum.io/ru</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://starquantum.io/hi</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://starquantum.io/fa</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://starquantum.io/ar</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://starquantum.io/zh</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://starquantum.io" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://starquantum.io/ru" />
+<xhtml:link rel="alternate" hreflang="hi" href="https://starquantum.io/hi" />
+<xhtml:link rel="alternate" hreflang="fa" href="https://starquantum.io/fa" />
+<xhtml:link rel="alternate" hreflang="ar" href="https://starquantum.io/ar" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://starquantum.io/zh" />
+<lastmod>2026-06-14</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+</urlset>

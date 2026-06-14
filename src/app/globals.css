@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-card: #080808;
+  --color-card-foreground: #ffffff;
+  --color-primary: #00f3ff;
+  --color-primary-foreground: #000000;
+  --color-secondary: #7c3aed;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #262626;
+  --color-muted-foreground: #999999;
+  --color-accent: #ffea00;
+  --color-accent-foreground: #000000;
+  --color-destructive: #ff0000;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #262626;
+  --color-input: #262626;
+  --color-ring: #00f3ff;
+  --radius: 0.5rem;
+}
+
+/*
+  Use Tailwind v4's native base layer for border defaults and body styles.
+  In v4 the base styles are applied via the `preflight` by default so
+  `@layer base` is no longer needed for most reset styles.
+*/
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom utilities that Tailwind v4 doesn't have built-in */
+.bg-cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.clip-corner-tl-br {
+  clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+}
+
+/* Font families */
+.font-display { font-family: 'Orbitron', 'Syncopate', sans-serif; }
+.font-mono { font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace; }
+.font-body { font-family: 'Inter', 'DM Sans', sans-serif; }

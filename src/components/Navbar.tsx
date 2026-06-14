@@ -1,4 +1,8 @@
+"use client";
+
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { CyberButton } from "./CyberButton";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,37 +15,40 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { useTranslation } from "react-i18next";
+import { SUPPORTED_LOCALES } from "@/lib/locales";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n, t } = useTranslation();
+  const pathname = usePathname();
 
-  const changeLanguage = (lng: string) => {
-    // Navigate to the locale-specific URL so crawlers see separate pages
-    const newPath = lng === "en" ? "/" : `/${lng}`;
-    if (window.location.pathname.replace(/\/+$/, "") !== newPath.replace(/\/+$/, "")) {
-      // Preserve hash for scroll position
-      const hash = window.location.hash || "";
-      window.location.href = newPath + hash;
-    } else {
-      i18n.changeLanguage(lng);
+  // Extract current locale from pathname
+  const currentLocale = SUPPORTED_LOCALES.find((loc) => pathname.startsWith(`/${loc}`)) || "en";
+
+  const getLocalizedPath = (lng: string) => {
+    const segments = pathname.split("/").filter(Boolean);
+    // Remove current locale if present
+    if ((SUPPORTED_LOCALES as readonly string[]).includes(segments[0])) {
+      segments.shift();
     }
+    const basePath = segments.join("/");
+    return lng === "en" ? `/${basePath}` : `/${lng}${basePath ? `/${basePath}` : ""}`;
   };
 
   const mainNavLinks = [
-    { name: t('navbar.home'), href: "#hero" },
-    { name: t('navbar.howItWorks'), href: "#how-it-works" },
-    { name: t('navbar.tokenUtility'), href: "#token-utility" },
-    { name: t('navbar.tokenomics'), href: "#tokenomics" },
-    { name: t('navbar.roadmap'), href: "#roadmap" },
-    { name: t('navbar.team'), href: "#team" }
+    { name: t("navbar.home"), href: "#hero" },
+    { name: t("navbar.howItWorks"), href: "#how-it-works" },
+    { name: t("navbar.tokenUtility"), href: "#token-utility" },
+    { name: t("navbar.tokenomics"), href: "#tokenomics" },
+    { name: t("navbar.roadmap"), href: "#roadmap" },
+    { name: t("navbar.team"), href: "#team" },
   ];
 
   const secondaryNavLinks = [
-    { name: t('navbar.partners'), href: "#partners" },
-    { name: t('navbar.faq'), href: "#faq" },
-    { name: t('navbar.community'), href: "#community" },
-    { name: t('navbar.testimonials'), href: "#testimonials" }
+    { name: t("navbar.partners"), href: "#partners" },
+    { name: t("navbar.faq"), href: "#faq" },
+    { name: t("navbar.community"), href: "#community" },
+    { name: t("navbar.testimonials"), href: "#testimonials" },
   ];
 
   const handleScroll = (id: string) => {
@@ -53,12 +60,12 @@ export function Navbar() {
   };
 
   const languageOptions = [
-    { code: 'en', name: t('navbar.languageOptions.en') },
-    { code: 'ru', name: t('navbar.languageOptions.ru') },
-    { code: 'hi', name: t('navbar.languageOptions.hi') },
-    { code: 'fa', name: t('navbar.languageOptions.fa') },
-    { code: 'ar', name: t('navbar.languageOptions.ar') },
-    { code: 'zh', name: t('navbar.languageOptions.zh') }
+    { code: "en", name: t("navbar.languageOptions.en") },
+    { code: "ru", name: t("navbar.languageOptions.ru") },
+    { code: "hi", name: t("navbar.languageOptions.hi") },
+    { code: "fa", name: t("navbar.languageOptions.fa") },
+    { code: "ar", name: t("navbar.languageOptions.ar") },
+    { code: "zh", name: t("navbar.languageOptions.zh") },
   ];
 
   return (
@@ -66,33 +73,29 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
-            className="flex-shrink-0 cursor-pointer" 
+          <motion.div
+            className="flex-shrink-0 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             transition={transitions.springSnappy}
           >
-            <motion.div 
+            <motion.div
               className="flex items-center gap-2.5"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={transitions.smooth}
             >
-              <motion.div 
+              <motion.div
                 className="relative w-10 h-10 overflow-hidden rounded border border-primary/50 shadow-[0_0_10px_rgba(0,243,255,0.3)]"
                 whileHover={{
                   boxShadow: "0 0 20px rgba(0, 243, 255, 0.6)",
                 }}
               >
-                <img 
-                  src="/logo-for-site.jpg" 
-                  alt="StarQuantum AI" 
-                  className="w-full h-full object-cover"
-                />
+                <img src="/logo-for-site.jpg" alt="StarQuantum AI" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
               </motion.div>
-              <motion.span 
+              <motion.span
                 className="font-display font-bold text-lg tracking-wider text-white hidden sm:inline"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -118,7 +121,7 @@ export function Navbar() {
                   transition={{ ...transitions.smooth, delay: index * 0.05 }}
                 >
                   {link.name}
-                  <motion.span 
+                  <motion.span
                     className="absolute -bottom-0.5 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
@@ -126,17 +129,17 @@ export function Navbar() {
                   />
                 </motion.button>
               ))}
-              
+
               {/* More dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <motion.button 
+                  <motion.button
                     className="px-3 py-2 font-mono text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-widest group rounded-sm relative"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {t('navbar.more')}
-                    <motion.span 
+                    {t("navbar.more")}
+                    <motion.span
                       className="absolute -bottom-0.5 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                       initial={{ width: 0 }}
                       whileHover={{ width: "100%" }}
@@ -147,8 +150,8 @@ export function Navbar() {
                 <DropdownMenuContent className="w-48 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
                   {secondaryNavLinks.map((link) => (
                     <motion.div key={link.name}>
-                      <DropdownMenuItem 
-                        onClick={() => handleScroll(link.href)} 
+                      <DropdownMenuItem
+                        onClick={() => handleScroll(link.href)}
                         className="cursor-pointer text-gray-300 hover:text-primary focus:text-primary"
                       >
                         {link.name}
@@ -165,7 +168,7 @@ export function Navbar() {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <motion.button 
+                <motion.button
                   className="p-2 rounded-sm hover:bg-white/10 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -175,27 +178,28 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
                 {languageOptions.map(({ code, name }) => (
-                  <DropdownMenuItem 
-                    key={code}
-                    onClick={() => changeLanguage(code)} 
-                    className="cursor-pointer text-gray-300 hover:text-primary focus:text-primary"
-                  >
-                    {name}
+                  <DropdownMenuItem key={code} asChild>
+                    <Link
+                      href={getLocalizedPath(code)}
+                      className={`cursor-pointer text-gray-300 hover:text-primary focus:text-primary ${code === currentLocale ? "text-primary font-medium" : ""}`}
+                    >
+                      {name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            
-            <motion.a 
-              href="https://t.me/sshanti_bot" 
-              target="_blank" 
+
+            <motion.a
+              href="https://t.me/sshanti_bot"
+              target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ ...transitions.smooth, delay: 0.2 }}
             >
               <CyberButton className="h-10 px-6 text-sm font-semibold">
-                {t('navbar.launchApp')}
+                {t("navbar.launchApp")}
               </CyberButton>
             </motion.a>
           </div>
@@ -210,19 +214,20 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
                 {languageOptions.map(({ code, name }) => (
-                  <DropdownMenuItem 
-                    key={code}
-                    onClick={() => changeLanguage(code)} 
-                    className="cursor-pointer text-gray-300 hover:text-primary focus:text-primary"
-                  >
-                    {name}
+                  <DropdownMenuItem key={code} asChild>
+                    <Link
+                      href={getLocalizedPath(code)}
+                      className={`cursor-pointer text-gray-300 hover:text-primary focus:text-primary ${code === currentLocale ? "text-primary font-medium" : ""}`}
+                    >
+                      {name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
             <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
               <CyberButton size="sm" className="h-9 px-4 text-xs font-semibold">
-                {t('navbar.launch')}
+                {t("navbar.launch")}
               </CyberButton>
             </a>
             <button
@@ -244,12 +249,13 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-40 bg-gray-950/95 border border-white/20 backdrop-blur-lg">
                 {languageOptions.map(({ code, name }) => (
-                  <DropdownMenuItem 
-                    key={code}
-                    onClick={() => changeLanguage(code)} 
-                    className="cursor-pointer text-gray-300 hover:text-primary focus:text-primary"
-                  >
-                    {name}
+                  <DropdownMenuItem key={code} asChild>
+                    <Link
+                      href={getLocalizedPath(code)}
+                      className={`cursor-pointer text-gray-300 hover:text-primary focus:text-primary ${code === currentLocale ? "text-primary font-medium" : ""}`}
+                    >
+                      {name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -287,7 +293,7 @@ export function Navbar() {
               ))}
               <div className="pt-2 px-4">
                 <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <CyberButton className="w-full h-10 text-sm font-semibold">{t('navbar.launchApp')}</CyberButton>
+                  <CyberButton className="w-full h-10 text-sm font-semibold">{t("navbar.launchApp")}</CyberButton>
                 </a>
               </div>
             </div>
