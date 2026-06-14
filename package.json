@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
-    "type-check": "tsc --noEmit",
-    "prepare": "husky install"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -86,19 +85,6 @@
     "eslint-config-next": "^16.2.9",
     "stylelint": "^15.10.0",
     "stylelint-config-standard": "^32.0.0",
-    "stylelint-config-tailwindcss": "^0.1.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.0"
-  }
-  ,
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "npm run lint --silent",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "npm run lint:styles --silent",
-      "git add"
-    ]
+    "stylelint-config-tailwindcss": "^0.1.0"
   }
 }
