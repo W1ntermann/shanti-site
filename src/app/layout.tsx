@@ -9,48 +9,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://starquantum.io"),
-  title: "StarQuantum AI — Autonomous AI Trading Engine | 24/7 Market Analysis",
-  description:
-    "StarQuantum AI is an autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7, free from emotion or fatigue. 18+ months verified live trading history.",
-  keywords: [
-    "StarQuantum AI",
-    "crypto trading",
-    "AI trading bot",
-    "automated trading",
-    "market manipulation detection",
-    "crypto signals",
-    "decentralized trading",
-    "on-chain trading",
-    "Telegram trading bot",
-    "token utility",
-    "staking",
-    "governance",
-  ],
   robots: "index, follow",
-  openGraph: {
-    type: "website",
-    url: "https://starquantum.io",
-    title: "StarQuantum AI — Autonomous AI Trading Engine",
-    description:
-      "An autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7. 18+ months verified live trading.",
-    images: [
-      {
-        url: "https://starquantum.io/og-image.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    siteName: "StarQuantum AI",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@starquantumai",
-    title: "StarQuantum AI — Autonomous AI Trading Engine",
-    description:
-      "An autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies 24/7. 18+ months verified live trading.",
-    images: ["https://starquantum.io/og-image.jpg"],
-  },
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -60,17 +19,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  alternates: {
-    canonical: "https://starquantum.io",
-    languages: {
-      en: "https://starquantum.io/",
-      ru: "https://starquantum.io/ru",
-      hi: "https://starquantum.io/hi",
-      fa: "https://starquantum.io/fa",
-      ar: "https://starquantum.io/ar",
-      zh: "https://starquantum.io/zh",
-    },
-  },
 };
 
 const jsonLd = {
