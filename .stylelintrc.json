@@ -1,7 +1,6 @@
 {
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-tailwindcss"
+    "stylelint-config-standard"
   ],
   "rules": {
     "at-rule-no-unknown": [
@@ -15,7 +14,12 @@
           "screen",
           "theme",
           "layer",
-          "container"
+          "container",
+          "utility",
+          "custom-variant",
+          "reference",
+          "plugin",
+          "source"
         ]
       }
     ]
