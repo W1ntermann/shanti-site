@@ -40,9 +40,9 @@ export async function generateMetadata({
     keywords: seo.keywords,
     robots: "index, follow",
     alternates: {
-      canonical: `https://starquantum.io/${locale === "en" ? "" : locale}`,
+      canonical: `https://starquantum.io/${locale}`,
       languages: {
-        en: "https://starquantum.io/",
+        en: "https://starquantum.io/en",
         ru: "https://starquantum.io/ru",
         hi: "https://starquantum.io/hi",
         fa: "https://starquantum.io/fa",
@@ -52,7 +52,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      url: `https://starquantum.io/${locale === "en" ? "" : locale}`,
+      url: `https://starquantum.io/${locale}`,
       title: seo.title,
       description: seo.description,
       images: [

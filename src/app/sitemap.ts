@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://starquantum.io";
 
   const localeUrls = SUPPORTED_LOCALES.map((locale) => ({
-    url: locale === "en" ? baseUrl : `${baseUrl}/${locale}`,
+    url: `${baseUrl}/${locale}`,
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: "weekly" as const,
     priority: locale === "en" ? 1.0 : 0.9,
@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languages: Object.fromEntries(
         SUPPORTED_LOCALES.map((l) => [
           l,
-          l === "en" ? baseUrl : `${baseUrl}/${l}`,
+          `${baseUrl}/${l}`,
         ]),
       ),
     },
