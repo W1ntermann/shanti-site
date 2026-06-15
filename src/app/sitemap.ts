@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { SUPPORTED_LOCALES } from "@/lib/locales";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://starquantum.io";
+  const baseUrl = "https://www.starquantum.io";
 
   const localeUrls = SUPPORTED_LOCALES.map((locale) => ({
     url: `${baseUrl}/${locale}`,

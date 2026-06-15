@@ -40,24 +40,24 @@ export async function generateMetadata({
     keywords: seo.keywords,
     robots: "index, follow",
     alternates: {
-      canonical: `https://starquantum.io/${locale}`,
+      canonical: `https://www.starquantum.io/${locale}`,
       languages: {
-        en: "https://starquantum.io/en",
-        ru: "https://starquantum.io/ru",
-        hi: "https://starquantum.io/hi",
-        fa: "https://starquantum.io/fa",
-        ar: "https://starquantum.io/ar",
-        zh: "https://starquantum.io/zh",
+        en: "https://www.starquantum.io/en",
+        ru: "https://www.starquantum.io/ru",
+        hi: "https://www.starquantum.io/hi",
+        fa: "https://www.starquantum.io/fa",
+        ar: "https://www.starquantum.io/ar",
+        zh: "https://www.starquantum.io/zh",
       },
     },
     openGraph: {
       type: "website",
-      url: `https://starquantum.io/${locale}`,
+      url: `https://www.starquantum.io/${locale}`,
       title: seo.title,
       description: seo.description,
       images: [
         {
-          url: "https://starquantum.io/og-image.jpg",
+          url: "https://www.starquantum.io/og-image.jpg",
           width: 1200,
           height: 630,
         },
@@ -70,7 +70,7 @@ export async function generateMetadata({
       site: "@starquantumai",
       title: seo.title,
       description: seo.description,
-      images: ["https://starquantum.io/og-image.jpg"],
+      images: ["https://www.starquantum.io/og-image.jpg"],
     },
     icons: {
       icon: [

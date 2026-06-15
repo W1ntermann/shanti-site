@@ -8,7 +8,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://starquantum.io"),
+  metadataBase: new URL("https://www.starquantum.io"),
   robots: "index, follow",
   icons: {
     icon: [
@@ -25,8 +25,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "StarQuantum AI",
-  url: "https://starquantum.io",
-  logo: "https://starquantum.io/logo-for-site.jpg",
+  url: "https://www.starquantum.io",
+  logo: "https://www.starquantum.io/logo-for-site.jpg",
   description:
     "StarQuantum AI is an autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7.",
   sameAs: [
@@ -39,7 +39,7 @@ const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "StarQuantum AI",
-  url: "https://starquantum.io",
+  url: "https://www.starquantum.io",
   description:
     "Autonomous AI trading engine — 24/7 market analysis, manipulation detection, and strategy execution.",
   inLanguage: ["en", "ru", "hi", "fa", "ar", "zh"],
@@ -47,7 +47,7 @@ const webSiteJsonLd = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://starquantum.io/search?q={search_term_string}",
+      urlTemplate: "https://www.starquantum.io/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
