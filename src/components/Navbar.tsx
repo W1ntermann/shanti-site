@@ -191,7 +191,7 @@ export function Navbar() {
             </DropdownMenu>
 
             <motion.a
-              href="https://t.me/sshanti_bot"
+              href="https://t.me/Star_Quantum_Bot"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: 20 }}
@@ -225,7 +225,7 @@ export function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/Star_Quantum_Bot" target="_blank" rel="noopener noreferrer">
               <CyberButton size="sm" className="h-9 px-4 text-xs font-semibold">
                 {t("navbar.launch")}
               </CyberButton>
@@ -292,7 +292,7 @@ export function Navbar() {
                 </button>
               ))}
               <div className="pt-2 px-4">
-                <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <a href="https://t.me/Star_Quantum_Bot" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <CyberButton className="w-full h-10 text-sm font-semibold">{t("navbar.launchApp")}</CyberButton>
                 </a>
               </div>

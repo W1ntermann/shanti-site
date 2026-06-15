@@ -151,7 +151,7 @@ export function PhilosophySection() {
               {t('philosophy.missionText')}
             </p>
             <a 
-              href="https://t.me/sshanti_bot" 
+              href="https://t.me/Star_Quantum_Bot" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block"

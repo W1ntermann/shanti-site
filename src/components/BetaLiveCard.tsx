@@ -100,7 +100,7 @@ export function BetaLiveCard({ }: BetaLiveCardProps) {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://t.me/sshanti_bot" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
+            <a href="https://t.me/Star_Quantum_Bot" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
               <CyberButton className="w-full sm:w-auto px-8 py-3 text-sm">
                 <Zap className="w-4 h-4 mr-2" />
                 {t('betaLive.depositNow')}
