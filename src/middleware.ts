@@ -4,14 +4,7 @@ const SUPPORTED_LOCALES = ["en", "ru", "hi", "fa", "ar", "zh"];
 const DEFAULT_LOCALE = "en";
 
 export default function proxy(request: NextRequest) {
-  const { pathname, hostname } = request.nextUrl;
-
-  // Redirect www → non-www
-  if (hostname.startsWith("www.")) {
-    const url = request.nextUrl.clone();
-    url.hostname = hostname.replace(/^www\./, "");
-    return NextResponse.redirect(url, 301);
-  }
+  const { pathname } = request.nextUrl;
 
   // Skip static assets, Next.js internals, and API routes
   if (
