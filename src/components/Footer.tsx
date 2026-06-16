@@ -180,7 +180,7 @@ export function Footer() {
               </a>
               <a
                 aria-label="Instagram"
-                href="https://www.instagram.com/shantiAI/"
+                href="https://www.instagram.com/starquantum_ai/"
                 rel="noreferrer"
                 target="_blank"
                 className={`${Underline} hover:border-primary/50 hover:bg-primary/5 backdrop-blur-sm`}
