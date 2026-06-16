@@ -31,7 +31,7 @@ export function CommunitySection() {
             </div>
             <h3 className="text-xl font-display font-bold text-white mb-1">{t("home.community.twitter")}</h3>
             <p className="text-primary text-lg font-bold mb-4">{t("home.community.twitterFollowers")}</p>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/starquantum_io" target="_blank" rel="noopener noreferrer">
               <CyberButton variant="secondary" className="w-full">{t("home.community.followUs")}</CyberButton>
             </a>
           </motion.div>

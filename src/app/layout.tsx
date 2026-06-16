@@ -30,7 +30,7 @@ const jsonLd = {
   description:
     "StarQuantum AI is an autonomous AI engine that detects market manipulation, identifies opportunities, and executes strategies with precision — 24/7.",
   sameAs: [
-    "https://twitter.com/starquantumai",
+    "https://x.com/starquantum_io",
     "https://t.me/starquantumai",
   ],
 };

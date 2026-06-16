@@ -67,7 +67,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site: "@starquantumai",
+      site: "@starquantum_io",
       title: seo.title,
       description: seo.description,
       images: ["https://www.starquantum.io/og-image.jpg"],

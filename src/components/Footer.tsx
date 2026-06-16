@@ -1,6 +1,6 @@
 "use client";
 
-import { Twitter, MessageCircle as Telegram, Github } from "lucide-react";
+import { X, MessageCircle as Telegram, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { DIcons } from "dicons";
 
@@ -29,11 +29,7 @@ export function Footer() {
     { name: t("footer.links.riskDisclaimer"), href: "#" }
   ];
 
-  const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter", testId: "link-footer-twitter" },
-    { icon: Telegram, href: "https://t.me/+ObGnIkpcUF5lNTc5", label: "Telegram", testId: "link-footer-telegram" },
-    { icon: Github, href: "https://github.com", label: "Github", testId: "link-footer-github" },
-  ];
+
 
   return (
     <footer className="relative mx-auto w-full border-t border-white/10 bg-black overflow-hidden">
@@ -83,21 +79,6 @@ export function Footer() {
               <p className="text-gray-400 text-sm mb-6 max-w-sm leading-relaxed">
                 {t('footer.description')}
               </p>
-              
-              <div className="flex gap-4">
-                {socialLinks.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300 backdrop-blur-sm"
-                    data-testid={social.testId}
-                  >
-                    <social.icon className="w-4 h-4 text-gray-400 hover:text-primary transition-colors" />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Product Links */}
@@ -190,7 +171,7 @@ export function Footer() {
               </a>
               <a
                 aria-label="X (Twitter)"
-                href="https://x.com/shantiAI"
+                href="https://x.com/starquantum_io"
                 rel="noreferrer"
                 target="_blank"
                 className={`${Underline} hover:border-primary/50 hover:bg-primary/5 backdrop-blur-sm`}
@@ -207,13 +188,15 @@ export function Footer() {
                 <DIcons.Instagram className="h-5 w-5 text-gray-400 hover:text-primary transition-colors" />
               </a>
               <a
-                aria-label="LinkedIn"
-                href="https://www.linkedin.com/company/shantiAI"
+                aria-label="TikTok"
+                href="#"
                 rel="noreferrer"
                 target="_blank"
                 className={`${Underline} hover:border-primary/50 hover:bg-primary/5 backdrop-blur-sm`}
               >
-                <DIcons.LinkedIn className="h-5 w-5 text-gray-400 hover:text-primary transition-colors" />
+                <svg className="h-5 w-5 text-gray-400 hover:text-primary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
               </a>
             </div>
           </div>
