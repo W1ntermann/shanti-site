@@ -7,9 +7,22 @@ export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
+// This metadata applies to the root path only
+// The locale pages have their own metadata in [locale]/layout.tsx
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.starquantum.io"),
   robots: "index, follow",
+  alternates: {
+    canonical: "https://www.starquantum.io/en",
+    languages: {
+      en: "https://www.starquantum.io/en",
+      ru: "https://www.starquantum.io/ru",
+      hi: "https://www.starquantum.io/hi",
+      fa: "https://www.starquantum.io/fa",
+      ar: "https://www.starquantum.io/ar",
+      zh: "https://www.starquantum.io/zh",
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },

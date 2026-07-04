@@ -4,7 +4,21 @@ const SUPPORTED_LOCALES = ["en", "ru", "hi", "fa", "ar", "zh"];
 const DEFAULT_LOCALE = "en";
 
 export default function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, host, protocol } = request.nextUrl;
+
+  // 1. Redirect HTTP to HTTPS
+  if (protocol === "http") {
+    const httpsUrl = request.nextUrl.clone();
+    httpsUrl.protocol = "https";
+    return NextResponse.redirect(httpsUrl, 301);
+  }
+
+  // 2. Redirect non-www to www (canonical domain)
+  if (!host.startsWith("www.")) {
+    const wwwUrl = request.nextUrl.clone();
+    wwwUrl.host = `www.${host}`;
+    return NextResponse.redirect(wwwUrl, 301);
+  }
 
   // Skip static assets, Next.js internals, and API routes
   if (
@@ -24,7 +38,7 @@ export default function proxy(request: NextRequest) {
   // Redirect root or non-locale paths to the default locale
   const url = request.nextUrl.clone();
   url.pathname = `/${DEFAULT_LOCALE}${pathname === "/" ? "" : pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(url, 301);
 }
 
 export const config = {
